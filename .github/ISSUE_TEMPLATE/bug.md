@@ -1,38 +1,39 @@
 ---
 name: Bug
 about: Demande de correction
-title: ''
-labels: ''
+title: "[BUG] - "
+labels: bug
 assignees: ''
 
 ---
 
 **Description du bug**
-A clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Faire une description claire et concise du bug.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Reproduire**
+
+Étapes permettant de reproduire le bug:
+1. Aller sur le lien suivant '...'
+2. Cliquer sur '....'
+3. Scroller jusqu'à  '....'
+4. Le bug d'affichage est visible '....'
+
+**Comportement attendu**
+
+Décrire le fonctionnement attendu
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+Si nécessaire, ajouter des screenshots en précisant l'url:
+```txt
+**monsite.com/le-bug**
+![Texte alternatif](mon_screenshot.jpg)
+```
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Contexte**
 
-**Additional context**
-Add any other context about the problem here.
+ - OS: [exemple: iOS]
+ - Navigateur [exemple: chrome, safari]
+ - Version [exemple: 22]
+Ou toute autre information utile
