@@ -7,15 +7,15 @@ assignees: ''
 
 ---
 
-## Contexte
+**Contexte**
 
 Si la feature fait suite à un autre ticket ou à un bug, le préciser ici.
 
-## Demande
+**Demande**
 
 Faire une description claire et concise de ce qui est attendu.
 
-### Screenshots
+**Screenshots**
 
 Si nécessaire, vous pouvez ajouter des screenshots en précisant l'url:
 ```txt
@@ -23,7 +23,7 @@ Si nécessaire, vous pouvez ajouter des screenshots en précisant l'url:
 ![Texte alternatif](mon_screenshot.jpg)
 ```
 
-## Liste des tâches
+**Liste des tâches**
 
 Liste des tâches à effectuer dans cette ordre pour mener à bien cette feature:
 - [ ] Tâche 1
