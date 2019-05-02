@@ -142,14 +142,44 @@ Product.create(
 Consumer.create(
   [
     {
-      firstname: 'Jean-michel',
-      lastname: 'paladin',
-      email: 'jm@paladin.com'
+      firstname: 'Catherine',
+      lastname: 'Haas',
+      email: 'fc.haas@gozmail.bzh'
     },
     {
-      firstname: 'Bob',
-      lastname: 'dylan',
-      email: 'bob@gmail.com'
+      firstname: 'Edith',
+      lastname: 'De Gélis',
+      email: 'edithdegelis@orange.fr'
+    },
+    {
+      firstname: 'Florence',
+      lastname: 'Papin',
+      email: 'papinflorence@hotmail.fr'
+    },
+    {
+      firstname: 'De Gélis',
+      lastname: 'Edith',
+      email: 'edithdegelis@orange.fr'
+    },
+    {
+      firstname: 'Marie-José',
+      lastname: 'Pasquereau',
+      email: 'mjpasquereau@sfr.fr'
+    },
+    {
+      firstname: 'Paolo',
+      lastname: 'Merlhiot',
+      email: 'merlhiotpaolo@yahoo.fr'
+    },
+    {
+      firstname: 'Isabelle',
+      lastname: 'Georges',
+      email: 'isabel.georges@free.fr'
+    },
+    {
+      firstname: 'Jean-Louis',
+      lastname: 'De Gélis',
+      email: 'jeanlouisdegelis@orange.fr'
     }
   ]
 )

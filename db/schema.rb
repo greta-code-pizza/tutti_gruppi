@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_081002) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "package"
-    t.float "price"
+    t.string "price"
     t.integer "weight_value"
     t.string "weight_type"
   end
