@@ -147,19 +147,24 @@ Consumer.create(
       email: 'fc.haas@gozmail.bzh'
     },
     {
+      firstname: 'Isabelle',
+      lastname: 'Depoortère',
+      email: 'isabelledepoortere@yahoo.fr'
+    },
+    {
       firstname: 'Edith',
       lastname: 'De Gélis',
       email: 'edithdegelis@orange.fr'
     },
     {
+      firstname: 'Phillipe',
+      lastname: 'Roger Bompol',
+      email: 'philippe.rogerbompol@orange.fr'
+    },
+    {
       firstname: 'Florence',
       lastname: 'Papin',
       email: 'papinflorence@hotmail.fr'
-    },
-    {
-      firstname: 'De Gélis',
-      lastname: 'Edith',
-      email: 'edithdegelis@orange.fr'
     },
     {
       firstname: 'Marie-José',
@@ -170,6 +175,11 @@ Consumer.create(
       firstname: 'Paolo',
       lastname: 'Merlhiot',
       email: 'merlhiotpaolo@yahoo.fr'
+    },
+    {
+      firstname: 'Laura',
+      lastname: 'Apparuit',
+      email: 'laura.apparuit@gmail.com'
     },
     {
       firstname: 'Isabelle',
