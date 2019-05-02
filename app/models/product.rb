@@ -6,4 +6,9 @@ class Product < ActiveRecord::Base
     jar:     'jar',
     tray:    'tray'
   }
+  enum weight_type: {
+    kilogram: 'kilogram',
+    gram: 'gram',
+    liter: 'liter'
+  }
 end
