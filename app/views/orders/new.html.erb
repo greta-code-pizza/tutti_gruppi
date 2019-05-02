@@ -22,15 +22,16 @@
                 <%end%>
             </select>
 
-            <% @product.each do |p| %>
-                <input type="hidden" name="product_id" value="<%=p.id%>">
-                <tr> 
-                    <td><%= p.name %></td>
-                    <td><%= p.package %></td>
-                    <td><%= p.price %></td>
-                    <td><%= p.weight %></td>
-                    <td><input type="number" name="quantity" placeholder="quantité" ></td>
-                </tr>
+            <% @products.each do |product| %>
+                <div>
+                    <tr> 
+                        <td><%= label_tag("order_product_#{product.id}", product.name)%></td>
+                        <td><%= product.package %></td>
+                        <td><%= product.price %></td>
+                        <td><%= product.weight_value %></td>
+                        <td><%= number_field_tag("order[product_id][#{product.id}]", 0)%></td>
+                    </tr>
+                </div>
             <%end%>
         
             <input type="submit" value="envoyer">
