@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @order = Order.create_with_deps(params)
     if @order
       flash[:info] = 'success'

@@ -16,7 +16,7 @@
 
     <tbody>
       <%= form_tag '/new', method: 'post' do%> 
-        <select name="consumer_id">
+        <select name="order[consumer_id]">
           <% @consumer.each do |c| %>
             <option value="<%= c.id%>"><%= c.firstname %></option>
           <%end%>
