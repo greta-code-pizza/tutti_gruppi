@@ -1,0 +1,40 @@
+<%= flash[:info] %>
+
+<h1>New</h1>
+
+<table>
+
+    <thead>
+      <tr>
+        <th>Produits</th>
+        <th>Conditionnement</th>
+        <th>Prix</th>
+        <th>Poids</th>
+        <th>Quantité</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= form_tag '/new', method: 'post' do%> 
+        <select name="order[consumer_id]">
+          <% @consumer.each do |c| %>
+            <option value="<%= c.id%>"><%= c.firstname %></option>
+          <%end%>
+        </select>
+
+        <% @products.each do |product| %>
+         <div>
+           <tr> 
+              <td><%= label_tag("order_product_#{product.id}", product.name)%></td>
+              <td><%= product.package %></td>
+              <td><%= product.price %></td>
+              <td><%= product.weight_value %></td>
+              <td><%= number_field_tag("order[product_id][#{product.id}]", 0)%></td>
+            </tr>
+          </div>
+        <%end%>
+        
+        <input type="submit" value="envoyer">
+    <%end%>  
+  </tbody>
+</table>
