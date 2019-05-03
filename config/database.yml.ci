@@ -2,7 +2,7 @@ test:
   adapter: mysql2
   pool: 5
   timeout: 5000
-  host: postgres
-  user: tutti
+  host: localhost
+  username: root
+  password: root
   database: tutti_test_job
-  password: tutti_test_job
