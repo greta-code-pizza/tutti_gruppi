@@ -1,4 +1,15 @@
 class OrdersController < ApplicationController
+
+  def index
+    @orders = Order.all
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    @orderitems = OrderItem.where(order_id:params[:id])
+    @total = total
+  end
+
   def new
     @order = Order.new
     @products = Product.all
@@ -15,4 +26,16 @@ class OrdersController < ApplicationController
       render 'new'
     end
   end
+
+  private
+
+  def total
+    @orderitems = OrderItem.where(order_id:params[:id])
+    @totalitem = []
+    @orderitems.each do |item|
+     @totalitem << item.product.price*item.quantity
+    end
+    @totalitem.sum
+  end
+
 end
