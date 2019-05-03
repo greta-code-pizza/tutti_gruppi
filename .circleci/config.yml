@@ -47,7 +47,7 @@ jobs:
           command: bundle check || bundle install
       - add_ssh_keys:
           fingerprints:
-            - "b0:b8:a3:41:ab:bf:85:48:c6:75:72:4e:dd:e8:08:d2"
+            - "38:fc:a8:9f:d2:d2:aa:56:7f:3b:45:5c:2a:e3:55:6a"
       - run:
           name: Deploy on staging
           command: bundle exec cap staging deploy
