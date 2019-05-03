@@ -6,8 +6,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    #binding.pry
-    @order = Order.create.create_with_deps(params)
+    binding.pry
+    @order = Order.create_with_deps(params)
     if @order
       flash[:info] = 'success'
       redirect_to request.referrer
@@ -15,11 +15,6 @@ class OrdersController < ApplicationController
       flash[:info] = 'failed'
       render 'new'
     end
-  end
- 
-  private
-
-  def params
   end
 
 end
