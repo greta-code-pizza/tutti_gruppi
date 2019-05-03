@@ -1,0 +1,71 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.6.2
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+        name: db
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Database setup
+      - run: bundle exec rake db:create RAILS_ENV=test
+      - run: bundle exec rake db:schema:load RAILS_ENV=test
+
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            bundle exec rspec
+
+  deploy-job:
+    docker:
+      - image: circleci/ruby:2.6.2
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - add_ssh_keys:
+          fingerprints:
+            - "b0:b8:a3:41:ab:bf:85:48:c6:75:72:4e:dd:e8:08:d2"
+      - run:
+          name: Deploy on staging
+          command: bundle exec cap staging deploy
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job
+      - deploy-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: develop
