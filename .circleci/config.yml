@@ -34,6 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
+      - run: cp config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create RAILS_ENV=test
       - run: bundle exec rake db:schema:load RAILS_ENV=test
 
@@ -47,7 +48,7 @@ jobs:
 
   deploy-job:
     docker:
-      - image: circleci/ruby:2.6.2
+      - image: circleci/ruby:2.6.2-node-browsers
     working_directory: ~/repo
     steps:
       - checkout
