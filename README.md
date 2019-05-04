@@ -2,7 +2,10 @@
   <a href="https://github.com/bbatsov/ruby-style-guide">
     <img src="https://img.shields.io/badge/guideline-rubocop-blue.svg?longCache=true&style=flat" alt="Rubocop" />
   </a>
+
+  <img src="https://circleci.com/gh/Kercode/tutti_gruppi/tree/develop.svg?style=svg" alt="Circleci" />
 </div>
+
 
 
 This README document whatever steps are necessary to get the application up and running.
