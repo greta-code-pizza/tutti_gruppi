@@ -4,11 +4,27 @@
   </a>
 
   <img src="https://circleci.com/gh/Kercode/tutti_gruppi/tree/develop.svg?style=svg" alt="Circleci" />
+
+  <a href="https://semver.org/spec/v2.0.0.html">
+    <img src="https://img.shields.io/badge/Semver-2.0.0-brightgreen.svg" alt="Semver" />
+  </a>
 </div>
 
+This README document whatever steps are necessary to get the application up and running and some useful information about the project.
 
+## Semver & Changelog
 
-This README document whatever steps are necessary to get the application up and running.
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+- MAJOR version when you make incompatible changes
+- MINOR version when you add functionality in a backwards-compatible manner
+- PATCH version when you make backwards-compatible bug fixes
+
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format (1.0.0.pre-release).
+
+To store this informations we follow the [Keep A Changelog](https://keepachangelog.com/en/1.0.0/) prescriptions from the [Changelog](CHANGELOG.md) file.
+
+[More informations about Semver](https://semver.org/spec/v2.0.0.html)
 
 ## Ruby & Rails versions
 
