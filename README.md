@@ -98,6 +98,13 @@ rake db:create
 rake db:migrate
 ```
 
+To populate the database with its default values, you can run this command:
+
+```shell
+rails db:seed
+```
+
 Right now your database works !
+
 
 [More informations about database configuration](http://guides.rubyonrails.org/configuring.html#configuring-a-database)
