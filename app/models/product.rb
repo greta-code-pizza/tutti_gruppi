@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   }
 
   def euro
-    "#{price / 100},#{price.to_s[-2..-1]}€"
+    "#{price.to_i / 100},#{price.to_s[-2..-1]}€"
   end
 
   def weight
