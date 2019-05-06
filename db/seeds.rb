@@ -7,84 +7,84 @@ Product.create(
       name: 'Oranges de table',
       package: 'box',
       price: 1110,
-      weight_value: 6,
+      weight_value: 6000,
       weight_type: 'gram'
     },
     {
       name: 'Oranges à jus',
       package: 'box',
       price: 625,
-      weight_value: 5,
+      weight_value: 5000,
       weight_type: 'gram'
     },
     {
       name: 'Citrons',
       package: 'box',
       price: 858,
-      weight_value: 3.5,
+      weight_value: 3500,
       weight_type: 'gram'
     },
     {
       name: 'Mandarines',
       package: 'box',
       price: 1200,
-      weight_value: 5,
+      weight_value: 5000,
       weight_type: 'gram'
     },
     {
       name: 'Avocats',
       package: 'box',
       price: 1800,
-      weight_value: 4,
+      weight_value: 4000,
       weight_type: 'gram'
     },
     {
       name: 'Patates doucesrails',
       package: 'box',
       price: 1000,
-      weight_value: 4,
+      weight_value: 4000,
       weight_type: 'gram'
     },
     {
       name: 'Mangues',
       package: 'box',
       price: 1800,
-      weight_value: 4,
+      weight_value: 4000,
       weight_type: 'gram'
     },
     {
       name: 'Anones',
       package: 'box',
       price: 1400,
-      weight_value: 4,
+      weight_value: 4000,
       weight_type: 'gram'
     },
     {
       name: 'Pamplemousses',
       package: 'box',
       price: 1175,
-      weight_value: 5,
+      weight_value: 5000,
       weight_type: 'gram'
     },
     {
       name: 'Papaye',
       package: 'box',
       price: 1800,
-      weight_value: 4,
+      weight_value: 4000,
       weight_type: 'gram'
     },
     {
       name: 'Amande',
       package: 'tray',
       price: 1600,
-      weight_value: 1,
+      weight_value: 1000,
       weight_type: 'gram'
     },
     {
       name: 'Figues séchées',
       package: 'bag',
       price: 800,
-      weight_value: 1,
+      weight_value: 1000,
       weight_type: 'gram'
     },
     {
