@@ -6,9 +6,9 @@
       <%= orderitem.quantity %> 
       <%= orderitem.product.package %> 
       de <%= orderitem.product.name%> 
-      pour <%= orderitem.product.price*orderitem.quantity %>€ 
+      pour <%= (orderitem.product.price*orderitem.quantity) / 100.0 %>€ 
     </p>
   <% end %>
 <% end %>
 
-<p>Total: <%= @total %>€</p>
+<p>Total: <%= @order.total %>€</p>
