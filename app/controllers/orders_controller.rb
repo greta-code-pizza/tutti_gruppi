@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
     @orderitems = OrderItem.where(order_id:params[:id])
     @totalitem = []
     @orderitems.each do |item|
-     @totalitem << item.product.price*item.quantity
+      @totalitem << item.product.price*item.quantity
     end
     @totalitem.sum
   end
