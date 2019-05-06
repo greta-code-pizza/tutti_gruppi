@@ -1,6 +1,6 @@
 <%= flash[:info] %>
 
-<%= form_tag '/new', method: 'post' do %>
+<%= form_tag '/orders', method: 'post' do %>
   <select name="order[consumer_id]">
     <% @consumer.each do |c| %>
       <option value="<%= c.id%>"><%= c.firstname %></option>
@@ -32,3 +32,5 @@
   </table>
   <%= submit_tag('envoyer') %>
 <%end%>
+
+<a href="/orders">retour</a>
