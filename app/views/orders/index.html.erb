@@ -1,0 +1,9 @@
+<h1>index order</h1>
+
+<ul>
+  <% @orders.each do |order|%>
+    <li><a href="/orders/<%=order.id%>">Commande n°<%= order.id%> de <%= order.consumer.firstname%> <%= order.consumer.lastname%></a></li>
+  <%end%>
+</ul>
+
+<a href="/orders/new">passer une commande</a>

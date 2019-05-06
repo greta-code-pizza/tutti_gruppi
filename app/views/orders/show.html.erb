@@ -1,0 +1,14 @@
+<h2>Commande n°<%= @order.id%> de <%= @order.consumer.firstname%> <%= @order.consumer.lastname%></h2>
+
+<% @orderitems.each do |orderitem| %>
+  <% if orderitem.quantity > 0 %>
+    <p>
+      <%= orderitem.quantity %> 
+      <%= orderitem.product.package %> 
+      de <%= orderitem.product.name%> 
+      pour <%= (orderitem.product.price*orderitem.quantity) / 100.0 %>€ 
+    </p>
+  <% end %>
+<% end %>
+
+<p>Total: <%= @order.total %>€</p>
