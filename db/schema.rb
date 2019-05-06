@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_111956) do
+ActiveRecord::Schema.define(version: 2019_05_06_073205) do
 
   create_table "consumers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "firstname"
@@ -27,19 +27,18 @@ ActiveRecord::Schema.define(version: 2019_05_03_111956) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "consumer_id"
+    t.integer "consumer_id"
     t.index ["consumer_id"], name: "index_orders_on_consumer_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "package"
-    t.string "price"
+    t.integer "price"
     t.integer "weight_value"
     t.string "weight_type"
   end
 
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
-  add_foreign_key "orders", "consumers"
 end

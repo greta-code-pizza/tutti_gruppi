@@ -3,10 +3,13 @@ class Order < ActiveRecord::Base
   belongs_to :consumer
 
   def self.create_with_deps(params)
-    order = Order.create(consumer_id: params[:order][:consumer_id])
+    transaction do
+      binding.pry
+      order = Order.create(consumer_id: params[:order][:consumer_id])
 
-    params[:order][:product_id].each do |key, value|
-      OrderItem.create(order_id: order.id, product_id: key, quantity: value)
+      params[:order][:product_id].each do |key, value|
+        OrderItem.create(order_id: order.id, product_id: key, quantity: value)
+      end
     end
   end
 end
