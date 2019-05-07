@@ -11,6 +11,10 @@ class Product < ActiveRecord::Base
     liter: 'liter'
   }
 
+  def upname
+    name.titleize
+  end
+
   def euro
     "#{price.to_i / 100},#{price.to_s[-2..-1]}€"
   end

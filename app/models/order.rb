@@ -16,7 +16,7 @@ class Order < ActiveRecord::Base
     @orderitems = OrderItem.where(order_id: id)
     @totalitem = []
     @orderitems.each do |item|
-      @totalitem << (item.product.price*item.quantity)
+      @totalitem << (item.product.price * item.quantity)
     end
     @totalitem.sum / 100.0
   end
