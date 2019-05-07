@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    ConsumerMailer.notify_consumer(params[:order][:consumer_id]).deliver
     @order = Order.create_with_deps(params)
     if @order
       flash[:info] = 'success'
