@@ -1,6 +1,8 @@
 class ConsumerMailer < ApplicationMailer
-  def notify_consumer(consumer)
+  def notify_consumer(consumer, order)
     @consumer = Consumer.find(consumer)
-    mail(to: @consumer.email, subject: 'Votre commande Tutti Gruppi n°')
+    @order = Order.find(order.id)
+    @items = OrderItem.where(order_id: order.id)
+    mail(to: @consumer.email, subject: "Tutti Gruppi: commande n°#{@order.id}")
   end
 end

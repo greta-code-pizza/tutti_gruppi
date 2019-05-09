@@ -39,7 +39,7 @@ Product.create(
       weight_type: 'gram'
     },
     {
-      name: 'Patates doucesrails',
+      name: 'Patates douces',
       package: 'box',
       price: 1000,
       weight_value: 4000,
@@ -142,54 +142,64 @@ Product.create(
 Consumer.create(
   [
     {
-      firstname: 'Catherine',
-      lastname: 'Haas',
-      email: 'fc.haas@gozmail.bzh'
+      firstname: 'consumer',
+      lastname: 'test',
+      email: 'arnaudfgr@gmail.com'
     },
     {
-      firstname: 'Isabelle',
-      lastname: 'Depoortère',
-      email: 'isabelledepoortere@yahoo.fr'
+      firstname: 'responsable',
+      lastname: 'test',
+      email: 'pro.davidsaoud@gmail.com'
     },
-    {
-      firstname: 'Edith',
-      lastname: 'De Gélis',
-      email: 'edithdegelis@orange.fr'
-    },
-    {
-      firstname: 'Phillipe',
-      lastname: 'Roger Bompol',
-      email: 'philippe.rogerbompol@orange.fr'
-    },
-    {
-      firstname: 'Florence',
-      lastname: 'Papin',
-      email: 'papinflorence@hotmail.fr'
-    },
-    {
-      firstname: 'Marie-José',
-      lastname: 'Pasquereau',
-      email: 'mjpasquereau@sfr.fr'
-    },
-    {
-      firstname: 'Paolo',
-      lastname: 'Merlhiot',
-      email: 'merlhiotpaolo@yahoo.fr'
-    },
-    {
-      firstname: 'Laura',
-      lastname: 'Apparuit',
-      email: 'laura.apparuit@gmail.com'
-    },
-    {
-      firstname: 'Isabelle',
-      lastname: 'Georges',
-      email: 'isabel.georges@free.fr'
-    },
-    {
-      firstname: 'Jean-Louis',
-      lastname: 'De Gélis',
-      email: 'jeanlouisdegelis@orange.fr'
-    }
+    # {
+    #   firstname: 'Catherine',
+    #   lastname: 'Haas',
+    #   email: 'fc.haas@gozmail.bzh'
+    # },
+    # {
+    #   firstname: 'Isabelle',
+    #   lastname: 'Depoortère',
+    #   email: 'isabelledepoortere@yahoo.fr'
+    # },
+    # {
+    #   firstname: 'Edith',
+    #   lastname: 'De Gélis',
+    #   email: 'edithdegelis@orange.fr'
+    # },
+    # {
+    #   firstname: 'Phillipe',
+    #   lastname: 'Roger Bompol',
+    #   email: 'philippe.rogerbompol@orange.fr'
+    # },
+    # {
+    #   firstname: 'Florence',
+    #   lastname: 'Papin',
+    #   email: 'papinflorence@hotmail.fr'
+    # },
+    # {
+    #   firstname: 'Marie-José',
+    #   lastname: 'Pasquereau',
+    #   email: 'mjpasquereau@sfr.fr'
+    # },
+    # {
+    #   firstname: 'Paolo',
+    #   lastname: 'Merlhiot',
+    #   email: 'merlhiotpaolo@yahoo.fr'
+    # },
+    # {
+    #   firstname: 'Laura',
+    #   lastname: 'Apparuit',
+    #   email: 'laura.apparuit@gmail.com'
+    # },
+    # {
+    #   firstname: 'Isabelle',
+    #   lastname: 'Georges',
+    #   email: 'isabel.georges@free.fr'
+    # },
+    # {
+    #   firstname: 'Jean-Louis',
+    #   lastname: 'De Gélis',
+    #   email: 'jeanlouisdegelis@orange.fr'
+    # }
   ]
 )

@@ -15,9 +15,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create_with_deps(params)
+    @order = Order.create_order(params)
+    @order_item = Order.create_with_deps(params, @order)
     if @order
-      ConsumerMailer.notify_consumer(params[:order][:consumer_id]).deliver
+      ConsumerMailer.notify_consumer(params[:order][:consumer_id], @order).deliver
       flash[:info] = 'success'
       redirect_to request.referrer
     else
