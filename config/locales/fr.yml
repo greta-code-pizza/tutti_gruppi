@@ -1,0 +1,114 @@
+fr:
+  orders:
+    # package
+    show:
+      box:      ['caisse', 'caisses']
+      tray:     ['cagette', 'cagettes']
+      bag:      ['sachet', 'sachets']
+      jar:      ['bocal', 'bocaux']
+      bottle:   ['bidon', 'bidons']
+    
+      table_oranges:  'oranges de table'
+      juice_oranges:  'oranges à jus'
+      lemons:         'citrons'
+      tangerines:     'mandarines'
+      avocado:        'avocats'
+      sweet_potatoes: 'patates docues'
+      mangos:         'mangues'
+      annonas:        'anones'
+      grapefruit:     'pamplemousse'
+      papaya:         'papaye'
+      almonds:        'amande'
+      dried_figs:     'figues séchées'
+      dried_tomatoes: 'tomates séchées'
+      dried_peppers:  'poivrons séchés'
+      fig_bread:      'pain de figues'
+      green_olive:    'olives vertes'
+      black_olive:    'olives noires'
+      tapenade:       'tapenade'
+      olive_oil:      "huile d\'olive"
+  # package
+    new: 
+      box:      'caisse'
+      tray:     'cagette'
+      bag:      'sachet'
+      jar:      'bocal'
+      bottle:   'bidon'
+  
+      table_oranges:  'oranges de table'
+      juice_oranges:  'oranges à jus'
+      lemons:         'citrons'
+      tangerines:     'mandarines'
+      avocado:        'avocats'
+      sweet_potatoes: 'patates docues'
+      mangos:         'mangues'
+      annonas:        'anones'
+      grapefruit:     'pamplemousse'
+      papaya:         'papaye'
+      almonds:        'amande'
+      dried_figs:     'figues séchées'
+      dried_tomatoes: 'tomates séchées'
+      dried_peppers:  'poivrons séchés'
+      fig_bread:      'pain de figues'
+      green_olive:    'olives vertes'
+      black_olive:    'olives noires'
+      tapenade:       'tapenade'
+      olive_oil:      "huile d\'olive"
+      
+  consumer_mailer:
+    notify_consumer: 
+      box:      'caisse'
+      tray:     'cagette'
+      bag:      'sachet'
+      jar:      'bocal'
+      bottle:   'bidon'
+  
+      table_oranges:  'oranges de table'
+      juice_oranges:  'oranges à jus'
+      lemons:         'citrons'
+      tangerines:     'mandarines'
+      avocado:        'avocats'
+      sweet_potatoes: 'patates docues'
+      mangos:         'mangues'
+      annonas:        'anones'
+      grapefruit:     'pamplemousse'
+      papaya:         'papaye'
+      almonds:        'amande'
+      dried_figs:     'figues séchées'
+      dried_tomatoes: 'tomates séchées'
+      dried_peppers:  'poivrons séchés'
+      fig_bread:      'pain de figues'
+      green_olive:    'olives vertes'
+      black_olive:    'olives noires'
+      tapenade:       'tapenade'
+      olive_oil:      "huile d\'olive"  
+
+  manager_mailer:
+    notify_manager:
+      box:      'caisse'
+      tray:     'cagette'
+      bag:      'sachet'
+      jar:      'bocal'
+      bottle:   'bidon'
+  
+      table_oranges:  'oranges de table'
+      juice_oranges:  'oranges à jus'
+      lemons:         'citrons'
+      tangerines:     'mandarines'
+      avocado:        'avocats'
+      sweet_potatoes: 'patates docues'
+      mangos:         'mangues'
+      annonas:        'anones'
+      grapefruit:     'pamplemousse'
+      papaya:         'papaye'
+      almonds:        'amande'
+      dried_figs:     'figues séchées'
+      dried_tomatoes: 'tomates séchées'
+      dried_peppers:  'poivrons séchés'
+      fig_bread:      'pain de figues'
+      green_olive:    'olives vertes'
+      black_olive:    'olives noires'
+      tapenade:       'tapenade'
+      olive_oil:      "huile d\'olive"  
+      
+    

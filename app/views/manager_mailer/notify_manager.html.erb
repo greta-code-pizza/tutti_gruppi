@@ -17,8 +17,8 @@
       <% if item.quantity > 0 %>
         <div>
           <tr>
-            <td><%= item.product.name %></td>
-            <td><%= item.product.package %></td>
+            <td><%= t(".#{item.product.name}") %></td>
+            <td><%= t(".#{item.product.package}") %></td>
             <td><%= item.product.weight %></td>
             <td><%= item.quantity %></td>
             <td><%= item.product.euro %></td>
