@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create_order(params)
+    @order = Order.create(consumer_id: params[:order][:consumer_id])
     @order_item = Order.create_with_deps(params, @order)
     if @order
       ConsumerMailer.notify_consumer(params[:order][:consumer_id], @order).deliver

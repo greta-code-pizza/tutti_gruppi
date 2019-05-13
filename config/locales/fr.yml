@@ -77,7 +77,7 @@ fr:
         jar:      bocal
         bottle:   bidon
 
-      product:
+      products:
         table_oranges:  oranges de table
         juice_oranges:  oranges à jus
         lemons:         citrons
@@ -107,7 +107,7 @@ fr:
         jar:      bocal
         bottle:   bidon
 
-      product:
+      products:
         table_oranges:  oranges de table
         juice_oranges:  oranges à jus
         lemons:         citrons
@@ -127,4 +127,3 @@ fr:
         black_olive:    olives noires
         tapenade:       tapenade
         olive_oil:      "huile d'olive"
-      

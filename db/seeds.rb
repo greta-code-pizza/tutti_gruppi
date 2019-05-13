@@ -144,16 +144,12 @@ Consumer.create(
     {
       firstname: 'consumer',
       lastname: 'test',
-      email: 'arnaudfgr@gmail.com',
-      group: 'vannes',
-      group_status: 'consumer'
+      email: 'arnaudfgr@gmail.com'
     },
     {
       firstname: 'responsable',
       lastname: 'test',
-      email: 'pro.davidsaoud@gmail.com',
-      group: 'vannes',
-      group_status: 'manager'
+      email: 'pro.davidsaoud@gmail.com'
     },
     # {
     #   firstname: 'Catherine',

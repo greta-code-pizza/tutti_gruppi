@@ -6,15 +6,15 @@
       <p>
         <%= orderitem.quantity %> 
 
-          <%= orderitem.product.plurality?(orderitem.quantity, t(".#{orderitem.product.package}")) %>
+          <%= orderitem.pluralize(t('orders.show.package')) %>
 
-        de <%= t(".#{orderitem.product.name}") %> 
-        pour <%= (orderitem.product.price*orderitem.quantity) / 100.0 %> € 
+        de <%= t("orders.show.products.#{orderitem.product.name}") %> 
+        pour <%= render_price_to_euros(@order.total) %> 
       </p>
     <% end %>
   <% end %>
 
-  <p>Total : <%= @order.total %></p>
+  <p>Total : <%= render_price_to_euros(@order.total) %></p>
 
 
 </div>

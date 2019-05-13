@@ -1,4 +1,4 @@
-<h3>Bonjour <%= @manager.firstname %></h3>
+<h3>Bonjour Responsable de groupement</h3>
 <p>Voici le récapitulatif de la commande n° <%=@order.id%><p>
 
 <table>
@@ -17,21 +17,21 @@
       <% if item.quantity > 0 %>
         <div>
           <tr>
-            <td><%= t(".#{item.product.name}") %></td>
-            <td><%= t(".#{item.product.package}") %></td>
+            <td><%= t("manager_mailer.notify_manager.products.#{item.product.name}") %></td>
+            <td><%= t("manager_mailer.notify_manager.package.#{item.product.package}") %></td>
             <td><%= item.product.weight %></td>
             <td><%= item.quantity %></td>
             <td><%= item.product.euro %></td>
             <td>
-              <%= item.product.price = (item.product.price*item.quantity)
+              <%= item.product.price = (item.product.price * item.quantity)
               item.product.euro %>
             </td>
           </tr>
         </div>
       <% end %>
     <% end %>
-    <td>Total de la commande: <%= @order.total %></td>
+    <td>Total de la commande: <%= render_price_to_euros(@order.total) %></td>
   </tbody>
 </table>
 
-<p>En cas de problème, contactez: <a href="mailto:<%=@consumer.email%>"><%=@consumer.email%></a></p>
+<p>En cas de problème, contactez: <a href="mailto:<%= @consumer.email %>"><%= @consumer.email %></a></p>

@@ -1,4 +1,6 @@
 class ConsumerMailer < ApplicationMailer
+  add_template_helper(ApplicationHelper)
+  
   def notify_consumer(consumer, order)
     @consumer = Consumer.find(consumer)
     @order = Order.find(order.id)

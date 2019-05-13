@@ -1,4 +1,4 @@
-<h1>Tutti Gruppi: commande n° <%=@order.id%></h1>
+<h1>Tutti Gruppi: commande n° <%= @order.id %></h1>
 <h3>Bonjour <%= @consumer.firstname %></h3>
 <p>Voici le récapitulatif de votre commande:<p>
 
@@ -18,8 +18,8 @@
       <% if item.quantity > 0 %>
         <div>
           <tr>
-            <td><%= t(".#{item.product.name}") %></td>
-            <td><%= t(".#{item.product.package}") %></td>
+            <td><%= t("consumer_mailer.notify_consumer.products.#{item.product.name}") %></td>
+            <td><%= t("consumer_mailer.notify_consumer.package.#{item.product.package}") %></td>
             <td><%= item.product.weight %></td>
             <td><%= item.quantity %></td>
             <td><%= item.product.euro %></td>
@@ -31,7 +31,7 @@
         </div>
       <% end %>
     <% end %>
-    <td>Total de la commande: <%= @order.total %></td>
+    <td>Total de la commande: <%= render_price_to_euros(@order.total) %></td>
   </tbody>
 </table>
 
