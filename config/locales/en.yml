@@ -1,9 +1,19 @@
 en:
   orders:
-    # packages
     show:
-      box:      ['box', 'boxes']
-      tray:     ['tray', 'trays']
-      bag:      ['bag', 'bags']
-      jar:      ['jar', 'jars']
-      bottle:   ['bottle', 'bottles']
+      package:
+        box:
+          - box
+          - boxes
+        tray:
+          - tray 
+          - trays
+        bag: 
+          - bag
+          - bags
+        jar: 
+          - jar
+          - jars
+        bottle: 
+          - bottle
+          - bottles
