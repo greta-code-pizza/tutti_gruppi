@@ -11,7 +11,7 @@ class OrderItem < ActiveRecord::Base
     quantity >= 2
   end
 
-  def total
-    product.price * quantity
+  def unit_price_x_quantity
+    product.price * quantity / 100.0
   end
 end

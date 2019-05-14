@@ -6,12 +6,14 @@
 
 <div class="container text-center mt-5">
   <%= form_tag '/orders', method: 'post' do %>
-    <label>Commande pour: </label>
-    <select name="order[consumer_id]">
-      <% @consumer.each do |c| %>
-        <option value="<%= c.id %>"><%= c.firstname %></option>
-      <%end%>
-    </select>
+    <div class="mb-4">
+      <label>Commande pour : </label>
+      <select name="order[consumer_id]">
+        <% @consumer.each do |c| %>
+          <option value="<%= c.id %>"><%= c.fullname %></option>
+        <%end%>
+      </select>
+    </div>  
     <table class="container text-center">
       <thead>
         <tr>
@@ -26,8 +28,8 @@
         <% @products.each do |product| %>
           <div>
             <tr>
-              <td class="border_command"><%= label_tag("order_product_#{product.id}", t("orders.new.products.#{product.name}")) %></td>
-              <td class="border_command"><%= t("orders.new.package.#{product.package}") %></td>
+              <td class="border_command"><%= label_tag("order_product_#{product.id}", t("products.#{product.name}")) %></td>
+              <td class="border_command"><%= t("package.#{product.package}") %></td>
               <td class="border_command"><%= product.euro %></td>
               <td class="border_command"><%= product.weight %></td>
               <td class="border_command"><%= number_field_tag("order[products][#{product.id}]", 0, min:0) %></td>
