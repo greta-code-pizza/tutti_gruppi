@@ -1,14 +1,20 @@
-<h2>Commande n°<%= @order.id%> de <%= @order.consumer.firstname%> <%= @order.consumer.lastname%></h2>
+<div class="container text-center mt-3">
+  <h2>Commande n°<%= @order.id%> de <%= @order.consumer.firstname %> <%= @order.consumer.lastname %></h2>
+  <hr>
+  <% @orderitems.each do |orderitem| %>
+    <% if orderitem.quantity > 0 %>
+      <p>
+        <%= orderitem.quantity %> 
 
-<% @orderitems.each do |orderitem| %>
-  <% if orderitem.quantity > 0 %>
-    <p>
-      <%= orderitem.quantity %> 
-      <%= orderitem.product.package %> 
-      de <%= orderitem.product.name%> 
-      pour <%= (orderitem.product.price*orderitem.quantity) / 100.0 %>€ 
-    </p>
+          <%= orderitem.pluralize(t('orders.show.package')) %>
+
+        de <%= t("orders.show.products.#{orderitem.product.name}") %> 
+        pour <%= render_price_to_euros(@order.total) %> 
+      </p>
+    <% end %>
   <% end %>
-<% end %>
 
-<p>Total: <%= @order.total %>€</p>
+  <p>Total : <%= render_price_to_euros(@order.total) %></p>
+
+
+</div>

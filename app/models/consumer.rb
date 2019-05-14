@@ -1,3 +1,3 @@
 class Consumer < ActiveRecord::Base
-end
   
+end

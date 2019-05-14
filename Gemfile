@@ -42,6 +42,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Use Pry as your rails console
   gem 'pry-rails'
+  gem 'figaro'
 end
 
 group :development do
