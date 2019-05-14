@@ -35,7 +35,7 @@ class Product < ActiveRecord::Base
     liter: 'liter'
   }
   def euro
-    "#{price.to_i / 100},#{price.to_s[-2..-1]}€"
+    "#{price.to_i / 100},#{price.to_s[-2..-1]} €"
   end
 
   def weight

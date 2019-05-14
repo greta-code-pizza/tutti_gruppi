@@ -1,5 +1,5 @@
 <h3>Bonjour Responsable de groupement</h3>
-<p>Voici le récapitulatif de la commande n° <%=@order.id%><p>
+<p>Voici le récapitulatif de la commande n° <%= @order.id %><p>
 
 <table>
   <thead>
@@ -17,15 +17,12 @@
       <% if item.quantity > 0 %>
         <div>
           <tr>
-            <td><%= t("manager_mailer.notify_manager.products.#{item.product.name}") %></td>
-            <td><%= t("manager_mailer.notify_manager.package.#{item.product.package}") %></td>
+            <td><%= t("products.#{item.product.name}") %></td>
+            <td><%= t("package.#{item.product.package}") %></td>
             <td><%= item.product.weight %></td>
             <td><%= item.quantity %></td>
             <td><%= item.product.euro %></td>
-            <td>
-              <%= item.product.price = (item.product.price * item.quantity)
-              item.product.euro %>
-            </td>
+            <td><%= render_price_to_euros(item.unit_price_x_quantity) %></td>
           </tr>
         </div>
       <% end %>

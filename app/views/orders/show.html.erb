@@ -1,5 +1,5 @@
 <div class="container text-center mt-3">
-  <h2>Commande n°<%= @order.id%> de <%= @order.consumer.firstname %> <%= @order.consumer.lastname %></h2>
+  <h2>Commande n°<%= @order.id %> de <%= @order.consumer.fullname %></h2>
   <hr>
   <% @orderitems.each do |orderitem| %>
     <% if orderitem.quantity > 0 %>
@@ -8,8 +8,8 @@
 
           <%= orderitem.pluralize(t('orders.show.package')) %>
 
-        de <%= t("orders.show.products.#{orderitem.product.name}") %> 
-        pour <%= render_price_to_euros(@order.total) %> 
+        de <%= t("products.#{orderitem.product.name}") %> 
+        pour <%= render_price_to_euros(orderitem.unit_price_x_quantity) %> 
       </p>
     <% end %>
   <% end %>
