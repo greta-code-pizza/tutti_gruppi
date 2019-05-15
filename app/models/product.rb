@@ -50,6 +50,10 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def upname
+    name.capitalize
+  end
+
   def plurality?(quantity, package)
     if quantity >= 2
       package[1]
