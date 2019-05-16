@@ -35,6 +35,4 @@ RSpec.describe Product, type: :model do
     end
   end
 
-  describe '#plurality?' do
-  end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :orderItem do
+  factory :order_item do
     product
     order
     quantity { 5 }

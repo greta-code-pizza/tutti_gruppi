@@ -9,7 +9,7 @@ RSpec.describe Order, type: :model do
 
       products.each do |name, price|
         product = FactoryBot.create(:product, name: name, price: price)
-        FactoryBot.create(:orderItem, product: product, order: @order, quantity: quantity)
+        FactoryBot.create(:order_item, product: product, order: @order, quantity: quantity)
         quantity -= 1
       end
     end
