@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_15_164831) do
+ActiveRecord::Schema.define(version: 2019_05_16_114904) do
 
   create_table "consumers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 2019_05_15_164831) do
     t.integer "price"
     t.integer "weight_value"
     t.string "weight_type"
+  end
+
+  create_table "whitelists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "order_items", "orders"
