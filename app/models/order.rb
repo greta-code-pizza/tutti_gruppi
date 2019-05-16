@@ -12,6 +12,6 @@ class Order < ActiveRecord::Base
   end
 
   def total
-    order_items.map(&:unit_price_x_quantity).sum
+    order_items.map(&:unit_price_x_quantity).sum.round(2)
   end
 end

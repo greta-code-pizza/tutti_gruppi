@@ -19,21 +19,43 @@
       </button>
       <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
         <ul class=" navbar-nav">
+        <% if current_consumer %>
           <li class="nav-item active">
             <a href="/orders/new" class="order nav-link">Commander</a>
           </li>
           <li class="nav-item">
             <a href="/orders" class="order nav-link">Liste des commandes</a>
           </li>
+          <% if consumer_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Déconnexion', destroy_consumer_session_path, method: :delete, class: 'order nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Connexion', new_consumer_session_path, class: 'order nav-link' %>
+            </li>
+          <% end %>
+        <% end %>
           <li class="nav-item">
             <a href="#" class="order nav-link">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
-  
+
+    <div class="container text-center">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
     <%= yield %>
-  
+
+    <%
+=begin%>
+    <%= debug consumer_signed_in? %>
+    <%= debug session.to_hash %> 
+<%
+=end %>
   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

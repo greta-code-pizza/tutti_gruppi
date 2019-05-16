@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_13_123311) do
+ActiveRecord::Schema.define(version: 2019_05_15_164831) do
 
   create_table "consumers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
-    t.string "email"
+    t.string "email", default: "", null: false
+    t.string "firstname", default: "", null: false
+    t.string "lastname", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["email"], name: "index_consumers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_consumers_on_reset_password_token", unique: true
   end
 
   create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
