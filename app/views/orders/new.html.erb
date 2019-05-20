@@ -7,12 +7,11 @@
 <div class="container text-center mt-5">
   <%= form_tag '/orders', method: 'post' do %>
     <div class="mb-4">
-      <label>Commande pour : </label>
-      <select name="order[consumer_id]">
-        <% @consumer.each do |c| %>
-          <option value="<%= c.id %>"><%= c.fullname %></option>
-        <%end%>
-      </select>
+      <p>Commande pour : 
+      <% if current_consumer %>
+        <%= current_consumer.fullname %>
+      <% end %>
+      </p>
     </div>  
     <table class="container text-center">
       <thead>

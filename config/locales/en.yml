@@ -17,3 +17,23 @@ en:
         bottle: 
           - bottle
           - bottles
+
+  link_to:
+    sign_in: 'Sign in'
+    password_forgotten: 'Forgot your password?'
+    sign_up: 'Sign up'
+    confirmable?: 'Confirmation instructions not received ?'
+    lockable?: 'Unlocking instructions not received ?'
+    reset_password: 'Reset password'
+    change_password: 'Change password'
+    resend_confirmation: 'Receive confirmation instructions'
+    get_confirmation: 'Receive instructions'
+    resend_unlock: 'Receive unlocking instructions'
+  
+
+  labels:
+    firstname: 'Firstname'
+    lastname: 'Lastname'
+    password: 'PAssword'
+    minimum_characters: ' charactères minimum)'
+    password_confirmation: 'Password confirmation'

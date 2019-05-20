@@ -45,3 +45,23 @@ fr:
         bottle: 
           - bidon
           - bidons
+
+  link_to:
+    sign_in: 'Se connecter'
+    password_forgotten: 'Mot de passe oublié ?'
+    sign_up: 'Créer un compte'
+    confirmable?: 'Instructions de confirmation non reçues ?'
+    lockable?: 'Instructions de déverrouillage non reçues ?'
+    reset_password: 'Réinitialiser le mot de passe'
+    change_password: 'Changer de mot de passe'
+    resend_confirmation: 'Recevoir les instructions de confirmation'
+    get_confirmation: 'Recevoir les instructions'
+    resend_unlock: 'Recevoir les instructions de déverrouillage'
+  
+
+  labels:
+    firstname: 'Prénom'
+    lastname: 'Nom'
+    password: 'Mot de passe'
+    minimum_characters: ' charactères minimum)'
+    password_confirmation: 'Confirmation de mot passe'
