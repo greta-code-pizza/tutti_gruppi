@@ -139,8 +139,22 @@ Product.create(
   ]
 )
 
+Whitelist.create(
+  [
+    {
+      email: 'admin@gmail.com'
+    }
+  ]
+)
+
 Consumer.create(
   [
+    {
+      firstname: 'admin',
+      lastname: 'admin',
+      email: 'admin@gmail.com',
+      password: 'adminadmin'
+    },
     {
       firstname: 'consumer',
       lastname: 'test',
