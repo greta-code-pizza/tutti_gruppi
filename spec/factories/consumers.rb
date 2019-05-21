@@ -5,5 +5,6 @@ FactoryBot.define do
     firstname { 'Catherine' }
     lastname { 'Haas' }
     email { 'fc.haas@gozmail.bz' }
+    password { '123456' }
   end
 end
