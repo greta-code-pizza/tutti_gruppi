@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-class Consumers::RegistrationsController < Devise::RegistrationsController
+class Authentications::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
-    if Whitelist.find_by_email(params[:consumer][:email])
+    if Whitelist.find_by_email(params[:authentication][:email])
+      Member.create
       super
     else
       flash[:notice] = 'An error occured'

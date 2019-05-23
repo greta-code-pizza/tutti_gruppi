@@ -8,8 +8,8 @@
   <%= form_tag '/orders', method: 'post' do %>
     <div class="mb-4">
       <p>Commande pour : 
-      <% if current_consumer %>
-        <%= current_consumer.fullname %>
+      <% if current_authentication %>
+        <%= current_authentication.fullname %>
       <% end %>
       </p>
     </div>  

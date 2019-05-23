@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_consumer!
+  before_action :authenticate_authentication!
   
   def index
     @orders = Order.all
@@ -13,15 +13,15 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @products = Product.all
-    @consumer = Consumer.all
+    @authentication = Authentication.all
   end
 
   def create
-    @order = Order.create(consumer_id: current_consumer.id)
+    @order = Order.create(authentication_id: current_authentication.id)
     @order_item = Order.create_with_deps(params, @order)
     if @order
-      ConsumerMailer.notify_consumer(current_consumer.id, @order).deliver
-      ManagerMailer.notify_manager(current_consumer.id, @order).deliver
+      AuthenticationMailer.notify_authentication(current_authentication.id, @order).deliver
+      ManagerMailer.notify_manager(current_authentication.id, @order).deliver
       flash[:info] = 'success'
       redirect_to request.referrer
     else
