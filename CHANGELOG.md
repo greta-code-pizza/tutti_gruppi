@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Check code quality with Codeclimate
+- Implement role system
+
+## [1.1.0]
+### Added
+- Implement Authentication system for Consumers
+- Improve tests with fixtures and Guard workflow
+
+## [1.0.0-mvp]
+### Added
+- Create order and notifications emailing system
 - Populate the database with it's default values (Products and Consumers)
 - This CHANGELOG file to hopefully serve as an evolving example of a
   standardized open source project CHANGELOG.
