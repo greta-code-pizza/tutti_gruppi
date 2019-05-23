@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: order_items
+#
+#  id         :bigint(8)        not null, primary key
+#  product_id :bigint(8)
+#  order_id   :bigint(8)
+#  quantity   :integer
+#
+
+
 RSpec.describe OrderItem, type: :model do
   describe '#unit_price_x_quantity' do
     it 'return cents (2500) to (125) €' do
