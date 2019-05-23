@@ -8,6 +8,8 @@
   <a href="https://semver.org/spec/v2.0.0.html">
     <img src="https://img.shields.io/badge/Semver-2.0.0-brightgreen.svg" alt="Semver" />
   </a>
+
+  <a href="https://codeclimate.com/github/Kercode/tutti_gruppi/maintainability"><img src="https://api.codeclimate.com/v1/badges/f69f54a9bebccb345abe/maintainability" /></a>
 </div>
 
 This README document whatever steps are necessary to get the application up and running and some useful information about the project.
