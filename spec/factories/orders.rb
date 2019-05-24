@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :order do
-    consumer
+    authentication
   end
 end

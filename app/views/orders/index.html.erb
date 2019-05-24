@@ -5,7 +5,7 @@
     <% @orders.each do |order| %>
       <li>
         <a href="/orders/<%= order.id %>">
-          Commande n°<%= order.id %> de <%= order.consumer.fullname %>
+          Commande n°<%= order.id %> de <%= order.authentication.fullname %>
         </a>
       </li>
     <% end %>
