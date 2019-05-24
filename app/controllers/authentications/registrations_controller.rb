@@ -4,9 +4,9 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     if Whitelist.find_by_email(params[:authentication][:email])
-      @member = Member.create
+      member = Member.create
       build_resource(sign_up_params)
-      resource.userable_id = @member.id
+      resource.userable_id = member.id
       resource.save
       yield resource if block_given?
       if resource.persisted?
