@@ -33,6 +33,12 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+      # run tests!
+      - run:
+          name: Run Rspec
+          command: |
+            bundle exec rspec
+
   deploy-job:
     docker:
       - image: circleci/ruby:2.6.2-node-browsers
@@ -57,6 +63,7 @@ workflows:
   build-deploy:
     jobs:
       - build-job
+      - test-job
       - deploy-job:
           requires:
             - build-job
