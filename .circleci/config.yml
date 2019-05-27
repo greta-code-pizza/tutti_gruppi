@@ -34,15 +34,15 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
-      - run: cp config/database.exemple.yml config/database.yml
+      # - run: cp config/database.exemple.yml config/database.yml
       - run: bundle exec rake db:create RAILS_ENV=test
       - run: bundle exec rake db:schema:load RAILS_ENV=test
 
       # run tests!
-      - run:
-          name: Run Rspec
-          command: |
-            bundle exec rspec
+      # - run:
+      #     name: Run Rspec
+      #     command: |
+      #       bundle exec rspec
 
   deploy-job:
     docker:
