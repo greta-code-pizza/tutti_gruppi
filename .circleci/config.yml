@@ -63,7 +63,6 @@ workflows:
   build-deploy:
     jobs:
       - build-job
-      - test-job
       - deploy-job:
           requires:
             - build-job
