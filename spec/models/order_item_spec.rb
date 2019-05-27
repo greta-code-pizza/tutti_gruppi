@@ -1,24 +1,32 @@
 # frozen_string_literal: true
 
 RSpec.describe OrderItem, type: :model do
+  before(:each) do
+    auth = Authentication.create(
+      firstname: 'plop',
+      lastname: 'plop',
+      email: 'test@test.com',
+      password: 'password123'
+    )
+    order = FactoryBot.create(:order, authentication: auth)
+    @order_item = FactoryBot.create(:order_item, order: order)
+  end
+
   describe '#unit_price_x_quantity' do
     it 'return cents (2500) to (125) €' do
-      product = FactoryBot.create(:order_item)
-      expect(product.unit_price_x_quantity).to eq(125)
+      expect(@order_item.unit_price_x_quantity).to eq(125)
     end
   end
 
   describe '#plurality?' do
     it 'return true if quantity >= 2' do
-      product = FactoryBot.create(:order_item)
-      expect(product.plurality?).to eq(true)
+      expect(@order_item.plurality?).to eq(true)
     end
   end
 
   describe '#pluralize' do
     it 'return turn box package type to boxes' do
-      order_item = FactoryBot.create(:order_item)
-      expect(order_item.product.package.pluralize).to eq('boxes')
+      expect(@order_item.product.package.pluralize).to eq('boxes')
     end
   end
 end

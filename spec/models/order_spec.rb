@@ -3,7 +3,14 @@
 RSpec.describe Order, type: :model do
   describe '#total' do
     before(:each) do
-      @order = FactoryBot.create(:order)
+      user = Authentication.create(
+        firstname: 'Catherine',
+        lastname: 'Haas',
+        email: 'test@test.com',
+        password: 'password123'
+      )
+
+      @order = FactoryBot.create(:order, authentication: user)
       quantity = 3
       products = { 'avocado' => 1110, 'annonas' => 625, 'lemons' => 858 }
 

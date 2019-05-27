@@ -4,8 +4,7 @@ FactoryBot.define do
   factory :authentication do
     firstname { 'Khal' }
     lastname { 'Mamoul' }
-    email { 'Khamoul@ox.com' }
+    email { 'test@test.com' }
     password { 'password' }
-    userable { 1 }
   end
 end
