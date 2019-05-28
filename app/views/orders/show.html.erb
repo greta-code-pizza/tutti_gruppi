@@ -6,7 +6,7 @@
       <p>
         <%= orderitem.quantity %>
 
-          <%= orderitem.pluralize(t('orders.show.package')) %>
+        <%= orderitem.pluralize(t('orders.show.package')) %>
 
         de <%= t("products.#{orderitem.product.name}") %> 
         pour <%= render_price_to_euros(orderitem.unit_price_x_quantity) %> 

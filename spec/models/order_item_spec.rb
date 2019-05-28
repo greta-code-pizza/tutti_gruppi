@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: order_items
+#
+#  id         :bigint(8)        not null, primary key
+#  product_id :bigint(8)
+#  order_id   :bigint(8)
+#  quantity   :integer
+#
+
+
 RSpec.describe OrderItem, type: :model do
   before(:each) do
     auth = Authentication.create(

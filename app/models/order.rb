@@ -1,4 +1,10 @@
-# frozen_string_literal: true
+# == Schema Information
+#
+# Table name: orders
+#
+#  id          :bigint(8)        not null, primary key
+#  consumer_id :bigint(8)
+#
 
 class Order < ActiveRecord::Base
   has_many :products
@@ -16,7 +22,7 @@ class Order < ActiveRecord::Base
           quantity: quantity
         )
       end
-      
+
       raise ActiveRecord::Rollback unless order.order_items.count.positive?
       order
     end
