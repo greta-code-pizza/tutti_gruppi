@@ -34,6 +34,6 @@ en:
   labels:
     firstname: 'Firstname'
     lastname: 'Lastname'
-    password: 'PAssword'
-    minimum_characters: ' charactères minimum)'
+    password: 'Password'
+    minimum_characters: ' minimum characters)'
     password_confirmation: 'Password confirmation'
