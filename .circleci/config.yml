@@ -16,7 +16,7 @@ jobs:
       - image: circleci/mysql:5.7
         environment:
           MYSQL_ROOT_PASSWORD: root
-        name: db
+        name: tutti_test
     working_directory: ~/repo
 
     steps:
@@ -32,6 +32,17 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Database setup
+      # - run: cp config/database.exemple.yml config/database.yml
+      # - run: bundle exec rake db:create RAILS_ENV=test
+      # - run: bundle exec rake db:schema:load RAILS_ENV=test
+
+      # run tests!
+      # - run:
+      #     name: Run Rspec
+      #     command: |
+      #       bundle exec rspec
 
   deploy-job:
     docker:

@@ -4,7 +4,8 @@ class ManagerMailer < ApplicationMailer
   def notify_manager(consumer, order)
     @consumer = consumer
     @order = order
+
     @items = OrderItem.where(order_id: order.id)
-    mail(to: ENV['gmail_username'], subject: "Tutti Gruppi")
+    mail(to: ENV['gmail_username'], subject: 'Tutti Gruppi')
   end
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 class OrdersController < ApplicationController
-  before_action :authenticate_consumer!
-  before_action :find_order, only: [:show]
-  
+  before_action :authenticate_authentication!
+
   def index
     @orders = Order.all
   end
@@ -13,21 +14,19 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @products = Product.all
-    @consumer = Consumer.all
+    @authentication = Authentication.all
   end
 
   def create
-    @order = Order.create(consumer: current_consumer)
-    @order_item = Order.create_with_deps(params, @order)
+    @order = Order.create_with_deps(params, current_authentication)
     if @order
-      ConsumerMailer.notify_consumer(current_consumer, @order).deliver
-      ManagerMailer.notify_manager(current_consumer, @order).deliver
+      AuthenticationMailer.notify_authentication(current_authentication, @order).deliver
+      ManagerMailer.notify_manager(current_authentication, @order).deliver
       flash[:info] = 'success'
-      redirect_to request.referrer
     else
       flash[:info] = 'failed'
-      render 'new'
     end
+    redirect_to request.referrer
   end
 
   private

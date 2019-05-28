@@ -19,20 +19,20 @@
       </button>
       <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
         <ul class=" navbar-nav">
-        <% if current_consumer %>
+        <% if current_authentication %>
           <li class="nav-item active">
             <a href="/orders/new" class="order nav-link">Commander</a>
           </li>
           <li class="nav-item">
             <a href="/orders" class="order nav-link">Liste des commandes</a>
           </li>
-          <% if consumer_signed_in? %>
+          <% if authentication_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'Déconnexion', destroy_consumer_session_path, method: :delete, class: 'order nav-link' %>
+              <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to 'Connexion', new_consumer_session_path, class: 'order nav-link' %>
+              <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
             </li>
           <% end %>
         <% end %>

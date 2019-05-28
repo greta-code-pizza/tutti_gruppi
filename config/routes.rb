@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :consumers, controllers: { registrations: 'consumers/registrations' }
+  devise_for :authentications, controllers: { registrations: 'authentications/registrations' }
   get 'home/index'
   get 'home/private'
   get 'orders/new' => 'orders#new'

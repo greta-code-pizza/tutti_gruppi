@@ -1,4 +1,4 @@
-class ConsumerMailer < ApplicationMailer
+class AuthenticationMailer < ApplicationMailer
   add_template_helper(ApplicationHelper)
   
   def notify_consumer(consumer, order)

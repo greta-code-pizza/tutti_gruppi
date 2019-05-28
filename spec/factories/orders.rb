@@ -11,6 +11,6 @@
 
 FactoryBot.define do
   factory :order do
-    consumer
+    
   end
 end

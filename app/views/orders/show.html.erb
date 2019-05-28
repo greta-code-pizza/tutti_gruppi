@@ -1,10 +1,10 @@
 <div class="container text-center mt-3">
-  <h2>Commande n°<%= @order.id %> de <%= @order.consumer.fullname %></h2>
+  <h2>Commande n°<%= @order.id %> de <%= @order.authentication.fullname %></h2>
   <hr>
   <% @orderitems.each do |orderitem| %>
     <% if orderitem.quantity > 0 %>
       <p>
-        <%= orderitem.quantity %> 
+        <%= orderitem.quantity %>
 
         <%= orderitem.pluralize(t('orders.show.package')) %>
 

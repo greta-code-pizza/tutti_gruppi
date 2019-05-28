@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
@@ -147,73 +149,13 @@ Whitelist.create(
   ]
 )
 
-Consumer.create(
-  [
-    {
-      firstname: 'admin',
-      lastname: 'admin',
-      email: 'admin@gmail.com',
-      password: 'adminadmin'
-    },
-    {
-      firstname: 'consumer',
-      lastname: 'test',
-      email: 'arnaudfgr@gmail.com'
-    },
-    {
-      firstname: 'responsable',
-      lastname: 'test',
-      email: 'pro.davidsaoud@gmail.com'
-    },
-    # {
-    #   firstname: 'Catherine',
-    #   lastname: 'Haas',
-    #   email: 'fc.haas@gozmail.bzh'
-    # },
-    # {
-    #   firstname: 'Isabelle',
-    #   lastname: 'Depoortère',
-    #   email: 'isabelledepoortere@yahoo.fr'
-    # },
-    # {
-    #   firstname: 'Edith',
-    #   lastname: 'De Gélis',
-    #   email: 'edithdegelis@orange.fr'
-    # },
-    # {
-    #   firstname: 'Phillipe',
-    #   lastname: 'Roger Bompol',
-    #   email: 'philippe.rogerbompol@orange.fr'
-    # },
-    # {
-    #   firstname: 'Florence',
-    #   lastname: 'Papin',
-    #   email: 'papinflorence@hotmail.fr'
-    # },
-    # {
-    #   firstname: 'Marie-José',
-    #   lastname: 'Pasquereau',
-    #   email: 'mjpasquereau@sfr.fr'
-    # },
-    # {
-    #   firstname: 'Paolo',
-    #   lastname: 'Merlhiot',
-    #   email: 'merlhiotpaolo@yahoo.fr'
-    # },
-    # {
-    #   firstname: 'Laura',
-    #   lastname: 'Apparuit',
-    #   email: 'laura.apparuit@gmail.com'
-    # },
-    # {
-    #   firstname: 'Isabelle',
-    #   lastname: 'Georges',
-    #   email: 'isabel.georges@free.fr'
-    # },
-    # {
-    #   firstname: 'Jean-Louis',
-    #   lastname: 'De Gélis',
-    #   email: 'jeanlouisdegelis@orange.fr'
-    # }
-  ]
+Admin.create(
+  authentication_attributes: {
+    firstname: 'Paolo',
+    lastname: 'Merlhiot',
+    email: 'admin@gmail.com',
+    password: 'adminadmin',
+    userable_id: 1,
+    userable_type: 'Admin'
+  }
 )
