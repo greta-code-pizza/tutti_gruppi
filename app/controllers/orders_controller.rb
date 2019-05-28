@@ -17,8 +17,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create(authentication_id: current_authentication.id)
-    @order_item = Order.create_with_deps(params, @order)
+    @order = Order.create_with_deps(params, current_authentication)
     if @order
       AuthenticationMailer.notify_authentication(current_authentication.id, @order).deliver
       ManagerMailer.notify_manager(current_authentication.id, @order).deliver
@@ -26,7 +25,7 @@ class OrdersController < ApplicationController
       redirect_to request.referrer
     else
       flash[:info] = 'failed'
-      render 'new'
+      redirect_to request.referrer
     end
   end
 end
