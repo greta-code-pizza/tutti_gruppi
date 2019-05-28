@@ -6,7 +6,6 @@ class Order < ActiveRecord::Base
   has_many :order_items
 
   def self.create_with_deps(params, current_authentication)
-    binding.pry
     transaction do
       order = Order.create(authentication: current_authentication)
       params[:order][:products].each do |id, quantity|
