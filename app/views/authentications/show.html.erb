@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <h1>Bienvenue sur votre profil</h1>
+  <ul>
+    <li>Prénom : <%= current_authentication.firstname.capitalize %>
+    </li>
+    <li>Nom : <%= current_authentication.lastname.capitalize %>
+    </li>
+    <li>Email : <%= current_authentication.email %>
+    </li>
+  </ul>
+  <%= link_to 'Update / Delete account', '/authentications/edit' %>
+
+</div>

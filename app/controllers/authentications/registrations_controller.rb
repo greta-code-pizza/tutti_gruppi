@@ -16,6 +16,10 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+    redirect_to root_path
+  end
+
   private
 
   def valid_authentication(resource)
