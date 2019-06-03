@@ -5,4 +5,10 @@ class AuthenticationsController < ApplicationController
 
   def show; end
 
+  def destroy
+    @authentication = Authentication.find(params[:id])
+    @authentication.destroy
+    redirect_to root_path
+  end
+
 end

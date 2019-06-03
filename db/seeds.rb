@@ -162,3 +162,16 @@ Admin.create(
     userable_type: 'Admin'
   }
 )
+
+Groupment.create(
+  [
+    {
+      name: 'Séné',
+      postal_code: '56860'
+    },
+    {
+      name: 'Vannes',
+      postal_code: '56000'
+    }
+  ]
+)
