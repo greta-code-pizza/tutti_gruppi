@@ -145,6 +145,9 @@ Whitelist.create(
   [
     {
       email: 'admin@gmail.com'
+    },
+    {
+      email: 'bob@gmail.com'
     }
   ]
 )
