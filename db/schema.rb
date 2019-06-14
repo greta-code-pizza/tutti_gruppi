@@ -13,8 +13,6 @@
 ActiveRecord::Schema.define(version: 2019_05_29_114453) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "groupment_id"
-    t.index ["groupment_id"], name: "index_admins_on_groupment_id"
   end
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,8 +35,8 @@ ActiveRecord::Schema.define(version: 2019_05_29_114453) do
   end
 
   create_table "groupment_authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "groupment_id"
-    t.integer "authentication_id"
+    t.bigint "groupment_id"
+    t.bigint "authentication_id"
     t.boolean "groupment_manager", default: false
     t.index ["authentication_id"], name: "index_groupment_authentications_on_authentication_id"
     t.index ["groupment_id"], name: "index_groupment_authentications_on_groupment_id"
@@ -50,13 +48,9 @@ ActiveRecord::Schema.define(version: 2019_05_29_114453) do
   end
 
   create_table "managers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "groupment_id"
-    t.index ["groupment_id"], name: "index_managers_on_groupment_id"
   end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "groupment_id"
-    t.index ["groupment_id"], name: "index_members_on_groupment_id"
   end
 
   create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,6 +80,8 @@ ActiveRecord::Schema.define(version: 2019_05_29_114453) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "groupment_authentications", "authentications"
+  add_foreign_key "groupment_authentications", "groupments"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "authentications"

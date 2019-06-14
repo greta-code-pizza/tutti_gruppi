@@ -18,6 +18,9 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
+
+    groupment_authentication(params, resource)
+
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
     resource_updated = update_resource(resource, account_update_params)
@@ -54,6 +57,19 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
       clean_up_passwords resource
       set_minimum_password_length
       respond_with resource
+    end
+  end
+
+  def groupment_authentication(params, resource)
+    groupment = GroupmentAuthentication.find_by_authentication_id(current_authentication.id)
+    params = params[:Groupment][:groupment_id]
+    
+    if groupment && params.empty?
+      groupment.destroy
+    elsif groupment
+      GroupmentAuthentication.update groupment_id:params.to_i, authentication_id:resource.id
+    else
+      GroupmentAuthentication.create groupment_id:params.to_i, authentication_id:resource.id
     end
   end
 end
