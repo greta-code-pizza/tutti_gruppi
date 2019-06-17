@@ -145,6 +145,9 @@ Whitelist.create(
   [
     {
       email: 'admin@gmail.com'
+    },
+    {
+      email: 'bob@gmail.com'
     }
   ]
 )
@@ -158,4 +161,17 @@ Admin.create(
     userable_id: 1,
     userable_type: 'Admin'
   }
+)
+
+Groupment.create(
+  [
+    {
+      name: 'Séné',
+      postal_code: '56860'
+    },
+    {
+      name: 'Vannes',
+      postal_code: '56000'
+    }
+  ]
 )

@@ -26,6 +26,9 @@
           <li class="nav-item">
             <a href="/orders" class="order nav-link">Liste des commandes</a>
           </li>
+          <li class="nav-item">
+            <a href="/authentications/show" class="order nav-link">Profil</a>
+          </li>
           <% if authentication_signed_in? %>
             <li class="nav-item">
               <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>

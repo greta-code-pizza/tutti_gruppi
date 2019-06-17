@@ -5,6 +5,16 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
+      <%= f.label :groupment %><br />
+      <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, prompt: "aucun") %>
+    </div>
+
+    <div class="field">
+      <%= f.label :firstname %><br />
+      <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname" %>
+    </div>
+
+    <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
@@ -36,10 +46,6 @@
       <%= f.submit "Update" %>
     </div>
   <% end %>
-
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
   <%= link_to "Back", :back %>
 </div>

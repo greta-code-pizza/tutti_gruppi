@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_102914) do
+ActiveRecord::Schema.define(version: 2019_05_29_114453) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
   end
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 2019_05_24_102914) do
     t.index ["email"], name: "index_authentications_on_email", unique: true
     t.index ["reset_password_token"], name: "index_authentications_on_reset_password_token", unique: true
     t.index ["userable_id", "userable_type"], name: "index_authentications_on_userable_id_and_userable_type"
+  end
+
+  create_table "groupment_authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "groupment_id"
+    t.bigint "authentication_id"
+    t.boolean "groupment_manager", default: false
+    t.index ["authentication_id"], name: "index_groupment_authentications_on_authentication_id"
+    t.index ["groupment_id"], name: "index_groupment_authentications_on_groupment_id"
+  end
+
+  create_table "groupments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "postal_code"
   end
 
   create_table "managers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,6 +80,8 @@ ActiveRecord::Schema.define(version: 2019_05_24_102914) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "groupment_authentications", "authentications"
+  add_foreign_key "groupment_authentications", "groupments"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "authentications"
