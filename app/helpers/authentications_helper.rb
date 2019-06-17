@@ -1,12 +1,10 @@
+# gpmt = groupment
 module AuthenticationsHelper
-
-def which_groupment groupment
-  if groupment
-    html = "<p> Groupement: #{groupment.groupment.name}  (#{@groupment.groupment.postal_code}) </p>".html_safe
-  else
-    html = "<p> Sans groupement </p>".html_safe
+  def which_groupment(gpmt)
+    if gpmt
+      `<p> Groupement: #{gpmt.groupment.name} (#{gpmt.groupment.postal_code}) </p>`
+    else
+      `<p> Sans groupement </p>`
+    end.html_safe
   end
-  html 
-end
-
 end
