@@ -8,11 +8,7 @@
     <li>Email : <%= current_authentication.email %>
     </li>
     <li>
-    <% if @groupment %>
-    Groupement : <%= @groupment.groupment.name %> (<%= @groupment.groupment.postal_code %>)
-    <% else %>
-    <p>Sans groupement</p>
-    <% end %>
+    <%= which_groupment @groupment %>
     </li>
   </ul>
 
