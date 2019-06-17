@@ -18,7 +18,6 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-
     groupment_authentication(params, resource)
 
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
