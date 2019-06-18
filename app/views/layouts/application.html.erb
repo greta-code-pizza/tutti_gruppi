@@ -23,9 +23,11 @@
           <li class="nav-item active">
             <a href="/orders/new" class="order nav-link">Commander</a>
           </li>
-          <li class="nav-item">
-            <a href="/orders" class="order nav-link">Liste des commandes</a>
-          </li>
+          <% if current_authentication.manager? || current_authentication.admin? %>
+            <li class="nav-item">
+              <a href="/orders" class="order nav-link">Liste des commandes</a>
+            </li>
+          <% end %>
           <li class="nav-item">
             <a href="/authentications/show" class="order nav-link">Profil</a>
           </li>
@@ -36,6 +38,11 @@
           <% else %>
             <li class="nav-item">
               <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
+            </li>
+          <% end %>
+          <% if current_authentication.admin? %>
+            <li class="nav-item">
+              <%= link_to 'Dashboard', '/admin/dashboard', class: 'order nav-link' %>
             </li>
           <% end %>
         <% end %>

@@ -1,0 +1,28 @@
+<div class="container text-center mt-3">
+  <% if current_authentication.admin? %>
+    <h4>Liste des membres</h4>
+      <table class="mx-auto">
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+
+        <% @authentications.each do |auth| %>
+          <tr>
+            <td><%= auth.firstname %></td>
+            <td><%= auth.lastname %></td>
+            <td><%= auth.email %></td>
+            <td><%= auth.userable_type %></td>
+            <td><%= link_to 'Editer' %></td>
+            <td><%= link_to 'Afficher', admin_path(auth) %></td>
+            <td><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
+
+          </tr>
+        <% end %>
+      </table>
+  <% else %>
+      <h2>Accès refusé</h2>
+  <% end %>
+</div>

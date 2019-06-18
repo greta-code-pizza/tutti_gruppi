@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2019_05_29_114453) do
   create_table "groupment_authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "groupment_id"
     t.bigint "authentication_id"
-    t.boolean "groupment_manager", default: false
     t.index ["authentication_id"], name: "index_groupment_authentications_on_authentication_id"
     t.index ["groupment_id"], name: "index_groupment_authentications_on_groupment_id"
   end

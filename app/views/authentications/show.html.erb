@@ -8,7 +8,10 @@
     <li>Email : <%= current_authentication.email %>
     </li>
     <li>
-    <%= which_groupment @groupment %>
+      <%= which_groupment @groupment %>
+    </li>
+    <li>Votre rôle est 
+      <%= current_authentication.userable_type %>
     </li>
   </ul>
 
