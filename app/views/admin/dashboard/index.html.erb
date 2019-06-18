@@ -7,6 +7,7 @@
           <th>Nom</th>
           <th>Email</th>
           <th>Role</th>
+          <th>Groupment</th>
         </tr>
 
         <% @authentications.each do |auth| %>
@@ -15,10 +16,11 @@
             <td><%= auth.lastname %></td>
             <td><%= auth.email %></td>
             <td><%= auth.userable_type %></td>
-            <td><%= link_to 'Editer' %></td>
+            <td><% which_groupment @groupment %><%= @groupment.groupment.name %>(<%= @groupment.groupment.postal_code %>)</td>
+            <td><%= link_to 'Editer', "edit/#{auth.id}" %></td>
             <td><%= link_to 'Afficher', admin_path(auth) %></td>
             <td><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
-
+            <td><%= link_to 'Promouvoir'  %></td>
           </tr>
         <% end %>
       </table>

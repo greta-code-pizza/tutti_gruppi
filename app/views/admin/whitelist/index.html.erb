@@ -1,0 +1,24 @@
+<div class="container text-center mt-3">
+  <% if current_authentication.admin? %>
+    <% @whitelist.each do |wl| %><br>
+      <%= wl.email %>
+    <% end %>
+    <hr>
+    <%= form_for Whitelist.to_s, method: :post do |f| %>
+      <div class="field">
+        <%= f.label 'Créer un nouvel email whitlisté' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <%= f.submit 'Créer' %>
+    <% end %>
+    
+    
+  <% else %>
+    <h2>Accès refusé</h2>
+  <% end %>
+
+
+<hr>
+
+
+</div>
