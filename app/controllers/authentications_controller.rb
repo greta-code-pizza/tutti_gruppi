@@ -12,19 +12,17 @@ class AuthenticationsController < ApplicationController
     redirect_to root_path
   end
 
-  def update
+  def edit
     @authentication = Authentication.find(params[:id])
-
-    if @authentication.update(params[:groupment])
-      flash[:info] = "Pokémon mise à jour"
-      redirect_to request.referrer || root_path
-    else
-      flash[:info] = "Echec de la mise à jour"
-      render 'show'
-    end
+    auth_gpmt = GroupmentAuthentication.find_by_authentication_id(@authentication.id)
+    auth_gpmt ? @groupment = Groupment.find(auth_gpmt.groupment_id) : @groupment = Groupment.find(1) 
   end
 
-  def edit 
+  def update
+    # binding.pry
+    auth_gpmt = GroupmentAuthentication.find_by_authentication_id(params[:id])
+    auth_gpmt.update groupment_id: params[:Groupment][:groupment_id]
 
+    redirect_to root_path
   end
 end
