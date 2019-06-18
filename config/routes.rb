@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :authentications, controllers: { registrations: 'authentications/registrations', confirmations: 'authentications/confirmations'}
 
@@ -11,10 +13,11 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'dashboard#home'
     get 'liste-des-membres', to: 'dashboard#index'
     get 'show/:id', to: 'dashboard#show'
+    get 'edit/:id', to: 'dashboard#edit'
+    get 'whitelist', to: 'whitelist#index'
+    resources :whitelist, only: %i[index home create new]
   end
 
   resources :orders, only:[:index, :show, :create, :new]
   resources :authentications, only:[:index, :show, :create, :new, :edit, :update, :destroy]
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
