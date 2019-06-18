@@ -14,18 +14,13 @@ class Admin::WhitelistController < ApplicationController
   end
 
   def create
-    Whitelist.create email: params[:email]
-    # if @whitelist.save
-    #   flash[:notice] = 'L\'email a bien été ajouté à la whitelist'
-    #   redirect_to request_referrer
-    # else
-    #   render 'new'
-    # end
+    @whitelist = Whitelist.create(email: params[:Whitelist][:email])
+    if @whitelist.save
+      flash[:notice] = 'L\'email a bien été ajouté à la whitelist'
+      redirect_to request.referrer
+    else
+      flash[:notice] = 'Une erreur s\'est produite'
+      redirect_to request.referrer || admin_path
+    end
   end
-
-  # private
-
-  # def whitelist_params
-  #   params.require(:whitelist).permit(:email)
-  # end
 end
