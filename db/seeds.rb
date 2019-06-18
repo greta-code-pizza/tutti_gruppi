@@ -166,6 +166,10 @@ Admin.create(
 Groupment.create(
   [
     {
+      name: 'Aucun',
+      postal_code: ''
+    },
+    {
       name: 'Séné',
       postal_code: '56860'
     },

@@ -15,7 +15,7 @@
             <td><%= auth.lastname %></td>
             <td><%= auth.email %></td>
             <td><%= auth.userable_type %></td>
-            <td><%= link_to 'Editer' %></td>
+            <td><%= link_to 'Editer', edit_authentication_path(auth) %></td>
             <td><%= link_to 'Afficher', admin_path(auth) %></td>
             <td><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
 

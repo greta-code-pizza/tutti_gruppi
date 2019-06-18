@@ -1,0 +1,30 @@
+<%=  @authentication.firstname %>
+
+
+<div class="container text-center">
+  <h2>Edit</h2>
+
+  <%= form_for @authentication, method: :patch do |f| %>
+
+   <div class="field">
+    <%= f.label :groupment %><br />
+    <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, :selected => @groupment.id) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role %><br />
+    <%= f.text_field :userable_type, autofocus: true, autocomplete: "firstname" %>
+  </div>
+
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Back", :back %>
+</div>
