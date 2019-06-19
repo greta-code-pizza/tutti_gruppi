@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
     @orderitems = OrderItem.where(order_id: params[:id])
   end
 

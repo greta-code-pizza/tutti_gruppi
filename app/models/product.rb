@@ -12,41 +12,41 @@
 #  weight_type  :string(255)
 #
 
-
 class Product < ActiveRecord::Base
   enum name: {
-    table_oranges:  'table oranges',
-    juice_oranges:  'juice oranges',
-    lemons:         'lemons',
-    tangerines:     'tangerines',
-    avocado:        'avocado',
+    table_oranges: 'table oranges',
+    juice_oranges: 'juice oranges',
+    lemons: 'lemons',
+    tangerines: 'tangerines',
+    avocado: 'avocado',
     sweet_potatoes: 'sweet potatoes',
-    mangos:         'mangos',
-    annonas:        'annonas',
-    grapefruit:     'grapefruit',
-    papaya:         'papaya',
-    almonds:        'almonds',
-    dried_figs:     'dried figs',
+    mangos: 'mangos',
+    annonas: 'annonas',
+    grapefruit: 'grapefruit',
+    papaya: 'papaya',
+    almonds: 'almonds',
+    dried_figs: 'dried figs',
     dried_tomatoes: 'dried tomatoes',
-    dried_peppers:  'dried peppers',
-    fig_bread:      'fig bread',
-    green_olive:    'green olive',
-    black_olive:    'black olive',
-    tapenade:       'tapenade',
-    olive_oil:      'olive oil'
+    dried_peppers: 'dried peppers',
+    fig_bread: 'fig bread',
+    green_olive: 'green olive',
+    black_olive: 'black olive',
+    tapenade: 'tapenade',
+    olive_oil: 'olive oil'
   }
   enum package: {
-    bag:     'bag',
-    bottle:  'bottle',
+    bag: 'bag',
+    bottle: 'bottle',
     bottles: 'bottles',
-    box:     'box',
-    jar:     'jar',
-    tray:    'tray'
+    box: 'box',
+    jar: 'jar',
+    tray: 'tray'
   }
   enum weight_type: {
     gram: 'gram',
     liter: 'liter'
   }
+
   def euro
     "#{price.to_i / 100},#{price.to_s[-2..-1]} €"
   end

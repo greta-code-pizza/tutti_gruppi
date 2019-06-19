@@ -14,11 +14,11 @@ class OrderItem < ActiveRecord::Base
 
   def pluralize(package)
     package = package[product.package.to_sym]
-    plurality? ? package[1] : package[2]
+    plurality? ? package[1] : package[0]
   end
 
   def plurality?
-    quantity >= 2
+    quantity > 1
   end
 
   def unit_price_x_quantity

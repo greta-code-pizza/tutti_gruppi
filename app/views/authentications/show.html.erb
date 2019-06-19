@@ -8,11 +8,14 @@
     <li>Email : <%= current_authentication.email %>
     </li>
     <li>
-    <%= which_groupment @groupment %>
+      Groupement : <%= which_groupment @groupment %>
+    </li>
+    <li>
+      Votre rôle est : <%= current_authentication.userable_type %>
     </li>
   </ul>
 
-  <%= link_to 'Update', '/authentications/edit' %>
-  <%= link_to 'Destroy', current_authentication, method: :delete, data: {confirm:'Are you sure ?'} %>
+  <%= link_to 'Update', '/authentications/edit', id: 'btns' %>
+  <%= link_to 'Destroy', current_authentication, method: :delete, data: {confirm:'Are you sure ?'}, id: 'btns' %>
   
 </div>
