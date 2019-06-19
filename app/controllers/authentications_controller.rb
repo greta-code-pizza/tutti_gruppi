@@ -7,7 +7,7 @@ class AuthenticationsController < ApplicationController
 
   def destroy
     @authentication = Authentication.find(params[:id])
-    auth_order = Order.find_by_authentication_id(params[:id])
+    auth_order = Order.where(authentication_id: params[:id])
     auth_order.update authentication_id: 2
     remove_groupment(params[:id])
     remove_role(params[:id])

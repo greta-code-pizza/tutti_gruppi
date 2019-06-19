@@ -199,5 +199,9 @@ GroupmentAuthentication.create(
   {
     groupment_id: 1,
     authentication_id: 1 
+  },
+  {
+    groupment_id: 1,
+    authentication_id: 2
   }
 )

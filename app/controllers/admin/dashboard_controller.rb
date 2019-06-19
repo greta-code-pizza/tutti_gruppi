@@ -11,7 +11,6 @@ class Admin::DashboardController < ApplicationController
 
   def show
     @authentication = Authentication.find(params[:id])
-    @order = Order.find(params[:id])
     @orders = Order.where(authentication_id: params[:id])
     @groupment = GroupmentAuthentication.where(authentication_id: params[:id])
   end
