@@ -15,6 +15,12 @@ Rails.application.routes.draw do
     get 'show/:id', to: 'dashboard#show'
     get 'edit/:id', to: 'dashboard#edit'
     get 'whitelist', to: 'whitelist#index'
+    get 'index-produits', to: 'dashboard#index_products'
+    get 'edition-produits/:id', to: 'dashboard#edit_products'
+    patch 'edition-produits/:id', to: 'dashboard#update_product'
+    # get 'formulaire-nouveau-produit', to: 'dashboard#form_new_product'
+    get 'formulaire-nouveau-produit', to: 'dashboard#form_new_product'
+    post 'ajout-produit', to: 'dashboard#add_new_product'
     resources :whitelist, only: %i[index home create new]
   end
 

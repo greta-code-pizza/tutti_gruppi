@@ -12,13 +12,13 @@
   <body>
     <nav class="d-flex navbar navbar-expand-lg navbar-light bg-dark">
       <div>
-        <a class="navbar-brand" href="/">Tutti Gruppi</a>
+        <a class="navbar-brand-logo" href="/">Tutti Gruppi</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
-        <ul class=" navbar-nav">
+        <ul class="navbar-nav">
         <% if current_authentication %>
           <li class="nav-item active">
             <a href="/orders/new" class="order nav-link">Commander</a>
@@ -31,23 +31,23 @@
           <li class="nav-item">
             <a href="/authentications/show" class="order nav-link">Profil</a>
           </li>
-          <% if authentication_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
-            </li>
-          <% end %>
           <% if current_authentication.admin? %>
             <li class="nav-item">
               <%= link_to 'Dashboard', '/admin/dashboard', class: 'order nav-link' %>
             </li>
+            <% if authentication_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
+              </li>
+          <% else %>
+              <li class="nav-item">
+                <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
+              </li>
+            <% end %>
           <% end %>
         <% end %>
           <li class="nav-item">
-            <a href="#" class="order nav-link">Contact</a>
+            <%= mail_to 'merlhiotpaolo@gmail.com', 'TO DO', class: 'order nav-link'  %>
           </li>
         </ul>
       </div>

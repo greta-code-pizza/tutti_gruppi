@@ -1,0 +1,42 @@
+<div class="container text-center mt-3">
+  <% if current_authentication.admin? %>
+    <%= form_tag '/orders', method: 'post' do %>
+    <div class="mb-4">
+      <h1>Chosissez un produit à éditer</h1>
+    </div>  
+    <table class="container text-center">
+      <thead>
+        <tr>
+          <th>Produits</th>
+          <th>Conditionnement</th>
+          <th>Prix</th>
+          <th>Poids</th>
+          
+        </tr><hr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <div>
+            <tr>
+              <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
+              <td><%= t("package.#{product.package}") %></td>
+              <td><%= product.euro %></td>
+              <td><%= product.weight %></td><td><%= link_to 'Editer', "edition-produits/#{product.id}", id: 'btns' %></td>
+            </tr>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="d-flex wrap align-items-center">
+    <div class="w-50 d-flex flex-row-start">
+        <a href="/orders"><input type="submit" value="Retour" class="mt-3" id="btns"></a>
+      </div>
+      <div class="w-50 d-flex flex-row-reverse">
+        <%= submit_tag 'Valider', class: "mt-3", id: "btns" %>
+      </div>
+    </div>
+  <% end %>
+  <% else %>
+    <p>Accès refusé</p>
+  <% end %>
+</div>

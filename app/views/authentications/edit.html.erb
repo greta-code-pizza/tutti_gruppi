@@ -1,13 +1,10 @@
-<%=  @authentication.firstname %>
-
-
 <div class="container text-center">
   <h2>Edit</h2>
 
   <%= form_for @authentication, method: :patch do |f| %>
 
    <div class="field">
-    <%= f.label :groupment %><br />
+    <%= f.label :groupement %><br />
     <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, :selected => @groupment.id) %>
   </div>
 

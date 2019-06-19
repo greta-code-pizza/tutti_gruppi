@@ -1,15 +1,10 @@
 <div class="container text-center mt-3">
   <% if current_authentication.admin? %>
     <h4>Profil de <%= @authentication.fullname %> (<%= @authentication.userable_type %>)</h4>
-    <p>Email de contact: 
-      <a href="mailto:<%= @authentication.email %>">
-        <%= @authentication.email %>
-      </a>
-    </p>
     <% if @orders == [] %>
       <p>Cet utilisateur n'a pas encore passé commande</p>
     <% else %>
-      <p>Commandes passées: </p>
+      <%= order_count @orders %>
       <hr>
       <% @orders.each do |order| %>
         <strong>Commande n°<%= order.id %> :</strong>
@@ -18,10 +13,8 @@
             <% if orderitem.quantity > 0 %>
               <p>
                 <%= orderitem.quantity %>
-
                 <%= orderitem.pluralize(t('orders.show.package')) %>
-
-                de <%= t("products.#{orderitem.product.name}") %> 
+                 <%= t("products.#{orderitem.product.name}") %> 
                 pour <%= render_price_to_euros(orderitem.unit_price_x_quantity) %> 
               </p>
             <% end %>
@@ -29,11 +22,11 @@
         <p>Total : <%= render_price_to_euros(order.total) %></p> 
       <hr>
       <% end %>
+      <%= paginate @orders %>
     <% end %>
   <% else %>
     <h2>Accès refusé</h2>
   <% end %>
-
 </div>
 
 

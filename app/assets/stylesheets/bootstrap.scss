@@ -1,12 +1,23 @@
-.navbar-brand {
-  color: #fff !important;
-}
-.nav-link {
-  color: #fff !important;
-  text-decoration: none !important;
-  padding: 15px 0;
+.navbar-brand-logo {
+  color: #fff;
+  font-size: 2rem;
 
   &:hover {
-    color: orange !important;
+    color: orange;
+  }
+}
+.navbar-light .navbar-nav .nav-link, 
+.navbar-light .navbar-nav .active > 
+.nav-link, 
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show > .nav-link{
+  color: #fff;
+  text-decoration: none;
+  font-size: .9rem;
+  text-transform: uppercase;
+
+  &:hover {
+    color: orange;
   }
 }

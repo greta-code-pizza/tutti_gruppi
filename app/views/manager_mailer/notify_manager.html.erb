@@ -1,5 +1,7 @@
-<h3>Bonjour Responsable de groupement</h3>
-<p>Voici le récapitulatif de la commande n° <%= @order.id %><p>
+<h2>Bonjour Responsable de groupement</h2>
+<p>Voici le récapitulatif de la commande n° <%= @order.id %> 
+  de <%= @order.authentication.fullname %>
+<p>
 
 <table>
   <thead>
@@ -17,7 +19,7 @@
       <% if item.quantity > 0 %>
         <div>
           <tr>
-            <td><%= t("products.#{item.product.name}") %></td>
+            <td><%= t("product.#{item.product.name}") %></td>
             <td><%= t("package.#{item.product.package}") %></td>
             <td><%= item.product.weight %></td>
             <td><%= item.quantity %></td>
@@ -31,4 +33,4 @@
   </tbody>
 </table>
 
-<p>En cas de problème, contactez: <a href="mailto:<%= @consumer.email %>"><%= @consumer.email %></a></p>
+<p>En cas de problème, contactez: <%= mail_to "#{@manager.email}", "#{@manager.email}" %></p>

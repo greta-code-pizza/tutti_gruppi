@@ -19,10 +19,8 @@ class AuthenticationsController < ApplicationController
   end
 
   def update
-    # binding.pry
     auth_gpmt = GroupmentAuthentication.find_by_authentication_id(params[:id])
     auth_gpmt.update groupment_id: params[:Groupment][:groupment_id]
-
     redirect_to root_path
   end
 end
