@@ -2,7 +2,8 @@
   <% if current_authentication.admin? %>
     <h2>Panneau d'administration</h2>
       <%= link_to 'Liste des membres', admin_liste_des_membres_path %>
-
+      <br>
+      <%= link_to 'Whitelist', admin_whitelist_path  %>
   <% else %>
       <h2>Accès refusé</h2>
   <% end %>
