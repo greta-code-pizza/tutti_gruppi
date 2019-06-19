@@ -148,6 +148,9 @@ Whitelist.create(
     },
     {
       email: 'bob@gmail.com'
+    },
+    {
+      email: 'tuttigruppi@gmail.com'
     }
   ]
 )
@@ -157,6 +160,18 @@ Admin.create(
     firstname: 'Paolo',
     lastname: 'Merlhiot',
     email: 'admin@gmail.com',
+    password: 'adminadmin',
+    userable_id: 1,
+    userable_type: 'Admin',
+  },
+)
+
+# account that retrieves the order of the users who deleted their account
+Admin.create(
+  authentication_attributes: {
+    firstname: 'Compte supprimé',
+    lastname: '',
+    email: 'tuttigruppi@gmail.com',
     password: 'adminadmin',
     userable_id: 1,
     userable_type: 'Admin'
@@ -178,4 +193,15 @@ Groupment.create(
       postal_code: '56000'
     }
   ]
+)
+
+GroupmentAuthentication.create(
+  {
+    groupment_id: 1,
+    authentication_id: 1 
+  },
+  {
+    groupment_id: 1,
+    authentication_id: 2
+  }
 )
