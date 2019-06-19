@@ -8,7 +8,7 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
       build_resource(sign_up_params)
       resource.userable_id = member.id
       resource.save
-      # yield resource if block_given?
+      GroupmentAuthentication.create groupment_id: 1, authentication_id: resource.id
       valid_authentication(resource)
     else
       flash[:notice] = 'An error occured'
@@ -65,6 +65,7 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
 
     auth_params = { groupment_id: groupment_id, authentication_id: resource.id }
 
-    groupment ? GroupmentAuthentication.update(auth_params) : GroupmentAuthentication.create(auth_params)
+    groupment ? groupment.update(auth_params) : GroupmentAuthentication.create(auth_params)
   end
+
 end

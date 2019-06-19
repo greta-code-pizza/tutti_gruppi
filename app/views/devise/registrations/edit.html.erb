@@ -6,7 +6,7 @@
 
     <div class="field">
       <%= f.label :groupment %><br />
-      <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, prompt: "aucun") %>
+      <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, :selected => @groupment.groupment_id) %>
     </div>
 
     <div class="field">
