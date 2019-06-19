@@ -1,22 +1,5 @@
-<head>
-<style type="text/css">
-* {
-  margin: 0;
-  padding: 0;
-}
-tbody{
-  border: 1px solid black;
-  padding: 3px;
-}
-td input {
-  -webkit-appearance: none;
-  border: none;
-}
-</style>
-</head>
-
-<h1>Tutti Gruppi - commande n° <%= @order.id %></h1>
-<h3>Bonjour <%= @consumer.fullname %></h3>
+<h2>Tutti Gruppi - commande n° <%= @order.id %></h2>
+<h2>Bonjour <%= @authentication.fullname %></h2>
 <p>Voici le récapitulatif de votre commande:<p>
 
 <table>
@@ -35,7 +18,7 @@ td input {
       <% if item.quantity > 0 %>
         <div>
           <tr>
-            <td><%= t("products.#{item.product.name}") %></td>
+            <td><%= t("product.#{item.product.name}") %></td>
             <td><%= t("package.#{item.product.package}") %></td>
             <td><%= item.product.weight %></td>
             <td><%= item.quantity %></td>
@@ -49,5 +32,5 @@ td input {
   </tbody>
 </table>
 
-<p>En cas de problème, contactez: <a href="mailto:merlhiotpaolo@yahoo.fr">merlhiotpaolo@yahoo.fr</a></p>
+<p>En cas de problème, contactez: <%= mail_to "merlhiotpaolo@yahoo.fr", 'merlhiotpaolo@yahoo.fr' %></p>
 

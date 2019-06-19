@@ -1,24 +1,45 @@
 fr:
+  product:
+    table_oranges:  Oranges de table
+    juice_oranges:  Oranges à jus
+    lemons:         Citrons
+    tangerines:     Mandarines
+    avocado:        Avocats
+    sweet_potatoes: Patates douces
+    mangos:         Mangues
+    annonas:        Anones
+    grapefruit:     Pamplemousses
+    papaya:         Papayes
+    almonds:        Amandes
+    dried_figs:     Figues séchées
+    dried_tomatoes: Tomates séchées
+    dried_peppers:  Poivrons séchés
+    fig_bread:      Pain de figues
+    green_olive:    Olives vertes
+    black_olive:    Olives noires
+    tapenade:       Tapenade
+    olive_oil:      "Huile d'olive"
+  
   products:
-    table_oranges:  oranges de table
-    juice_oranges:  oranges à jus
-    lemons:         citrons
-    tangerines:     mandarines
-    avocado:        avocats
-    sweet_potatoes: patates douces
-    mangos:         mangues
-    annonas:        anones
-    grapefruit:     pamplemousse
-    papaya:         papaye
-    almonds:        amande
-    dried_figs:     figues séchées
-    dried_tomatoes: tomates séchées
-    dried_peppers:  poivrons séchés
-    fig_bread:      pain de figues
-    green_olive:    olives vertes
-    black_olive:    olives noires
-    tapenade:       tapenade
-    olive_oil:      "huile d'olive"
+    table_oranges:  d'oranges de table
+    juice_oranges:  d'oranges à jus
+    lemons:         de citrons
+    tangerines:     de mandarines
+    avocado:        d'avocats
+    sweet_potatoes: de patates douces
+    mangos:         de mangues
+    annonas:        d'anones
+    grapefruit:     de pamplemousses
+    papaya:         de papayes
+    almonds:        d'amandes
+    dried_figs:     de figues séchées
+    dried_tomatoes: de tomates séchées
+    dried_peppers:  de poivrons séchés
+    fig_bread:      de pain de figues
+    green_olive:    d'olives vertes
+    black_olive:    d'olives noires
+    tapenade:       de tapenade
+    olive_oil:      "d'huile d'olive"
 
   package: 
     box:      caisse
@@ -29,6 +50,8 @@ fr:
 
   orders:
     show:
+      for: 'pour'
+
       package:
         box:
           - caisse

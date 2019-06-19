@@ -8,22 +8,31 @@
           <th>Email</th>
           <th>Role</th>
           <th>Groupment</th>
+          <th>Contact</th>
         </tr>
 
         <% @authentications.each do |auth| %>
           <tr>
-            <td><%= auth.firstname %></td>
-            <td><%= auth.lastname %></td>
-            <td><%= auth.email %></td>
-            <td><%= auth.userable_type %></td>
-            <td><%= link_to 'Editer', edit_authentication_path(auth) %></td>
-            <td><%= link_to 'Afficher', admin_path(auth) %></td>
-            <td><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
-            <td><%= link_to 'Promouvoir'  %></td>
+            <td class="pt-4 pr-3"><%= auth.firstname %></td>
+            <td class="pt-4 pr-3"><%= auth.lastname %></td>
+            <td class="pt-4 pr-3"><%= auth.email %></td>
+            <td class="pt-4 pr-3"><%= auth.userable_type %></td>
+            <%= which_groupment @groupment %>
+            <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", 'Contacter', id: 'btns' %></td>
+            <td class="pt-4 pr-3"><%= link_to 'Editer', edit_authentication_path(auth), id: 'btns' %></td>
+            <td class="pt-4 pr-3"><%= link_to 'Commandes', admin_path(auth), id: 'btns' %></td>
+            <td class="pt-4 pr-3"><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
           </tr>
         <% end %>
+        <hr>
       </table>
+      <div class="pagination-wrapper">
+        <%= paginate @authentications, class: 'pt-3', style: 'background-color: red;' %>
+      </div>
+      <hr>
+      
   <% else %>
       <h2>Accès refusé</h2>
   <% end %>
 </div>
+<%= link_to 'Retour', admin_dashboard_path, id: 'btns' %>

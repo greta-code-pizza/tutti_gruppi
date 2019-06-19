@@ -1,22 +1,23 @@
 en:
   orders:
     show:
+      for: 'for'
       package:
         box:
-          - box
-          - boxes
+          - box of
+          - boxes of
         tray:
-          - tray 
-          - trays
+          - tray of
+          - trays of
         bag: 
-          - bag
-          - bags
+          - bag of
+          - bags of
         jar: 
-          - jar
-          - jars
+          - jar of
+          - jars of
         bottle: 
-          - bottle
-          - bottles
+          - bottle of
+          - bottles of
 
   link_to:
     sign_in: 'Sign in'

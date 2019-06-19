@@ -27,7 +27,7 @@
         <% @products.each do |product| %>
           <div>
             <tr>
-              <td class="border_command"><%= label_tag("order_product_#{product.id}", t("products.#{product.name}")) %></td>
+              <td class="border_command"><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
               <td class="border_command"><%= t("package.#{product.package}") %></td>
               <td class="border_command"><%= product.euro %></td>
               <td class="border_command"><%= product.weight %></td>
