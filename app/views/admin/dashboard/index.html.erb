@@ -20,9 +20,8 @@
             <%= which_groupment @groupment %>
             <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", 'Contacter', id: 'btns' %></td>
             <td class="pt-4 pr-3"><%= link_to 'Editer', edit_authentication_path(auth), id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Afficher', admin_path(auth), id: 'btns' %></td>
+            <td class="pt-4 pr-3"><%= link_to 'Commandes', admin_path(auth), id: 'btns' %></td>
             <td class="pt-4 pr-3"><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Promouvoir', id: 'btns' %></td>
           </tr>
         <% end %>
         <hr>
