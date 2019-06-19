@@ -2,6 +2,10 @@
   <h2>Edit</h2>
 
   <%= form_for @authentication, method: :patch do |f| %>
+    <div class="field">
+      <%= f.label :groupment %><br />
+      <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, :selected => @groupment.id) %>
+    </div>
 
     <div class="field">
       <%= f.label :groupement %><br />
@@ -22,5 +26,13 @@
       <%= f.submit 'Update', id: 'btns', class: 'mt-3 mb-3' %>
     </div>
   <% end %>
+
     <%= link_to 'Back', :back, id: 'btns' %>
+
+  <p>Rôle: <%= @authentication.userable_type%></p>
+  <%= link_to "up_admin", "/upAdmin/#{@authentication.id}" %>
+  <%= link_to "up_manager", "/upManager/#{@authentication.id}" %>
+  <%= link_to "up_member", "/upMember/#{@authentication.id}" %>
+
+  <%= link_to "Back", :back %>
 </div>

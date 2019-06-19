@@ -15,4 +15,5 @@ class Authentication < ActiveRecord::Base
   %w[admin member manager].each do |role|
     define_method("#{role}?") { userable_type == role.capitalize }
   end
+
 end

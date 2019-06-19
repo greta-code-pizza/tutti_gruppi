@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'home/private'
   get 'orders/new', to: 'orders#new'
 
+  get 'upAdmin/:id' => 'authentications#upAdmin'
+  get 'upManager/:id' => 'authentications#upManager'
+  get 'upMember/:id' => 'authentications#upMember'
+
   namespace :admin do
     get 'dashboard', to: 'dashboard#home'
     get 'liste-des-membres', to: 'dashboard#index'
