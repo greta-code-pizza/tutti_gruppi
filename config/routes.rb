@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get 'form_new_product', to: 'products#form_new_product'
     post 'form_new_product', to: 'products#add_new_product'
     delete 'delete_product/:id', to: 'products#destroy'
-    
+
     resources :whitelist, only: %i[index home create new]
   end
 
