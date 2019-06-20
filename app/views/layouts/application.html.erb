@@ -35,15 +35,15 @@
             <li class="nav-item">
               <%= link_to 'Dashboard', '/admin/dashboard', class: 'order nav-link' %>
             </li>
-            <% if authentication_signed_in? %>
-              <li class="nav-item">
-                <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
-              </li>
+          <% end %>
+          <% if authentication_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
+            </li>
           <% else %>
-              <li class="nav-item">
-                <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
-              </li>
-            <% end %>
+            <li class="nav-item">
+              <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
+            </li>
           <% end %>
         <% end %>
           <li class="nav-item">

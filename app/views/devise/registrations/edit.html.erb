@@ -43,9 +43,9 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Update" %>
+      <%= f.submit 'Update', id: 'btns', class: 'mb-3 mt-3' %>
     </div>
   <% end %>
 
-  <%= link_to "Back", :back %>
+  <%= link_to "Back", '/authentications/show', id: 'btns' %>
 </div>

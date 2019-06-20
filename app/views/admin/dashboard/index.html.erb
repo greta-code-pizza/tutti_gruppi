@@ -8,7 +8,6 @@
           <th>Email</th>
           <th>Role</th>
           <th>Groupment</th>
-          <th>Contact</th>
         </tr>
 
         <% @authentications.each do |auth| %>
@@ -27,7 +26,7 @@
         <hr>
       </table>
       <div class="pagination-wrapper">
-        <%= paginate @authentications, class: 'pt-3', style: 'background-color: red;' %>
+        <%= paginate @authentications, class: 'pt-3' %>
       </div>
       <hr>
       

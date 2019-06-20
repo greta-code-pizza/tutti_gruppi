@@ -162,8 +162,8 @@ Admin.create(
     email: 'admin@gmail.com',
     password: 'adminadmin',
     userable_id: 1,
-    userable_type: 'Admin',
-  },
+    userable_type: 'Admin'
+  }
 )
 
 # account that retrieves the order of the users who deleted their account
@@ -196,12 +196,14 @@ Groupment.create(
 )
 
 GroupmentAuthentication.create(
-  {
-    groupment_id: 1,
-    authentication_id: 1 
-  },
-  {
-    groupment_id: 1,
-    authentication_id: 2
-  }
+  [
+    {
+      groupment_id: 1,
+      authentication_id: 1
+    },
+    {
+      groupment_id: 1,
+      authentication_id: 2
+    }
+  ]
 )

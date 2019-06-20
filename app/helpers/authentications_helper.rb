@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # gpmt = groupment
 module AuthenticationsHelper
   def which_groupment(gpmt)
