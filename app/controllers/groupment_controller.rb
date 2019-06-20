@@ -10,4 +10,7 @@ class GroupmentController < ApplicationController
     @member_gpmt = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
   end
 
+  def manager_groupment
+    @group = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
+  end
 end
