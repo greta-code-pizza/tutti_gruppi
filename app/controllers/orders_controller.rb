@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_authentication!
 
   def index
-    @orders = Order.page(params[:page]).per(15)
+    @orders = Order.page(params[:page]).per(1).where(authentication_id: current_authentication.id)
   end
 
   def show

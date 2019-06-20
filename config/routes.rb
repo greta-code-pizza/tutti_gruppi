@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'upManager/:id' => 'authentications#upManager'
   get 'upMember/:id' => 'authentications#upMember'
 
+  get 'manage_groupment', to: 'groupment#manage_groupment'
+  
   namespace :admin do
     get 'dashboard', to: 'dashboard#home'
     get 'liste-des-membres', to: 'dashboard#index'
@@ -23,10 +25,10 @@ Rails.application.routes.draw do
     get 'form_new_product', to: 'products#form_new_product'
     post 'form_new_product', to: 'products#add_new_product'
     delete 'delete_product/:id', to: 'products#destroy'
-
     resources :whitelist, only: %i[index home create new]
   end
 
+  resources :groupment, only: %i[show index]
   resources :orders, only: %i[index show create new]
   resources :authentications, only: %i[index show create new edit update destroy]
 end
