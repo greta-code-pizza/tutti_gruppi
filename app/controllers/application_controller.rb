@@ -52,4 +52,5 @@ class ApplicationController < ActionController::Base
       Member.find(target.userable_id).destroy
     end
   end
+
 end

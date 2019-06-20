@@ -6,10 +6,8 @@ class GroupmentController < ApplicationController
   def index; end
 
   def show
-    @auth_gpmt = Groupment.find(@groupment.id)
+    @auth_gpmt = Groupment.find(@groupment.groupment_id)
+    @member_gpmt = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
   end
 
-  def manager_groupment
-    
-  end
 end
