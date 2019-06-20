@@ -1,5 +1,16 @@
 <div class="container text-center mt-3">
-    <%= @auth_gpmt.name %>
+  <h1><%= @auth_gpmt.name %></h1>
+  <% if @auth_gpmt.id != 1 %>
+    <%@member_gpmt.each do |m| %>
+      <%if m.authentication.manager?%>
+        <p>Seigneur <%= m.authentication.firstname %> | <%= m.authentication.lastname %> </p>
+      <% else %>
+        <p><%= m.authentication.firstname %> | <%= m.authentication.lastname %> </p>
+      <%end%>
+    <%end %>
+  <% else %>
+    <%= link_to 'Rejoindre un groupement', '/authentications/edit', id: 'btns' %>
+  <% end %>
   <% if current_authentication.manager? %>
     <%= link_to 'Manage', manager_groupment_path %>
   <% end %>
