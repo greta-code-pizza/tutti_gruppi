@@ -1,6 +1,6 @@
 <div class="container text-center mt-3">
-      <%= @auth_gpmt.name %>
+    <%= @auth_gpmt.name %>
   <% if current_authentication.manager? %>
-    <%= link_to 'Manage', manage_groupment_path %>
+    <%= link_to 'Manage', manager_groupment_path %>
   <% end %>
 </div>
