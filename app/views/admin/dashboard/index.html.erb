@@ -16,7 +16,7 @@
             <td class="pt-4 pr-3"><%= auth.lastname %></td>
             <td class="pt-4 pr-3"><%= auth.email %></td>
             <td class="pt-4 pr-3"><%= auth.userable_type %></td>
-            <% group = GroupmentAuthentication.find_by_authentication_id(auth.id)%>
+            <% group = GroupmentAuthentication.find_by_authentication_id(auth.id) %>
             <td class="pt-4 pr-3"><%= group.groupment.name %></td>
             <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", 'Contacter', id: 'btns' %></td>
             <td class="pt-4 pr-3"><%= link_to 'Editer', edit_authentication_path(auth), id: 'btns' %></td>
