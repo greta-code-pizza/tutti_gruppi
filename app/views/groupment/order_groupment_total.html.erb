@@ -18,11 +18,13 @@
       <tr>
         <td class="border_command"> <%= product.name %> </td>
         <% @member_gpmt.each do |member| %>
-          <% order = Order.find_by_authentication_id(member.authentication_id)%>
-          <% orderitem = OrderItem.where(order_id: order.id, product_id: product.id) %>
-          <% orderitem.each do |oi| %>
-            <%  nbt += oi.quantity %>
-          <% end %>
+          <% if Order.find_by_authentication_id(member.authentication_id) %>
+            <% order = Order.find_by_authentication_id(member.authentication_id)%>
+            <% orderitem = OrderItem.where(order_id: order.id, product_id: product.id) %>
+            <% orderitem.each do |oi| %>
+              <%  nbt += oi.quantity %>
+            <% end %>
+          <% end%>      
         <% end %>
           <td class="border_command"> <%= nbt %> </td>
           <% total = (nbt * product.price) %>

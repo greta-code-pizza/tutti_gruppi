@@ -16,11 +16,13 @@
 
         <% @member_gpmt.each do |member| %>
           <% quantity = 0 %>
-          <% order = Order.find_by_authentication_id(member.authentication_id) %>
-          <% orderitem = OrderItem.where(order_id: order.id, product_id: product.id) %>
-          <% orderitem.each do |oi| %>
-            <% quantity = oi.quantity %>
-            <% quantitytotal += oi.quantity %>
+          <% if Order.find_by_authentication_id(member.authentication_id) %>
+            <% order = Order.find_by_authentication_id(member.authentication_id) %>
+            <% orderitem = OrderItem.where(order_id: order.id, product_id: product.id) %>
+            <% orderitem.each do |oi| %>
+              <% quantity = oi.quantity %>
+              <% quantitytotal += oi.quantity %>
+            <% end %>
           <% end %>
           <td class="border_command"> <%= quantity %> </td>
         <% end %>
