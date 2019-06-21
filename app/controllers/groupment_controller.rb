@@ -11,7 +11,7 @@ class GroupmentController < ApplicationController
   end
 
   def manager_groupment
-    @group = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
+    @member_gpmt = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
   end
 
   def order_groupment_quantity
