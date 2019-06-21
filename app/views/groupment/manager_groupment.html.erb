@@ -33,11 +33,13 @@
         <div class="w-100 p-4">
           <p>Total : <%= total %> €</p>
           <p>Date de livraison :</p>
+          <%= link_to 'Récap commandes', order_groupment_quantity_path, id: 'btns' %>
         </div>
         
         <div class="w-100 p-4">
           <p>Responsable :</p>
           <p>Accompagnateur :</p>
+          <%= link_to 'Facture', order_groupment_total_path, id: 'btns' %>
         </div>
       </div>
     </div>

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'upMember/:id' => 'authentications#upMember'
 
   get 'manager_groupment', to: 'groupment#manager_groupment'
+  get 'order_groupment_quantity', to: 'groupment#order_groupment_quantity'
+  get 'order_groupment_total', to: 'groupment#order_groupment_total'
 
   namespace :admin do
     get 'dashboard', to: 'dashboard#home'
