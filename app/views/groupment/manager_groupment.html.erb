@@ -6,24 +6,40 @@
       <% @group.each do |group| %>
         <% order = Order.where(authentication_id: group.authentication_id) %>
         <% if order != [] %>
-          <div class="m-3" style="background-color: orange; border: 2px solid black;">
+          <div class="m-3 p-4" style="border: 2px solid black;">
             <%= group.authentication.fullname %>
             <% order.each do |o| %>
-              <p>Numero de commande : <%= o.id %></p>
-              <p>Total : <%= render_price_to_euros(o.total) %></p>
-              <% total += o.total %>
-            <%= link_to 'Voir', order_path(o.id), id: 'btns' %>
+              <div class="d-flex">
+                <div class="w-100">
+                  <p>Numero de commande : <%= o.id %></p>
+                  <p>Total : <%= render_price_to_euros(o.total) %></p>
+                  <% total += o.total %>
+                </div> 
+
+                <div class="w-100"> 
+                  <div class="pt-4 mt-3 text-right">
+                    <%= link_to 'Voir', order_path(o.id), id: 'btns' %>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
 
-    <div class="w-50 h-400 bg-primary">
-      <p>Total: <%= total %></p>
-      <p>Date de livraison :</p>
-      <p>Responsable :</p>
-      <p>Accompagnateur :</p>
+    <div class="w-50 m-3" style="border: 2px solid black;">
+      <div class="d-flex w-100">
+        <div class="w-100 p-4">
+          <p>Total : <%= total %> €</p>
+          <p>Date de livraison :</p>
+        </div>
+        
+        <div class="w-100 p-4">
+          <p>Responsable :</p>
+          <p>Accompagnateur :</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
