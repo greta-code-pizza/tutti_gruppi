@@ -14,7 +14,10 @@ class GroupmentController < ApplicationController
     @group = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
   end
 
-  def order_groupment_quantity; end
+  def order_groupment_quantity
+    @products = Product.all
+    @member_gpmt = GroupmentAuthentication.where(groupment_id: @groupment.groupment_id)
+  end
 
   def order_groupment_total; end
 end
