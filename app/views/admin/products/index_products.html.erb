@@ -1,42 +1,40 @@
-<div class="container text-center mt-3">
-  <% if current_authentication.admin? %>
-    <div class="mb-4">
-      <h1>Chosissez un produit a éditer</h1>
-    </div>  
-    <table class="container text-center">
-      <thead>
-        <tr>
-          <th>Produits</th>
-          <th>Conditionnement</th>
-          <th>Prix</th>
-          <th>Poids</th>
-        </tr>
-        <hr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <div>
-            <tr>
-              <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
-              <td><%= t("package.#{product.package}") %></td>
-              <td><%= product.euro %></td>
-              <td><%= product.weight %></td>
-              <td><%= link_to 'Editer', "edition-produits/#{product.id}", id: 'btns' %></td>
-              <td><%= link_to 'Supprimer', "delete_product/#{product.id}", method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
-            </tr>
-          </div>
-        <% end %>
-      </tbody>
-    </table>
-    <div class="d-flex wrap align-items-center">
-      <div class="w-50 d-flex flex-row-start">
-        <%= link_to 'Retour', admin_dashboard_path, id: 'btns' %>
-      </div>
+<% if current_authentication.admin? %>
+  <div class="mb-4">
+    <h1>Chosissez un produit a éditer</h1>
+  </div>  
+  <table class="container text-center">
+    <thead>
+      <tr>
+        <th>Produits</th>
+        <th>Conditionnement</th>
+        <th>Prix</th>
+        <th>Poids</th>
+      </tr>
+      <hr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <div>
+          <tr>
+            <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
+            <td><%= t("package.#{product.package}") %></td>
+            <td><%= product.euro %></td>
+            <td><%= product.weight %></td>
+            <td><%= link_to 'Editer', "edition-produits/#{product.id}", id: 'btns' %></td>
+            <td><%= link_to 'Supprimer', "delete_product/#{product.id}", method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
+          </tr>
+        </div>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="d-flex wrap align-items-center">
+    <div class="w-50 d-flex flex-row-start">
+      <%= link_to 'Retour', admin_dashboard_path, id: 'btns' %>
     </div>
-  <hr>
-  <% else %>
-    <p>Accès refusé</p>
-  <% end %>
-  <!-- Pagination appears if more than 19 products -->
-  <%= paginate @products %>
-</div>
+  </div>
+<hr>
+<% else %>
+  <p>Accès refusé</p>
+<% end %>
+<!-- Pagination appears if more than 19 products -->
+<%= paginate @products %>

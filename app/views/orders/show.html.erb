@@ -1,15 +1,13 @@
-<div class="container text-center mt-3">
-  <h2>Commande n°<%= @order.id %> de <%= @order.authentication.fullname %></h2>
-  <hr>
-  <% @orderitems.each do |orderitem| %>
-    <% if orderitem.quantity > 0 %>
-      <p>
-        <%= orderitem.quantity %>
-        <%= orderitem.pluralize(t('orders.show.package')) %>
-        <%= t("products.#{orderitem.product.name}") %> 
-        <%= t('orders.show.for') %> <%= render_price_to_euros(orderitem.unit_price_x_quantity) %> 
-      </p>
-    <% end %>
+<h2>Commande n°<%= @order.id %> de <%= @order.authentication.fullname %></h2>
+<hr>
+<% @orderitems.each do |orderitem| %>
+  <% if orderitem.quantity > 0 %>
+    <p>
+      <%= orderitem.quantity %>
+      <%= orderitem.pluralize(t('orders.show.package')) %>
+      <%= t("products.#{orderitem.product.name}") %> 
+      <%= t('orders.show.for') %> <%= render_price_to_euros(orderitem.unit_price_x_quantity) %> 
+    </p>
   <% end %>
-  <p>Total : <%= render_price_to_euros(@order.total) %></p>
-</div>
+<% end %>
+<p>Total : <%= render_price_to_euros(@order.total) %></p>

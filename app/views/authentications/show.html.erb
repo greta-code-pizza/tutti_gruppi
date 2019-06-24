@@ -1,20 +1,19 @@
-<div class="container text-center">
-  <h1>Bienvenue sur votre profil</h1>
-  <ul>
-    <li>Prénom : <%= current_authentication.firstname.capitalize %>
-    </li>
-    <li>Nom : <%= current_authentication.lastname.capitalize %>
-    </li>
-    <li>Email : <%= current_authentication.email %>
-    </li>
-    <li>
-      Groupement : <%= @groupment.groupment.name %>
-    </li>
-    <li>
-      Votre rôle est : <%= current_authentication.userable_type %>
-    </li>
-  </ul>
+<h1>Bienvenue sur votre profil</h1>
+<ul>
+  <li>Prénom : <%= current_authentication.firstname.capitalize %>
+  </li>
+  <li>Nom : <%= current_authentication.lastname.capitalize %>
+  </li>
+  <li>Email : <%= current_authentication.email %>
+  </li>
+  <li>
+    Groupement : <%= @groupment.groupment.name %>
+  </li>
+  <li>
+    Votre rôle est : <%= current_authentication.userable_type %>
+  </li>
+</ul>
 
-  <%= link_to 'Update', '/authentications/edit', id: 'btns' %>
-  <%= link_to 'Destroy', current_authentication, method: :delete, data: {confirm:'Are you sure ?'}, id: 'btns' %>
-</div>
+<%= link_to 'Update', '/authentications/edit', id: 'btns' %>
+<%= link_to 'Destroy', current_authentication, method: :delete, data: {confirm:'Are you sure ?'}, id: 'btns' %>
+
