@@ -59,13 +59,6 @@ ActiveRecord::Schema.define(version: 2019_06_21_131637) do
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
   end
 
-  create_table "order_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "event_id"
-    t.bigint "order_id"
-    t.index ["event_id"], name: "index_order_events_on_event_id"
-    t.index ["order_id"], name: "index_order_events_on_order_id"
-  end
-
   create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "order_id"
@@ -96,8 +89,6 @@ ActiveRecord::Schema.define(version: 2019_06_21_131637) do
 
   add_foreign_key "groupment_authentications", "authentications"
   add_foreign_key "groupment_authentications", "groupments"
-  add_foreign_key "order_events", "events"
-  add_foreign_key "order_events", "orders"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "authentications"
