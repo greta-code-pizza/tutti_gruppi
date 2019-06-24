@@ -4,36 +4,25 @@
     <div class="w-50">
     <% total = 0 %>
       <% @member_gpmt.each do |member| %>
-        <% event = Event.all %>
-        <% event.each do |e| %>
-          <% if DateTime.now > e.open && DateTime.now < e.close %>
-
-            <% orderevent= OrderEvent.where(event_id: e.id)%>
-            <% orderevent.each do |oi| %>
-              <% order = Order.where(id: oi.order_id, authentication_id: member.id) %>
-
-              <% if order != [] %>
-                <div class="m-3 p-4" style="border: 2px solid black;">
-                  <%= member.authentication.fullname %>
-                  <% order.each do |o| %>
-                    <div class="d-flex">
-                      <div class="w-100">
-                        <p>Numero de commande : <%= o.id %></p>
-                        <p>Total : <%= render_price_to_euros(o.total) %></p>
-                        <% total += o.total %>
-                      </div> 
-
-                      <div class="w-100"> 
-                        <div class="pt-4 mt-3 text-right">
-                          <%= link_to 'Voir', order_path(o.id), id: 'btns' %>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
+        <% order = Order.where(authentication_id: member.id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
+        <% if order != [] %>
+          <div class="m-3 p-4" style="border: 2px solid black;">
+            <%= member.authentication.fullname %>
+            <% order.each do |o| %>
+              <div class="d-flex">
+                <div class="w-100">
+                  <p>Numero de commande : <%= o.id %></p>
+                  <p>Total : <%= render_price_to_euros(o.total) %></p>
+                  <% total += o.total %>
+                </div> 
+                <div class="w-100"> 
+                  <div class="pt-4 mt-3 text-right">
+                    <%= link_to 'Voir', order_path(o.id), id: 'btns' %>
+                  </div>
                 </div>
-              <% end %>
+              </div>
             <% end %>
-          <% end %>
+          </div>
         <% end %>
       <% end %>
     </div>
