@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
+    @event = Event.find_by(open: Date.today.beginning_of_month, close: Date.today.end_of_month)
     @products = Product.all
     @authentication = Authentication.all
   end
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
     else
       flash[:info] = 'failed'
     end
-    redirect_to request.referrer
+    redirect_to '/orders'
   end
 
   private
