@@ -1,5 +1,5 @@
-<div class="container text-center">
-  <h2>Edit</h2>
+<% if current_authentication.admin? %>
+<h2>Edit</h2>
 
   <%= form_for @authentication, method: :patch do |f| %>
 
@@ -13,19 +13,17 @@
       <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
     </div>
 
-    <div class="field">
-      <%= f.label :role %><br />
-      <%= f.text_field :userable_type, autofocus: true, autocomplete: 'firstname' %>
-    </div>
-
     <div class="actions">
       <%= f.submit 'Update', id: 'btns', class: 'mt-3 mb-3' %>
     </div>
   <% end %>
-    <%= link_to 'Back', admin_liste_des_membres_path, id: 'btns' %>
+
+  <%= link_to 'Back', admin_liste_des_membres_path, id: 'btns' %>
 
   <p>Rôle: <%= @authentication.userable_type %></p>
   <%= link_to "up_admin", "/upAdmin/#{@authentication.id}", id: 'btns' %>
   <%= link_to "up_manager", "/upManager/#{@authentication.id}", id: 'btns' %>
   <%= link_to "up_member", "/upMember/#{@authentication.id}", id: 'btns' %>
-</div>
+<% else %>
+  <h1>Accès refusé</h1>
+<% end %>

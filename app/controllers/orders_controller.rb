@@ -4,11 +4,23 @@ class OrdersController < ApplicationController
   before_action :authenticate_authentication!
 
   def index
-    @orders = Order.page(params[:page]).per(15)
+    @orders = Order.page(params[:page]).per(1).where(authentication_id: current_authentication.id)
   end
 
   def show
     @order = Order.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = OrderPdf.new(@order)
+        send_data pdf.render,
+                  filename: "order_#{@order.id}",
+                  type: 'application/pdf',
+                  disposition: 'inline'
+      end
+    end
+    
     @orderitems = OrderItem.where(order_id: params[:id])
   end
 

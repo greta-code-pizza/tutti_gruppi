@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_114453) do
+ActiveRecord::Schema.define(version: 2019_06_21_131637) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
   end
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2019_05_29_114453) do
     t.index ["email"], name: "index_authentications_on_email", unique: true
     t.index ["reset_password_token"], name: "index_authentications_on_reset_password_token", unique: true
     t.index ["userable_id", "userable_type"], name: "index_authentications_on_userable_id_and_userable_type"
+  end
+
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.date "open"
+    t.date "close"
+    t.date "delivery"
   end
 
   create_table "groupment_authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_114453) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "authentication_id"
+    t.date "date"
     t.index ["authentication_id"], name: "index_orders_on_authentication_id"
   end
 

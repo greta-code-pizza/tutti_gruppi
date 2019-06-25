@@ -6,7 +6,6 @@ class Admin::DashboardController < ApplicationController
   def home; end
 
   def index
-    # @groupment = Groupment.all
     @authentications = Authentication.page(params[:page]).per(4).order(:userable_type)
   end
 

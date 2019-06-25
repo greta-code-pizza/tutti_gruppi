@@ -1,11 +1,9 @@
-<div class="container text-center">
-  <h1>Bienvenue sur Tutti Gruppi</h1>
+<h1>Bienvenue sur Tutti Gruppi</h1>
 
-  <p>
-    <% if authentication_signed_in? %>
-      <%= link_to 'Se déconnecter', destroy_authentication_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Se connecter', new_authentication_session_path %>
-    <% end %>  
-  </p>
-</div>
+<p>
+  <% if authentication_signed_in? %>
+    <%= link_to 'Se déconnecter', destroy_authentication_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Se connecter', new_authentication_session_path %>
+  <% end %>  
+</p>

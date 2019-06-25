@@ -13,7 +13,7 @@ class Order < ActiveRecord::Base
 
   def self.create_with_deps(params, current_authentication)
     transaction do
-      order = Order.create(authentication: current_authentication)
+      order = Order.create(authentication: current_authentication, date: DateTime.now)
       params[:order][:products].each do |id, quantity|
         next unless quantity != '0'
         OrderItem.create(

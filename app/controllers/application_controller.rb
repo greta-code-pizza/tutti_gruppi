@@ -37,10 +37,6 @@ class ApplicationController < ActionController::Base
     @groupment = GroupmentAuthentication.find_by_authentication_id(current_authentication.id)
   end
 
-  def remove_groupment(id)
-    GroupmentAuthentication.find_by_authentication_id(id).destroy
-  end
-
   def remove_role(id)
     target = Authentication.find(id)
     case target.userable_type
@@ -52,4 +48,5 @@ class ApplicationController < ActionController::Base
       Member.find(target.userable_id).destroy
     end
   end
+
 end

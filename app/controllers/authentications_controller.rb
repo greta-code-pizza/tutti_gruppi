@@ -9,8 +9,6 @@ class AuthenticationsController < ApplicationController
     @authentication = Authentication.find(params[:id])
     auth_order = Order.where(authentication_id: params[:id])
     auth_order.update authentication_id: 2
-    remove_groupment(params[:id])
-    remove_role(params[:id])
     @authentication.destroy
     redirect_to request.referrer || root_path
   end
