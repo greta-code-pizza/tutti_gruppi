@@ -7,8 +7,9 @@ gem 'devise'
 gem 'kaminari'
 
 gem 'prawn'
-gem 'responders'
 gem 'prawn-table'
+gem 'responders'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

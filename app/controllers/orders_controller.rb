@@ -9,19 +9,21 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @orderitems = OrderItem.where(order_id: params[:id])
 
     respond_to do |format|
       format.html
       format.pdf do
         pdf = OrderPdf.new(@order)
         send_data pdf.render,
-                  filename: "order_#{@order.id}",
+                  filename: "Tutti Gruppi - Commande :\##{@order.id}.pdf",
+                  page_size: 'A4',
+                  template: 'orders/invoice.html.erb',
+                  layout: 'pdf.html',
                   type: 'application/pdf',
                   disposition: 'inline'
       end
     end
-    
-    @orderitems = OrderItem.where(order_id: params[:id])
   end
 
   def new
