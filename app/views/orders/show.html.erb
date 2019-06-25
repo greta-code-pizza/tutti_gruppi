@@ -15,3 +15,5 @@
 <p>
   <%= link_to "Reçu téléchargeable (PDF)", order_path(@order, format: 'pdf') %>
 </p>
+
+<%= link_to 'Back', :back || root_path, id: 'btns' %>
