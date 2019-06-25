@@ -1,0 +1,90 @@
+fr:
+  product:
+    table_oranges:  Oranges de table
+    juice_oranges:  Oranges à jus
+    lemons:         Citrons
+    tangerines:     Mandarines
+    avocado:        Avocats
+    sweet_potatoes: Patates douces
+    mangos:         Mangues
+    annonas:        Anones
+    grapefruit:     Pamplemousses
+    papaya:         Papayes
+    almonds:        Amandes
+    dried_figs:     Figues séchées
+    dried_tomatoes: Tomates séchées
+    dried_peppers:  Poivrons séchés
+    fig_bread:      Pain de figues
+    green_olive:    Olives vertes
+    black_olive:    Olives noires
+    tapenade:       Tapenade
+    olive_oil:      "Huile d'olive"
+  
+  products:
+    table_oranges:  d'oranges de table
+    juice_oranges:  d'oranges à jus
+    lemons:         de citrons
+    tangerines:     de mandarines
+    avocado:        d'avocats
+    sweet_potatoes: de patates douces
+    mangos:         de mangues
+    annonas:        d'anones
+    grapefruit:     de pamplemousses
+    papaya:         de papayes
+    almonds:        d'amandes
+    dried_figs:     de figues séchées
+    dried_tomatoes: de tomates séchées
+    dried_peppers:  de poivrons séchés
+    fig_bread:      de pain de figues
+    green_olive:    d'olives vertes
+    black_olive:    d'olives noires
+    tapenade:       de tapenade
+    olive_oil:      "d'huile d'olive"
+
+  package: 
+    box:      caisse
+    tray:     cagette
+    bag:      sachet
+    jar:      bocal
+    bottle:   bidon
+
+  orders:
+    show:
+      for: 'pour'
+
+      package:
+        box:
+          - caisse
+          - caisses
+        tray:
+          - cagette 
+          - cagettes
+        bag: 
+          - sachet
+          - sachets
+        jar: 
+          - bocal
+          - bocaux
+        bottle: 
+          - bidon
+          - bidons
+
+  link_to:
+    sign_in: 'Se connecter'
+    password_forgotten: 'Mot de passe oublié ?'
+    sign_up: 'Créer un compte'
+    confirmable?: 'Instructions de confirmation non reçues ?'
+    lockable?: 'Instructions de déverrouillage non reçues ?'
+    reset_password: 'Réinitialiser le mot de passe'
+    change_password: 'Changer de mot de passe'
+    resend_confirmation: 'Recevoir les instructions de confirmation'
+    get_confirmation: 'Recevoir les instructions'
+    resend_unlock: 'Recevoir les instructions de déverrouillage'
+  
+
+  labels:
+    firstname: 'Prénom'
+    lastname: 'Nom'
+    password: 'Mot de passe'
+    minimum_characters: ' charactères minimum)'
+    password_confirmation: 'Confirmation de mot passe'

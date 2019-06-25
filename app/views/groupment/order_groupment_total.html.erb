@@ -1,0 +1,38 @@
+<h1>Commande du groupement: <%= @groupment.groupment.name %></h1>
+<p>Mois: Juillet</p>
+
+<table class="container text-center">
+  <thead>
+    <tr>
+    <th> Nom du produit </th>
+    <th> Quantité </th>
+    <th> Total </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% totalcommande = 0 %>
+    <% @products.each do |product| %>
+    <% nbt = 0 %>
+      <tr>
+        <td class="border_command"> <%= product.name %> </td>
+        <% @member_gpmt.each do |member| %>
+          <% if Order.find_by(authentication_id:member.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month)  %>
+            <% order = Order.find_by(authentication_id:member.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
+            <% orderitem = OrderItem.where(order_id: order.id, product_id: product.id) %>
+            <% orderitem.each do |oi| %>
+              <%  nbt += oi.quantity %>
+            <% end %>
+          <% end%>      
+        <% end %>
+          <td class="border_command"> <%= nbt %> </td>
+          <% total = (nbt * product.price) %>
+          <td class="border_command"> <%= total/ 100 %>,<%= total.to_s[-2..-1]%> € </td>
+      </tr>
+      <% totalcommande += total %>
+    <% end %>
+  </tbody>
+</table>
+
+<p>total de la commande: <%= totalcommande/ 100 %>,<%= totalcommande.to_s[-2..-1]%> € </p>
+
+<%= link_to 'Back', manager_groupment_path || root_path, id: 'btns' %>

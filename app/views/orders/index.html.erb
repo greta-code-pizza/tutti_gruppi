@@ -1,0 +1,15 @@
+<h1>Liste des commandes</h1>
+  <ul>
+    <% @orders.each do |order| %>
+      <li>
+        <a href="/orders/<%= order.id %>">
+          Commande n°<%= order.id %> de <%= order.authentication.fullname %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+<a href="/orders/new">
+  <input type="submit" value="Passer commande" class="mt-3" id="btns">
+</a>
+
+<%= paginate @orders %>

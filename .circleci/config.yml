@@ -1,0 +1,76 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build-job:
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.6.2-node-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+        name: tutti_test
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Install Bundler
+          command: gem install bundler -v 2.0.1
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Database setup
+      # - run: cp config/database.exemple.yml config/database.yml
+      # - run: bundle exec rake db:create RAILS_ENV=test
+      # - run: bundle exec rake db:schema:load RAILS_ENV=test
+
+      # run tests!
+      # - run:
+      #     name: Run Rspec
+      #     command: |
+      #       bundle exec rspec
+
+  deploy-job:
+    docker:
+      - image: circleci/ruby:2.6.2-node-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install Bundler
+          command: gem install bundler -v 2.0.1
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - add_ssh_keys:
+          fingerprints:
+            - "da:2d:a9:aa:2b:d2:a3:80:a7:45:dc:c3:44:e3:42:d5"
+      - run:
+          name: Deploy on staging
+          command: bundle exec cap staging deploy
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job
+      - deploy-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: develop

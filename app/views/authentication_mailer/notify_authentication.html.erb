@@ -1,0 +1,36 @@
+<h2>Tutti Gruppi - commande n° <%= @order.id %></h2>
+<h2>Bonjour <%= @authentication.fullname %></h2>
+<p>Voici le récapitulatif de votre commande:<p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Produits</th>
+      <th>Conditionnement</th>
+      <th>Poids</th>
+      <th>Quantité</th>
+      <th>Prix unitaire</th>
+      <th>Prix total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <% if item.quantity > 0 %>
+        <div>
+          <tr>
+            <td><%= t("product.#{item.product.name}") %></td>
+            <td><%= t("package.#{item.product.package}") %></td>
+            <td><%= item.product.weight %></td>
+            <td><%= item.quantity %></td>
+            <td><%= item.product.euro %></td>
+            <td><%= render_price_to_euros(item.unit_price_x_quantity) %></td>
+          </tr>
+        </div>
+      <% end %>
+    <% end %>
+    <td>Total de la commande: <%= render_price_to_euros(@order.total) %></td>
+  </tbody>
+</table>
+
+<p>En cas de problème, contactez: <%= mail_to "merlhiotpaolo@yahoo.fr", 'merlhiotpaolo@yahoo.fr' %></p>
+

@@ -2,6 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
+gem 'mailcatcher'
+gem 'devise'
+gem 'kaminari'
+
+gem 'prawn'
+gem 'responders'
+gem 'prawn-table'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -42,6 +49,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Use Pry as your rails console
   gem 'pry-rails'
+  gem 'figaro'
 end
 
 group :development do
@@ -56,6 +64,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard'
+  gem 'guard-rspec'
 end
 
 group :test do
