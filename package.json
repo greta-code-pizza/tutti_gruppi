@@ -1,5 +1,26 @@
 {
   "name": "tutti_gruppi",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "description": "<div align=\"center\">   <a href=\"https://github.com/bbatsov/ruby-style-guide\">     <img src=\"https://img.shields.io/badge/guideline-rubocop-blue.svg?longCache=true&style=flat\" alt=\"Rubocop\" />   </a>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "compile:sass": "node-sass app/assets/stylesheets/sass/main.scss app/assets/stylesheets/application.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kercode/tutti_gruppi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kercode/tutti_gruppi/issues"
+  },
+  "homepage": "https://github.com/Kercode/tutti_gruppi#readme"
 }
