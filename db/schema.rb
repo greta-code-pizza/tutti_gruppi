@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_06_21_131637) do
     t.string "name"
     t.string "package"
     t.integer "price"
+    t.boolean "available", default: true
     t.integer "weight_value"
     t.string "weight_type"
   end
