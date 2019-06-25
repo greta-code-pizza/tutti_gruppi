@@ -1,8 +1,9 @@
-<div class="container-fluid">
-  <h1>Commandes du groupement (<%= @groupment.groupment.name %>)</h1>
-  <div class="d-flex">
-    <div class="w-50">
-    <% total = 0 %>
+<h1 class="text-center">Commandes du groupement (<%= @groupment.groupment.name %>)</h1>
+
+<section>
+  <div class="row">
+    <div class="col-1-of-3">
+      <% total = 0 %>
       <% @member_gpmt.each do |member| %>
         <% order = Order.where(authentication_id: member.id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
         <% if order != [] %>
@@ -14,6 +15,7 @@
                   <p>Numero de commande : <%= o.id %></p>
                   <p>Total : <%= render_price_to_euros(o.total) %></p>
                   <% total += o.total %>
+                  <hr>
                 </div> 
                 <div class="w-100"> 
                   <div class="pt-4 mt-3 text-right">
@@ -26,21 +28,26 @@
         <% end %>
       <% end %>
     </div>
-
-    <div class="w-50 m-3" style="border: 2px solid black;">
-      <div class="d-flex w-100">
-        <div class="w-100 p-4">
-          <p>Total : <%= total %> €</p>
-          <p>Date de livraison :</p>
-          <%= link_to 'Récap commandes', order_groupment_quantity_path, id: 'btns' %>
-        </div>
-        
-        <div class="w-100 p-4">
-          <p>Responsable :</p>
-          <p>Accompagnateur :</p>
-          <%= link_to 'Facture', order_groupment_total_path, id: 'btns' %>
-        </div>
+    
+    <div class="col-1-of-3">
+      <div class="m-3 p-4" style="border: 2px solid black;">
+        <p>Total : <%= number_to_currency(total) %> €</p>
+        <p>Date de livraison :</p>
+        <%= link_to 'Récap commandes', order_groupment_quantity_path, id: 'btns' %>
+      </div>
+    </div>  
+      
+    <div class="col-1-of-3">
+      <div class="m-3 p-4" style="border: 2px solid black;">
+        <p>Responsable :</p>
+        <p>Accompagnateur :</p>
+        <%= link_to 'Facture', order_groupment_total_path, id: 'btns' %>
       </div>
     </div>
   </div>
-</div>
+    
+
+  
+    
+
+</section>
