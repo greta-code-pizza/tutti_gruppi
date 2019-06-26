@@ -123,6 +123,18 @@ To populate the database with its default values, you can run this command:
 rails db:seed
 ```
 
+Or you can use one command (acting like a macro):
+
+```shell
+rake db:db
+```
+that reproduces these 4 commands:
+```shell
+rake db:drop        # drops database schema
+rake db:create      # creates the database
+rake db:migrate     # migrate all the migrations
+rake db:seed        # populates the database schema from your seeds.rb
+```
 Right now your database works !
 
 
