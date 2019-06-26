@@ -5,6 +5,7 @@
   <table class="container text-center">
     <thead>
       <tr>
+        <th>Statut</th>
         <th>Produits</th>
         <th>Conditionnement</th>
         <th>Prix</th>
@@ -16,11 +17,17 @@
       <% @products.each do |product| %>
         <div>
           <tr>
+            <td><%= image_tag product.available ? 'true.png' : 'false.png'%></td>
             <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
             <td><%= t("package.#{product.package}") %></td>
             <td><%= product.euro %></td>
             <td><%= product.weight %></td>
             <td><%= link_to 'Editer', "edition-produits/#{product.id}", id: 'btns' %></td>
+            <% if product.available %>
+              <td><%= link_to "Unavailable", "/admin/unavailable/#{product.id}", id: 'btns' %></td>
+            <% else %>
+              <td><%= link_to "Available", "/admin/available/#{product.id}", id: 'btns' %></td>
+            <% end %>
             <td><%= link_to 'Supprimer', "delete_product/#{product.id}", method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
           </tr>
         </div>
