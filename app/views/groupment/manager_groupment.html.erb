@@ -2,7 +2,7 @@
 
 <section>
   <div class="row">
-    <div class="col-1-of-3">
+    <div class="col-1-of-2">
       <% total = 0 %>
       <% @member_gpmt.each do |member| %>
         <% order = Order.where(authentication_id: member.id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
@@ -23,28 +23,27 @@
                   </div>
                 </div>
               </div>
-              <hr>
             <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
     
-    <div class="col-1-of-3">
-      <div class="m-3 p-4" style="border: 2px solid black;">
-        <p>Total : <%= number_to_currency(total) %> €</p>
-        <p>Date de livraison :</p>
-        <%= link_to 'Récap commandes', order_groupment_quantity_path, id: 'btns' %>
+    <div class="col-1-of-2">
+      <div id="bloc_facture">
+        <div class="col-1-of-2 text-center">
+          <p>Total : <%= number_to_currency(total) %> €</p>
+          <p>Date de livraison :</p>
+          <%= link_to 'Récap commandes', order_groupment_quantity_path, id: 'btns' %>
+        </div>  
+
+        <div class="col-1-of-2 text-center">
+          <p>Responsable :</p>
+          <p>Accompagnateur :</p>
+          <%= link_to 'Facture', order_groupment_total_path, id: 'btns' %>
+        </div>  
       </div>
-    </div>  
-      
-    <div class="col-1-of-3">
-      <div class="m-3 p-4" style="border: 2px solid black;">
-        <p>Responsable :</p>
-        <p>Accompagnateur :</p>
-        <%= link_to 'Facture', order_groupment_total_path, id: 'btns' %>
-      </div>
-    </div>
+    </div> 
   </div>   
 </section>
 

@@ -1,0 +1,18 @@
+#bloc_facture {
+  border: 2px solid $color-black;
+  height: 200px;
+  margin: 1rem;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
+  @include respond(tab-land) {
+    padding: 4rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+}
