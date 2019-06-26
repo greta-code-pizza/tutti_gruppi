@@ -50,4 +50,12 @@ class Admin::ProductsController < ApplicationController
     @product.destroy
     redirect_to admin_index_produits_path
   end
+
+  %w[available unavailable].each do |status|
+    define_method("#{status}") {
+      Product.find(params[:id]).update available:false if status == 'unavailable'
+      Product.find(params[:id]).update available:true if status == 'available'
+      redirect_to request.referrer
+    }
+  end
 end

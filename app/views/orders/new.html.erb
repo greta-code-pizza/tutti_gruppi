@@ -25,15 +25,17 @@
       </thead>
       <tbody>
         <% @products.each do |product| %>
-          <div>
-            <tr>
-              <td class="border_command"><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
-              <td class="border_command"><%= t("package.#{product.package}") %></td>
-              <td class="border_command"><%= product.euro %></td>
-              <td class="border_command"><%= product.weight %></td>
-              <td class="border_command"><%= number_field_tag("order[products][#{product.id}]", 0, min:0) %></td>
-            </tr>
-          </div>
+          <% if product.available == true %>
+            <div>
+              <tr>
+                <td class="border_command"><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
+                <td class="border_command"><%= t("package.#{product.package}") %></td>
+                <td class="border_command"><%= product.euro %></td>
+                <td class="border_command"><%= product.weight %></td>
+                <td class="border_command"><%= number_field_tag("order[products][#{product.id}]", 0, min:0) %></td>
+              </tr>
+            </div>
+          <% end%>
         <% end %>
       </tbody>
     </table>

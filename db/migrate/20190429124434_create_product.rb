@@ -4,6 +4,7 @@ class CreateProduct < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :type
       t.string :price
+      t.boolean :available, :default => true
     end
   end
 end
