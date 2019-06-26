@@ -34,3 +34,5 @@
 </table>
 
 <p>total de la commande: <%= totalcommande/ 100 %>,<%= totalcommande.to_s[-2..-1]%> € </p>
+
+<%= link_to 'Back', manager_groupment_path || root_path, id: 'btns' %>

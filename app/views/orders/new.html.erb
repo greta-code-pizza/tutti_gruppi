@@ -4,44 +4,48 @@
   </div>
 <% end %>
 
-<%= form_tag '/orders', method: 'post' do %>
-  <div class="mb-4">
-    <p>Commande pour : 
-    <% if current_authentication %>
-      <%= current_authentication.fullname %>
-    <% end %>
-    </p>
-  </div>  
-  <table class="container text-center">
-    <thead>
-      <tr>
-        <th>Produits</th>
-        <th>Conditionnement</th>
-        <th>Prix</th>
-        <th>Poids</th>
-        <th>Quantité</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <div>
-          <tr>
-            <td class="border_command"><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
-            <td class="border_command"><%= t("package.#{product.package}") %></td>
-            <td class="border_command"><%= product.euro %></td>
-            <td class="border_command"><%= product.weight %></td>
-            <td class="border_command"><%= number_field_tag("order[products][#{product.id}]", 0, min:0) %></td>
-          </tr>
-        </div>
+<%if !Order.find_by(date: @event.open..@event.close, authentication_id: current_authentication.id) %>
+  <%= form_tag '/orders', method: 'post' do %>
+    <div class="mb-4">
+      <p>Commande pour : 
+      <% if current_authentication %>
+        <%= current_authentication.fullname %>
       <% end %>
-    </tbody>
-  </table>
-  <div class="d-flex wrap align-items-center">
-  <div class="w-50 d-flex flex-row-start">
-      <a href="/orders"><input type="submit" value="Retour" class="mt-3" id="btns"></a>
+      </p>
+    </div>  
+    <table class="container text-center">
+      <thead>
+        <tr>
+          <th>Produits</th>
+          <th>Conditionnement</th>
+          <th>Prix</th>
+          <th>Poids</th>
+          <th>Quantité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <div>
+            <tr>
+              <td class="border_command"><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
+              <td class="border_command"><%= t("package.#{product.package}") %></td>
+              <td class="border_command"><%= product.euro %></td>
+              <td class="border_command"><%= product.weight %></td>
+              <td class="border_command"><%= number_field_tag("order[products][#{product.id}]", 0, min:0) %></td>
+            </tr>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="d-flex wrap align-items-center">
+    <div class="w-50 d-flex flex-row-start">
+        <a href="/orders"><input type="submit" value="Retour" class="mt-3" id="btns"></a>
+      </div>
+      <div class="w-50 d-flex flex-row-reverse">
+        <%= submit_tag 'Valider', class: "mt-3", id: "btns" %>
+      </div>
     </div>
-    <div class="w-50 d-flex flex-row-reverse">
-      <%= submit_tag 'Valider', class: "mt-3", id: "btns" %>
-    </div>
-  </div>
+  <% end %>
+<% else %>
+<h1> tu as déjà commandé !</h1>
 <% end %>
