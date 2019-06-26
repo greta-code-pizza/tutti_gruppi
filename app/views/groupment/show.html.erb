@@ -1,10 +1,10 @@
 <h1><%= @auth_gpmt.name %></h1>
 <% if @auth_gpmt.id != 1 %>
-  <%@member_gpmt.each do |m| %>
+  <% @member_gpmt.each do |m| %>
     <% if m.authentication.manager? %>
-      <p>Seigneur <%= m.authentication.firstname %> | <%= m.authentication.lastname %> </p>
+      <p><%= image_tag 'crown.png', class: 'crown' %> <%= m.authentication.fullname %> </p>
     <% else %>
-      <p><%= m.authentication.firstname %> | <%= m.authentication.lastname %> </p>
+      <p><%= m.authentication.fullname %> </p>
     <% end %>
   <% end %>
 <% else %>

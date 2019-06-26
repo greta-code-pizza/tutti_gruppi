@@ -54,18 +54,18 @@ rbenv install 2.6.2
 Once expected ruby version is installed you have to choose between use it only for this project or define it as default ruby version:
 
 <table>
-    <tr>
-    	<th>Current project</th>
-    	<th>Default version</th>
-    </tr>
-    <tr>
-      <td>
-        <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv local 2.6.2</code></pre>
-      </td>
-      <td>
-        <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv global 2.6.2</code></pre>
-      </td>
-    </tr>
+  <tr>
+    <th>Current project</th>
+    <th>Default version</th>
+  </tr>
+  <tr>
+    <td>
+      <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv local 2.6.2</code></pre>
+    </td>
+    <td>
+      <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv global 2.6.2</code></pre>
+    </td>
+  </tr>
 </table>
 
 [More informations about rbenv](https://github.com/rbenv/rbenv)

@@ -5,31 +5,33 @@
   display: block;
   margin: 0 auto;
   float: none;
+  margin-top: 1rem;
 
-  & a, & span.gap {
-    padding: 0 14px;
+  & a,
+  & span.gap {
+    padding: 0 12px;
     line-height: 38px;
     text-decoration: none;
     background-color: $color-pagination-bg;
-    border: 1px solid $color-light-gray;
-    border-left-width: 0;
     border-radius: 6px;
     color: $color-btns;
     font-weight: bold;
+    margin: 0 3px;
   }
+
   & span.current {
-    padding: 0 14px;
-    line-height: 38px;
+    padding: 0 12px;
+    line-height: 0px;
     text-decoration: none;
-    border: 1px solid $color-light-gray;
-    border-left-width: 0;
     border-radius: 6px;
     color: $color-pagination-bg;
     font-weight: bold;
     background-color: $color-btns;
+    margin: 0 3px;
   }
+
   & a:hover {
-      background-color: $color-btns;
+    background-color: $color-btns;
     color: $color-pagination-bg;
   }
 }

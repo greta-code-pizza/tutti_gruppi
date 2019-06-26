@@ -5,7 +5,7 @@
   font-size: 2rem;
 
   &:hover {
-    color: $color-orange;
+    color: $color-btns;
   }
 }
 
@@ -20,25 +20,25 @@
   text-transform: uppercase;
 
   &:hover {
-    color: $color-orange;
+    color: $color-btns;
   }
 }
 
 .active {
-  border-left: 1px solid $color-orange;
-  border-right: 1px solid $color-orange;
+  border-left: 2px solid rgba($color-btns, .5);
+  border-right: 2px solid rgba($color-btns, .5);
   font-weight: bold;
 
   .nav-link {
-  color: $color-orange !important;
+  color: $color-btns !important;
   }
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: $color-orange;
+  border-color: $color-btns;
 }
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color-orange}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color-btns}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 
@@ -48,7 +48,7 @@
     // width: 15%;
     text-align: center;
     &.active {
-      border-bottom: 1px solid $color-orange;
+      border-bottom: 1px solid $color-btns;
       width: 8rem;
       margin: 0 auto;
     }
