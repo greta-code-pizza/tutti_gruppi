@@ -54,18 +54,18 @@ rbenv install 2.6.2
 Once expected ruby version is installed you have to choose between use it only for this project or define it as default ruby version:
 
 <table>
-    <tr>
-    	<th>Current project</th>
-    	<th>Default version</th>
-    </tr>
-    <tr>
-      <td>
-        <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv local 2.6.2</code></pre>
-      </td>
-      <td>
-        <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv global 2.6.2</code></pre>
-      </td>
-    </tr>
+  <tr>
+    <th>Current project</th>
+    <th>Default version</th>
+  </tr>
+  <tr>
+    <td>
+      <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv local 2.6.2</code></pre>
+    </td>
+    <td>
+      <pre class="code highlight js-syntax-highlight sh monokai" v-pre="true"><code>rbenv global 2.6.2</code></pre>
+    </td>
+  </tr>
 </table>
 
 [More informations about rbenv](https://github.com/rbenv/rbenv)
@@ -84,8 +84,25 @@ Then install dependencies with bundler like that:
 ```shell
 bundle install
 ```
-
 [More informations about bundler](http://bundler.io/)
+
+If you want to make changes to Stylesheets (compiled from node-sass (SCSS synthax)) You will have to install the Node Modules folders locally, To do so type:
+```shell
+npm install
+```
+This commande should install node-sass locally on your computer.
+
+Then you'll be able to make changes to SCSS files included in app/assets/stylesheets/sass.
+To watch your changes you'll have to run a command to compile from one scss file to a css file:
+
+```shell
+npm run compile:sass 
+# The above command will start a script from package.json file
+# "scripts": {
+#    "compile:sass": "node-sass app/assets/stylesheets/sass/main.scss app/assets/stylesheets/application.css -w"
+#  }
+```
+And that's it :D
 
 ## Database creation
 
