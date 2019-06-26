@@ -131,9 +131,9 @@ rake db:db
 that reproduces these 4 commands:
 ```shell
 rake db:drop        # drops database schema
-rake db:create      # creates the database
+rake db:create      # create the database
 rake db:migrate     # migrate all the migrations
-rake db:seed        # populates the database schema from your seeds.rb
+rake db:seed        # populate the database schema from your seeds.rb
 ```
 Right now your database works !
 
