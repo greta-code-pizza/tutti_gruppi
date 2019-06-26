@@ -13,7 +13,5 @@
 <p><strong>Total : <%= render_price_to_euros(@order.total) %></strong></p>
 
 <p>
-  <%= link_to "Reçu téléchargeable (PDF)", order_path(@order, format: 'pdf') %>
+  <%= link_to "Reçu téléchargeable (PDF)", order_path(@order, format: 'pdf'), id: 'btns' %>
 </p>
-
-<%= link_to 'Back', :back || root_path, id: 'btns' %>
