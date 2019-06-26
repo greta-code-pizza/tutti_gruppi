@@ -14,14 +14,15 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = OrderPdf.new(@order)
+        pdf = OrderPdf.new(@order, @orderitems)
         send_data pdf.render,
                   filename: "Tutti Gruppi - Commande :\##{@order.id}.pdf",
                   page_size: 'A4',
-                  template: 'orders/invoice.html.erb',
+                  template: 'app/views/orders/invoice.html.erb',
                   layout: 'pdf.html',
                   type: 'application/pdf',
-                  disposition: 'inline'
+                  disposition: 'inline',
+                  position: 'center'
       end
     end
   end
