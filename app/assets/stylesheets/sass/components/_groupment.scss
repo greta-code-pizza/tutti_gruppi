@@ -17,11 +17,8 @@
   }
 }
 
-.crown {
-  width: 3%;
-  margin-top: -10px;
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 0rem !important;
 }
 
-// .member_card {
-//   width: 50rem;
-// }

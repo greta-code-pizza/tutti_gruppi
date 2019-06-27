@@ -1,0 +1,22 @@
+.jumbotron {
+  background-image: url("jumbotron.jpg");
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-position: center right;
+  color: $color-white;
+  background-size: cover;
+
+  h1 {
+    margin: 5rem 0;
+    font-size: 4rem;
+    text-shadow: 0 9px 5px rgba($color-black, 0.6);
+
+    @include respond(phone) {
+      font-size: 3rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+  }
+}

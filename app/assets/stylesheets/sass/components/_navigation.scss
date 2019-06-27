@@ -1,12 +1,11 @@
 /* NAVIGATION */
 
-.navbar-brand-logo {
-  color: $color-white;
-  font-size: 2rem;
+#logo {
+  width: 10rem;
+}
 
-  &:hover {
-    color: $color-btns;
-  }
+.bg-dark {
+  background-color: $color-pagination-bg !important;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -37,10 +36,12 @@
 .custom-toggler.navbar-toggler {
   border-color: $color-btns;
 }
-.custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color-btns}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+.fa .fa-navicon {
+  color: $color-white;
 }
-
+// .custom-toggler .navbar-toggler-icon {
+//   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(#{$color-btns}, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+// }
 
 @include respond(tab-port) {
   .nav-item {

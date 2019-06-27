@@ -32,5 +32,7 @@
     <td>Total de la commande: <%= render_price_to_euros(@order.total) %></td>
   </tbody>
 </table>
-
+<p>
+  <%= link_to "Reçu téléchargeable (PDF)", order_path(@order, format: 'pdf'), id: 'btns' %>
+</p>
 <p>En cas de problème, contactez: <%= mail_to "#{@manager.email}", "#{@manager.email}" %></p>
