@@ -21,8 +21,13 @@ class AuthenticationsController < ApplicationController
 
   def update
     auth_gpmt = GroupmentAuthentication.find_by_authentication_id(params[:id])
-    auth_gpmt.update groupment_id: params[:Groupment][:groupment_id]
-    redirect_to root_path
+    if auth_gpmt.update groupment_id: params[:Groupment][:groupment_id]
+      flash[:notice] = "Vous appartenez désormais au groupement #{auth_gpmt}."
+      redirect_to request.referrer || root_path
+    else
+      flash[:notice] = 'Une erreur est survenue.'
+      redirect_to root_path
+    end
   end
 
   # meta programming, update the authentication role

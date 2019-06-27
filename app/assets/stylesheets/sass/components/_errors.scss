@@ -1,0 +1,16 @@
+
+div#flash_notice.flash_message{
+  background-color: rgba($color-btns, .3);
+  background-image: url('valid.png');
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  border: 1px solid $color-btns;
+  border-radius: 6px;
+  color: $color-black;
+  width: 33%;
+  height: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

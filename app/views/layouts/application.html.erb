@@ -9,17 +9,16 @@
 
     <% if current_page?(manager_groupment_path) %>
       <div class="container-fluid mt-5">
-        <% render 'shared/error_messages' %>
+        <%= render 'shared/error_messages' %>
         <%= yield %>
       </div>
     <% else %>
       <div class="container text-center mt-5">
-        <% render 'shared/error_messages' %>
+        <%= render 'shared/error_messages' %>
         <%= yield %>
       </div>
     <% end %>
     
-  
     <%= render 'shared/scripts' %>
   </body>
 </html>
