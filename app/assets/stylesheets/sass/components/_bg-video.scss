@@ -1,0 +1,39 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .3;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 71%, 0% 100%);
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.align-mid {
+  margin: 40vh 0;
+}
+
+
+.section-2 {
+  height: 85vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-pagination-bg, 0.8),
+      rgba($color-btns, 0.8));
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  
+  .bg {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    height: 100vw;
+  }
+}

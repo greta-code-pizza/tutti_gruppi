@@ -1,9 +1,18 @@
-<h1>Bienvenue sur Tutti Gruppi</h1>
+<section>
+  <div class="bg-video">
+    <video class="bg-video__content" autoplay muted loop src="https://storage.coverr.co/videos/Veggie-Stand?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTYxNjM5MDkyLCJleHAiOjE1NjE2NDI2OTJ9.T3Eabb4Sfk5HkvN3-bHshBHAavqk77bCHF4M_nPr8Jw">
+    </video>
+  </div>
 
-<p>
-  <% if authentication_signed_in? %>
-    <%= link_to 'Se déconnecter', destroy_authentication_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Se connecter', new_authentication_session_path %>
-  <% end %>  
-</p>
+  <article class="align-mid">
+    <h1 class="bg-text">Bienvenue sur Tutti Gruppi</h1>
+    <p>
+    <% if authentication_signed_in? %>
+      <%= link_to 'Se déconnecter', destroy_authentication_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Se connecter', new_authentication_session_path %>
+    <% end %>  
+    </p>
+  </article>
+</section>
+
