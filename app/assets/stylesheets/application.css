@@ -333,23 +333,53 @@ section.gpmt {
     .footer img {
       width: 30%; } }
 
-.jumbotron {
-  background-image: url("jumbotron.jpg");
-  height: 25rem;
+.icons {
+  width: 2.5rem; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .3;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 71%, 0% 100%); }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.align-mid {
+  margin: 40vh 0; }
+
+.section-2 {
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, rgba(47, 47, 47, 0.8), rgba(120, 199, 2, 0.8));
+  background-size: cover;
+  background-position: top;
+  position: relative; }
+  .section-2 .bg {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    height: 100vw; }
+
+div#flash_notice.flash_message {
+  background-color: rgba(120, 199, 2, 0.3);
+  background-image: url("valid.png");
+  background-size: 2rem;
   background-repeat: no-repeat;
-  background-position: center right;
-  color: #fff;
-  background-size: cover; }
-  .jumbotron h1 {
-    margin: 5rem 0;
-    font-size: 4rem;
-    text-shadow: 0 9px 5px rgba(0, 0, 0, 0.6); }
-    @media only screen and (max-width: 37.5em) {
-      .jumbotron h1 {
-        font-size: 3rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .jumbotron h1 {
-        font-size: 3rem; } }
+  border: 1px solid #78c702;
+  border-radius: 6px;
+  color: black;
+  width: 33%;
+  height: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .row {
   max-width: 114rem;

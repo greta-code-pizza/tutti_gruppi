@@ -1,4 +1,4 @@
-<div class="container text-center mt-3">
+
   <% if current_authentication.admin? %>
     <h4>Liste des membres</h4>
       <table class="mx-auto">
@@ -11,21 +11,25 @@
         </tr>
 
         <% @authentications.each do |auth| %>
-          <tr>
-            <td class="pt-4 pr-3"><%= auth.firstname %></td>
-            <td class="pt-4 pr-3"><%= auth.lastname %></td>
-            <td class="pt-4 pr-3"><%= auth.email %></td>
-            <td class="pt-4 pr-3"><%= auth.userable_type %></td>
-            <% group = GroupmentAuthentication.find_by_authentication_id(auth.id) %>
-            <td class="pt-4 pr-3"><%= group.groupment.name %></td>
-            <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", 'Contacter', id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Editer', edit_authentication_path(auth), id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Commandes', admin_path(auth), id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
-          </tr>
+
+            <tr>
+              <td class="pt-4 pr-3"><%= auth.firstname %></td>
+              <td class="pt-4 pr-3"><%= auth.lastname %></td>
+              <td class="pt-4 pr-3"><%= auth.email %></td>
+              <td class="pt-4 pr-3"><%= auth.userable_type %></td>
+              <% group = GroupmentAuthentication.find_by_authentication_id(auth.id) %>          
+              <td class="pt-4 pr-3"><%= group.groupment.name %></td>
+              <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", image_tag('contact.png', class:'icons') %></td>
+              <td class="pt-4 pr-3"><%= link_to image_tag('basket.png', class:'icons'), admin_path(auth) %></td>
+              <td class="pt-4 pr-3"><%= link_to image_tag('edit.png', class:'icons'), edit_authentication_path(auth) %></td>
+              <td class="pt-4 pr-3"><%= link_to image_tag('delete.png', class:'icons'), authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
+            </tr>
+
         <% end %>
+        
         <hr>
       </table>
+
       <div class="pagination-wrapper">
         <%= paginate @authentications, class: 'pt-3' %>
       </div>
@@ -34,5 +38,5 @@
   <% else %>
       <h2>Accès refusé</h2>
   <% end %>
-</div>
+
 <%= link_to 'Retour', admin_dashboard_path, id: 'btns' %>

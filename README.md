@@ -84,8 +84,25 @@ Then install dependencies with bundler like that:
 ```shell
 bundle install
 ```
-
 [More informations about bundler](http://bundler.io/)
+
+If you want to make changes to Stylesheets (compiled from node-sass (SCSS synthax)) You will have to install the Node Modules folders locally, To do so type:
+```shell
+npm install     # This should install jquery & node-sass
+```
+This commande should install node-sass locally on your computer.
+
+Then you'll be able to make changes to SCSS files included in app/assets/stylesheets/sass.
+To watch your changes you'll have to run a command to compile from one scss file to a css file:
+
+```shell
+npm run compile:sass 
+# The above command will start a script from package.json file
+# "scripts": {
+#    "compile:sass": "node-sass app/assets/stylesheets/sass/main.scss app/assets/stylesheets/application.css -w"
+#  }
+```
+And that's it :D
 
 ## Database creation
 
@@ -106,6 +123,18 @@ To populate the database with its default values, you can run this command:
 rails db:seed
 ```
 
+Or you can use one command (acting like a macro):
+
+```shell
+rake db:db
+```
+that reproduces these 4 commands:
+```shell
+rake db:drop        # drops database schema
+rake db:create      # create the database
+rake db:migrate     # migrate all the migrations
+rake db:seed        # populate the database schema from your seeds.rb
+```
 Right now your database works !
 
 

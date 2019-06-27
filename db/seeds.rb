@@ -207,3 +207,14 @@ GroupmentAuthentication.create(
     }
   ]
 )
+
+Event.create(
+  [
+    {
+      name:"june",
+      open:Date.today.beginning_of_month,
+      close:Date.today.end_of_month,
+      delivery:Date.today.end_of_month
+    }
+  ]
+)
