@@ -1,12 +1,11 @@
 /* NAVIGATION */
 
-.navbar-brand-logo {
-  color: $color-white;
-  font-size: 2rem;
+#logo {
+  width: 10rem;
+}
 
-  &:hover {
-    color: $color-orange;
-  }
+.bg-dark {
+  background-color: $color-pagination-bg !important;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -20,27 +19,29 @@
   text-transform: uppercase;
 
   &:hover {
-    color: $color-orange;
+    color: $color-btns;
   }
 }
 
 .active {
-  border-left: 1px solid $color-orange;
-  border-right: 1px solid $color-orange;
+  border-left: 2px solid rgba($color-btns, .5);
+  border-right: 2px solid rgba($color-btns, .5);
   font-weight: bold;
 
   .nav-link {
-  color: $color-orange !important;
+  color: $color-btns !important;
   }
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: $color-orange;
+  border-color: $color-btns;
 }
-.custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color-orange}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+.fa .fa-navicon {
+  color: $color-white;
 }
-
+// .custom-toggler .navbar-toggler-icon {
+//   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(#{$color-btns}, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+// }
 
 @include respond(tab-port) {
   .nav-item {
@@ -48,7 +49,7 @@
     // width: 15%;
     text-align: center;
     &.active {
-      border-bottom: 1px solid $color-orange;
+      border-bottom: 1px solid $color-btns;
       width: 8rem;
       margin: 0 auto;
     }

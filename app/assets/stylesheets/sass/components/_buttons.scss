@@ -1,0 +1,61 @@
+#btns {
+  background-color: $color-btns;
+  border-radius: 15px;
+  padding: 6px 13px;
+  color: $color-black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-btns-hover;
+    color: $color-btns;
+  }
+}
+
+#buttonToTop {
+  display: inline-block;
+  background-color: $color-btns;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  box-shadow: 0px 5px 10px $color-black;
+
+  &::before {
+    font-size: 2em;
+    line-height: 50px;
+    color: $color-pagination-bg;
+  }
+
+  &::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: $color-pagination-bg;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-light-gray;
+  }
+
+  &:active {
+    background-color: $color-dark-gray;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}

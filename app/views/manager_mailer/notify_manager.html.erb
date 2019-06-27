@@ -32,5 +32,4 @@
     <td>Total de la commande: <%= render_price_to_euros(@order.total) %></td>
   </tbody>
 </table>
-
 <p>En cas de problème, contactez: <%= mail_to "#{@manager.email}", "#{@manager.email}" %></p>

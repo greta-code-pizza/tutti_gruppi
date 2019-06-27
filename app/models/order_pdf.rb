@@ -13,14 +13,16 @@ class OrderPdf < Prawn::Document
   end
 
   def header
-    text 'TUTTI GRUPPI', size: 20, style: :bold, align: :center
+    pigs = "app/assets/images/logo.png" 
+    image pigs, :at => [200,720], :width => 150
+    move_down 50
   end
 
   def order_number
     text "Commande numéro : #{@order.id}", size: 16,
                                            style: :bold,
                                            align: :center
-    move_down 15
+    move_down 30
   end
 
   def order_recap

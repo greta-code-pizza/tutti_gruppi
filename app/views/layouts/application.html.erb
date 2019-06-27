@@ -7,7 +7,8 @@
   <body>
     <%= render 'shared/navigation' %>
 
-    <% if current_page?(manager_groupment_path) %>
+  <main>
+    <% if current_page?(manager_groupment_path) || current_page?('/groupment/show') %>
       <div class="container-fluid mt-5">
         <%= render 'shared/error_messages' %>
         <%= yield %>
@@ -18,7 +19,11 @@
         <%= yield %>
       </div>
     <% end %>
-    
+  </main>
+    <%= render 'shared/footer' %>
+  <!-- Button to go back to the top of the page -->
+  <a id="buttonToTop"></a>
     <%= render 'shared/scripts' %>
   </body>
 </html>
+

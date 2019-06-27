@@ -1,9 +1,9 @@
-<nav class="d-flex navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="d-flex navbar navbar-expand-lg navbar-light bg-dark fixed-top">
   <div>
-    <a class="navbar-brand-logo" href="/">Tutti Gruppi</a>
+    <a class="navbar-brand-logo" href="/"><%= image_tag 'logo.png', id: 'logo' %></a>
   </div>
   <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <i class="fa fa-navicon"></i>
   </button>
   <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -23,21 +23,18 @@
         </li>
       <% end %>
       <% if authentication_signed_in? %>
-        <li class="nav-item <%= 'active' if current_page?(destroy_authentication_session_path) %>">
-          <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
-        </li>
         <li class="nav-item <%= 'active' if current_page?('/groupment/show') %>">
           <%= link_to 'Groupment', '/groupment/show', class: 'order nav-link' %>
         </li>
+        <li class="nav-item <%= 'active' if current_page?(destroy_authentication_session_path) %>">
+          <%= link_to 'Déconnexion', destroy_authentication_session_path, method: :delete, class: 'order nav-link' %>
+        </li>
+      <% end %>
       <% else %>
         <li class="nav-item <%= 'active' if current_page?(new_authentication_session_path) %>">
           <%= link_to 'Connexion', new_authentication_session_path, class: 'order nav-link' %>
         </li>
-      <% end %>
     <% end %>
-      <li class="nav-item">
-        <%= mail_to 'merlhiotpaolo@gmail.com', 'contact', class: "order nav-link"  %>
-      </li>
     </ul>
   </div>
 </nav>

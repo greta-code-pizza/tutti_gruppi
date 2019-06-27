@@ -31,17 +31,3 @@ td input {
   margin: 0 auto;
 }
 
-#btns {
-  background-color: $color-btns;
-  border-radius: 15px;
-  padding: 6px 13px;
-  color: $color-black;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-#btns:hover {
-  background-color: $color-btns-hover;
-  color: $color-btns;
-}
