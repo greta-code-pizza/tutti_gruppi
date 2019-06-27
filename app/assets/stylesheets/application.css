@@ -21,7 +21,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+  outline: 0; }
 
 html {
   font-size: 87.5%; }
@@ -175,6 +176,43 @@ td input {
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 0rem !important; }
+
+section.gpmt {
+  justify-content: center; }
+  section.gpmt .block-gpmt {
+    display: flex;
+    flex-wrap: wrap;
+    width: 89%; }
+    section.gpmt .block-gpmt .profil-card {
+      background-color: #272727;
+      display: flex;
+      width: 300px;
+      height: 90px;
+      padding: 10px;
+      margin: 5px;
+      justify-content: center; }
+      section.gpmt .block-gpmt .profil-card .main-image {
+        width: 30%;
+        display: flex;
+        justify-content: center; }
+        section.gpmt .block-gpmt .profil-card .main-image .profil-img {
+          width: 70px;
+          clip-path: circle(50% at 50% 50%); }
+      section.gpmt .block-gpmt .profil-card .image {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        section.gpmt .block-gpmt .profil-card .image .rank-img {
+          width: 25px; }
+      section.gpmt .block-gpmt .profil-card .name {
+        color: white;
+        width: 55%;
+        display: flex;
+        align-items: center; }
+        section.gpmt .block-gpmt .profil-card .name p {
+          margin-bottom: 0;
+          font-size: 15px; }
 
 #btns {
   background-color: #78c702;

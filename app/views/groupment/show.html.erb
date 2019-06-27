@@ -1,36 +1,39 @@
 <h1 class="text-center"><%= @auth_gpmt.name %></h1>
-<section class="row">
-  
 
-  <% if @auth_gpmt.id != 1 %>
+<section class="row gpmt">
+  <div class="block-gpmt">
+    <% if @auth_gpmt.name != "Aucun" %>
+      <% @member_gpmt.each do |m| %>
+        <article class="profil-card">
 
-    
-    <% @member_gpmt.each do |m| %>
+          <div class="main-image">
+            <%= image_tag 'profil-default.png', class: 'profil-img' %>
+          </div>
+
+          
+            <div class="image">
+              <% if m.authentication.manager? %>
+                <%= image_tag 'crown.png', class: 'rank-img' %>
+              <% else %>
+                <%= image_tag 'member.png', class: 'rank-img' %>
+              <% end %>
+            </div>
+          
+          
 
 
-    <div class="col-1-of-4 d-flex card_box" style="border: 1px solid black;">
-      <div class="main-image">
-        IMAGE
-      </div>
-      <% if m.authentication.manager? %>
-      <div class="image">
-        <%= image_tag 'crown.png', class: 'crown_img' %>
-      </div>
-      <% end %>
-      <div class="image1">
-        
-      </div>
-      <div class="name">
-        <p><%= m.authentication.fullname %></p>
-      </div>
       
-    </div>
-    <% end %>
+          <div class="name">
+            <p><%= m.authentication.fullname %></p>
+          </div>
+          
+        </article>
+      <% end %>
 
-  <% else %>
-    <%= link_to 'Rejoindre un groupement', '/authentications/edit', id: 'btns' %>
-  <% end %>
-  
+    <% else %>
+      <%= link_to 'Rejoindre un groupement', '/authentications/edit', id: 'btns' %>
+    <% end %>
+  </div>
 </section>
  <% if current_authentication.manager? %>
   <div class="mx-auto">
