@@ -18,10 +18,10 @@
             <td class="pt-4 pr-3"><%= auth.userable_type %></td>
             <% group = GroupmentAuthentication.find_by_authentication_id(auth.id) %>
             <td class="pt-4 pr-3"><%= group.groupment.name %></td>
-            <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", 'Contacter', id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Editer', edit_authentication_path(auth), id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Commandes', admin_path(auth), id: 'btns' %></td>
-            <td class="pt-4 pr-3"><%= link_to 'Supprimer', authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
+            <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", image_tag("contact.png") %></td>
+            <td class="pt-4 pr-3"><%= link_to image_tag("basket.png", class:"ico"), admin_path(auth) %></td>
+            <td class="pt-4 pr-3"><%= link_to image_tag("edit.png"), edit_authentication_path(auth) %></td>
+            <td class="pt-4 pr-3"><%= link_to image_tag("delete.png"), authentication_path(auth), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
           </tr>
         <% end %>
         <hr>
