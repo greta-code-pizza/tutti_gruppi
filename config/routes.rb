@@ -41,6 +41,6 @@ Rails.application.routes.draw do
   end
 
   resources :groupment, only: %i[show index]
-  resources :orders, only: %i[index show create new]
+  resources :orders, only: %i[index show create new edit update destroy]
   resources :authentications, only: %i[index show create new edit update destroy]
 end

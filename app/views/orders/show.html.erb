@@ -11,7 +11,11 @@
   <% end %>
 <% end %>
 <p><strong>Total : <%= render_price_to_euros(@order.total) %></strong></p>
-
+<p>
+  <%= link_to image_tag('edit.png', class:'icons'), edit_order_path %>
+  <%= link_to image_tag('delete.png', class:'icons'), "/orders/#{params[:id]}", method: :delete, data: {confirm: 'Are you sure ?'} %>
+</p>
 <p>
   <%= link_to "Reçu téléchargeable (PDF)", order_path(@order, format: 'pdf'), id: 'btns' %>
 </p>
+<%= link_to "retour", orders_path, id: 'btns' %>
