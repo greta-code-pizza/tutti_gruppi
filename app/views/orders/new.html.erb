@@ -4,7 +4,7 @@
   </div>
 <% end %>
 
-<%if !Order.find_by(date: @event.open..@event.close, authentication_id: current_authentication.id) %>
+<% if !Order.find_by(date: @event.open..@event.close, authentication_id: current_authentication.id) %>
   <%= form_tag '/orders', method: 'post' do %>
     <div class="mb-4">
       <p>Commande pour : 
@@ -40,7 +40,7 @@
       </tbody>
     </table>
     <div class="d-flex wrap align-items-center">
-    <div class="w-50 d-flex flex-row-start">
+      <div class="w-50 d-flex flex-row-start">
         <a href="/orders"><input type="submit" value="Retour" class="mt-3" id="btns"></a>
       </div>
       <div class="w-50 d-flex flex-row-reverse">
@@ -49,5 +49,5 @@
     </div>
   <% end %>
 <% else %>
-<h1> tu as déjà commandé !</h1>
+<h1>Vous avez déjà commandé pour ce mois</h1>
 <% end %>

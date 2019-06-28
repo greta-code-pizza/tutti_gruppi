@@ -17,60 +17,71 @@
   }
 }
 
-
-.row [class^="col-"]:not(:last-child) {
-  margin-right: 0rem !important;
-}
-
-
-section.gpmt{
+section.gpmt {
   justify-content: center;
 
-  .block-gpmt{
+  @include respond(tab-land) {
+    margin-top: 3rem;
+  }
+
+  @include respond(tab-port) {
+    margin-top: 6rem;
+  }
+
+  .block-gpmt {
     display: flex;
     flex-wrap: wrap;
-    width: 89%;
-  
-    .profil-card{
-      background-color: rgb(39, 39, 39);
+    justify-content: center;
+
+    .profil-card {
+      background-color: $color-pagination-bg;
       display: flex;
       width: 300px;
       height: 90px;
       padding: 10px;
       margin: 5px;
       justify-content: center;
-    
-      .main-image{
+      border-radius: 5px;
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba($color-black, 0.5);
+        background-image: linear-gradient(to right bottom, $color-gradient-1, $color-gradient-3);
+        transform: scale(1) translateY(-.2rem);
+      }
+
+      .main-image {
         width: 30%;
         display: flex;
         justify-content: center;
-    
-        .profil-img{
+
+        .profil-img {
           width: 70px;
           clip-path: circle(50.0% at 50% 50%);
         }
       }
-      .image{
+
+      .image {
         width: 15%;
         display: flex;
         align-items: center;
         justify-content: center;
-    
-        .rank-img{
+
+        .rank-img {
           width: 25px;
         }
       }
-      .name{
+
+      .name {
         color: white;
         width: 55%;
         display: flex;
         align-items: center;
-        
-        p{
+
+        p {
           margin-bottom: 0;
           font-size: 15px;
         }
       }
-    }  
+    }
   }
 }

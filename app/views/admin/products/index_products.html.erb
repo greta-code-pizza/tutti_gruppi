@@ -1,47 +1,90 @@
-<% if current_authentication.admin? %>
-  <div class="mb-4">
-    <h1>Chosissez un produit a éditer</h1>
-  </div>  
-  <table class="container text-center">
-    <thead>
-      <tr>
-        <th>Statut</th>
-        <th>Produits</th>
-        <th>Conditionnement</th>
-        <th>Prix</th>
-        <th>Poids</th>
-      </tr>
-      <hr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <div>
-          <tr>
-            <td><%= image_tag product.available ? 'true.png' : 'false.png'%></td>
-            <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
-            <td><%= t("package.#{product.package}") %></td>
-            <td><%= product.euro %></td>
-            <td><%= product.weight %></td>
-            <td><%= link_to 'Editer', "edition-produits/#{product.id}", id: 'btns' %></td>
-            <% if product.available %>
-              <td><%= link_to "Unavailable", "/admin/unavailable/#{product.id}", id: 'btns' %></td>
-            <% else %>
-              <td><%= link_to "Available", "/admin/available/#{product.id}", id: 'btns' %></td>
-            <% end %>
-            <td><%= link_to 'Supprimer', "delete_product/#{product.id}", method: :delete, data: {confirm: 'Are you sure ?'}, id: 'btns' %></td>
-          </tr>
-        </div>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="d-flex wrap align-items-center">
-    <div class="w-50 d-flex flex-row-start">
-      <%= link_to 'Retour', admin_dashboard_path, id: 'btns' %>
+<section class="manage_products">
+  <% if current_authentication.admin? %>
+    
+    <div class="mt-3 mb-3 float-left">
+      <%= link_to raw('<i class="fas fa-chevron-left"></i> Retour'), admin_dashboard_path, id: 'btns' %>
     </div>
-  </div>
-<hr>
-<% else %>
-  <p>Accès refusé</p>
-<% end %>
-<!-- Pagination appears if more than 19 products -->
-<%= paginate @products %>
+
+    <div class="mb-4">
+      <h1>Choisissez un produit a éditer</h1>
+    </div>  
+    <table class="container text-center">
+      <thead>
+        <tr>
+          <th>Statut</th>
+          <th>Produits</th>
+          <th>Conditionnement</th>
+          <th>Prix</th>
+          <th>Poids</th>
+        </tr>
+        <hr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <div>
+            <tr>      
+              <td><%= product.available ? available : unavailable %></td>
+              <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
+              <td><%= t("package.#{product.package}") %></td>
+              <td><%= product.euro %></td>
+              <td><%= product.weight %></td>
+              <td><%= link_to image_tag('edit.png', class:'icons', title: "Editer #{t("product.#{product.name}")}"), "edition-produits/#{product.id}" %></td> 
+              <% if product.available %>
+                <td><%= link_to 'Indisponible', "/admin/unavailable/#{product.id}", id: 'btns' %></td>
+              <% else %>
+                <td><%= link_to 'Disponible', "/admin/available/#{product.id}", id: 'btns' %></td>
+              <% end %>
+              <td><%= link_to image_tag('delete.png', class:'icons', title: "Supprimer #{t("product.#{product.name}")}"), "delete_product/#{product.id}", method: :delete, data: {confirm: 'Etes vous sûr ?'} %></td>
+            </tr>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="mx-auto">
+      <!-- Pagination appears if more than 19 products -->
+      <%= paginate @products %>
+    </div>
+  <hr>
+  <% else %>
+    <p>Accès refusé</p>
+  <% end %>
+
+  <% if current_authentication.admin? %>
+    <h1>Ajouter un produit</h1>
+    <%= form_for 'products/index_products', method: :post do %>
+
+      <div class="field">
+        <%= label_tag :nom_de_produit %><br />
+        <%= text_field_tag :name, nil, placeholder: 'Ex: banana' %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :Conditionement %><br />
+        <%= text_field_tag :package, nil, placeholder: 'Ex: bag' %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :Prix %><br />
+        <%= text_field_tag :price, nil, placeholder: 'Ex: 1500'  %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :Poids %><br />
+        <%= text_field_tag :weight_value, nil, placeholder: 'Ex: 4500' %>
+      </div>
+
+      <div class="field">
+        <%= label_tag :Type_de_poids %><br />
+        <%= text_field_tag :weight_type, nil, placeholder: 'Ex: gram' %>
+      </div>
+
+      <%= submit_tag 'Ajouter', id: 'btns', class: 'mt-3 mb-3' %>
+    <% end %>
+  <% else %>
+    <p>Accès refusé</p>
+  <% end %>
+
+  <%= link_to raw('<i class="fas fa-chevron-left"></i> Retour'), admin_dashboard_path, id: 'btns', class: 'margin_bottom' %>
+</section>
+    
