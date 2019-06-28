@@ -27,17 +27,16 @@ class Admin::EventsController < ApplicationController
       delivery: params[:Event][:delivery]
     )
       flash[:notice] = "L'événement a bien été édité"
-      redirect_to admin_events_index_path
     else
       flash[:notice] = 'Une erreur est survenue'
-      redirect_to admin_events_index_path
     end
+    redirect_to admin_events_index_path
   end
 
   def destroy_events
     Event.find(params[:id]).destroy
     flash[:notice] = "L'événement a été supprimé avec succés"
-    redirect_to request.referrer
+    redirect_to '/orders'
   end
 
 end

@@ -28,7 +28,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @event = Event.find_by(open: Date.today.beginning_of_month, close: Date.today.end_of_month)
+    month = Date.today.beginning_of_month..Date.today.end_of_month
+    @event = Event.find_by(open: month, close: month)
     @products = Product.all
     @authentication = Authentication.all
   end
@@ -38,11 +39,23 @@ class OrdersController < ApplicationController
     if @order
       AuthenticationMailer.notify_authentication(current_authentication, @order).deliver
       ManagerMailer.notify_manager(current_authentication, @order).deliver
-      flash[:info] = 'success'
+      flash[:notice] = 'La commande a bien été enregistré'
     else
-      flash[:info] = 'failed'
+      flash[:info] = 'Une erreur est survenue !'
     end
     redirect_to '/orders'
+  end
+
+  def edit
+    @order = Order.find(params[:id])
+    @products = Product.all
+  end
+
+  def destroy
+    OrderItem.where(order_id: params[:id]).destroy_all
+    Order.find(params[:id]).destroy
+    flash[:notice] = 'La commande a été supprimé avec succès'
+    redirect_to "/orders"
   end
 
   private
