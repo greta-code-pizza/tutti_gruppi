@@ -1,0 +1,16 @@
+<h1>Liste des événements</h1>
+
+<ul>
+<% @events.each do |event| %>
+  <li>Nom: <%= event.name %></li>
+  <li>Départ: <%= event.open %></li>
+  <li>Fermeture: <%= event.close %></li>
+  <li>Livraison: <%= event.delivery %></li>
+  <%= link_to 'Editer', "events_edit/#{event.id}", id: 'btns' %>
+  <%= link_to 'Supprimer', "events_delete/#{event.id}", id: 'btns', method: :delete, data: {confirm: 'Are you sure ?'} %>
+  <hr>
+<% end %>
+</ul>
+
+
+<%= link_to "Ajout d'un événements", admin_events_new_path, id: 'btns' %>

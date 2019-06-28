@@ -1,0 +1,31 @@
+<% if current_authentication.admin? %>
+  <h1>Ajouter d'un événement</h1>
+  <%= form_for Event.to_s, method: :post do |f| %>
+
+    <div class="field">
+      <%= label_tag "nom de l'événement" %><br />
+      <%= text_field_tag :name, nil, placeholder: 'Ex: Décembre 2019' %>
+    </div>
+
+     <div class="field">
+      <%= label_tag "Date de lancement" %><br />
+      <%= f.date_field :open %>
+    </div>
+
+     <div class="field">
+      <%= label_tag "Date de fin" %><br />
+      <%= f.date_field :close %>
+    </div>
+
+    <div class="field">
+      <%= label_tag "Date de livraison" %><br />
+      <%= f.date_field :delivery %>
+    </div>
+
+    <%= submit_tag 'Ajouter', id: 'btns', class: 'mt-3 mb-3' %>
+  <% end %>
+<% else %>
+  <p>Accès refusé</p>
+<% end %>
+
+<%= link_to "Retour", admin_dashboard_path, id: 'btns' %>

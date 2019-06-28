@@ -21,6 +21,14 @@ Rails.application.routes.draw do
     get 'show/:id', to: 'dashboard#show'
     get 'edit/:id', to: 'dashboard#edit'
     get 'whitelist', to: 'whitelist#index'
+    
+    get 'events_index', to: 'events#index_events'
+    get 'events_new', to: 'events#new_events'
+    post 'events_new', to: 'events#create_events'
+    get 'events_edit/:id', to: 'events#edit_events'
+    patch 'events_edit/:id', to: 'events#update_events'
+    delete 'events_delete/:id', to: 'events#destroy_events'
+
     get 'index-produits', to: 'products#index_products'
     get 'edition-produits/:id', to: 'products#edit_products'
     patch 'edition-produits/:id', to: 'products#update_product'
