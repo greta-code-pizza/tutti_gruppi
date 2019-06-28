@@ -37,5 +37,14 @@ body {
 }
 
 main {
-	height: 120vh;
+	min-height: 62vh;
+	margin-top: 0;
+	
+	@include respond(tab-land) {
+		min-height: 66.5vh;
+	}
+
+	@include respond(tab-land) {
+		min-height: 72vh;
+	}
 }

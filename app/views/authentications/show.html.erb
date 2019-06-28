@@ -14,6 +14,5 @@
   </li>
 </ul>
 
-<%= link_to 'Update', '/authentications/edit', id: 'btns' %>
-<%= link_to 'Destroy', current_authentication, method: :delete, data: {confirm:'Are you sure ?'}, id: 'btns' %>
-
+<%= link_to image_tag('edit.png', class:'icons', title: "Editer vos informations"), '/authentications/edit' %>
+<%= link_to image_tag('delete.png', class:'icons', title: "Supprimer votre compte"), current_authentication, method: :delete, data: {confirm: 'Etes vous sûr ?'} %>

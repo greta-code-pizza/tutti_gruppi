@@ -14,27 +14,5 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require jquery_ujs
 //= require_tree .
-/*===========================================================
-========          Back to top button script          ========
-===========================================================*/
-$(function () {
-  $(window).scroll(function () {
-      if ($(window).scrollTop() > 200) {
-          btn.addClass("show");
-      } else {
-          btn.removeClass("show");
-      }
-  });
-  // Back to top button
-  let btn = $("#buttonToTop");
-  btn.on("click", function (e) {
-      e.preventDefault();
-      $("html, body").animate({
-              scrollTop: 0
-          },
-          "900"
-      );
-  });
-})
-/*========== End of Back to top button script  ===========*/

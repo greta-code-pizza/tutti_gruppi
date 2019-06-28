@@ -8,9 +8,11 @@
   <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
     <% if current_authentication %>
-      <li class="nav-item <%= 'active' if current_page?('/orders/new') %>">
-        <a href="/orders/new" class="order nav-link">Commander</a>
-      </li>
+      
+        <li class="nav-item <%= 'active' if current_page?('/orders/new') %>">
+          <a href="/orders/new" class="order nav-link">Commander</a>
+        </li>
+      
       <li class="nav-item <%= 'active' if current_page?('/orders') %>">
         <a href="/orders" class="order nav-link">Liste des commandes</a>
       </li>
