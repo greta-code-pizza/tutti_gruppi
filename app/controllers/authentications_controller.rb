@@ -22,7 +22,7 @@ class AuthenticationsController < ApplicationController
   def update
     auth_gpmt = GroupmentAuthentication.find_by_authentication_id(params[:id])
     if auth_gpmt.update groupment_id: params[:Groupment][:groupment_id]
-      flash[:notice] = "Vous appartenez désormais au groupement #{auth_gpmt}."
+      flash[:notice] = "Vous appartenez désormais au groupement #{auth_gpmt.groupment.name}."
       redirect_to request.referrer || root_path
     else
       flash[:notice] = 'Une erreur est survenue.'

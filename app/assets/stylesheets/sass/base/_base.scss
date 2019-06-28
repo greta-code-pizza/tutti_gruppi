@@ -29,7 +29,6 @@ html {
 
 body {
 	box-sizing: border-box;
-	padding-top: 4.5rem;
 
 	@include respond(tab-port) {
 		padding: 0;
@@ -37,5 +36,17 @@ body {
 }
 
 main {
-	height: 120vh;
+	min-height: 63vh;
+
+  @include respond(tab-port) {
+    margin-top: 3rem;
+	}
+	
+	@include respond(phone) {
+    margin-top: 3rem;
+  }
+	
+	@include respond(tab-land) {
+		min-height: 68vh;
+	}
 }
