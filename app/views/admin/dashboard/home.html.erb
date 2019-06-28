@@ -1,19 +1,19 @@
 <div class="container text-center mt-3">
   <% if current_authentication.admin? %>
     <h2>Panneau d'administration</h2>
-    <div class="mb-3">
+    <div class="mb-4">
       <%= link_to 'Liste des membres', admin_liste_des_membres_path, id: 'btns' %>
     </div>
-    
-    <div class="mb-3">
-      <%= link_to 'Whitelist', admin_whitelist_path, id: 'btns'  %>
-    </div>   
 
-    <div class="mb-3">
+    <div class="mb-4">
+      <%= link_to 'Whitelist', admin_whitelist_path, id: 'btns'  %>
+    </div>
+
+    <div class="mb-4">
       <%= link_to 'Produits', admin_index_produits_path, id: 'btns' %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-4">
       <%= link_to 'Evenements', admin_events_index_path, id: 'btns' %>
     </div>
 

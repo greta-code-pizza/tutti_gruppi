@@ -6,11 +6,13 @@
   <li>Départ: <%= event.open %></li>
   <li>Fermeture: <%= event.close %></li>
   <li>Livraison: <%= event.delivery %></li>
-  <%= link_to 'Editer', "events_edit/#{event.id}", id: 'btns' %>
-  <%= link_to 'Supprimer', "events_delete/#{event.id}", id: 'btns', method: :delete, data: {confirm: 'Are you sure ?'} %>
+  <div class="mt-3">
+  <%= link_to image_tag('edit.png', class:'icons', title: "Editer l'évènement'"), "events_edit/#{event.id}" %>
+  <%= link_to image_tag('delete.png', class:'icons', title: "Supprimer l'évènement'"), "events_delete/#{event.id}", method: :delete, data: {confirm: 'Etes vous sûr ?'} %>
+  </div>
   <hr>
 <% end %>
 </ul>
 
 
-<%= link_to "Ajout d'un événements", admin_events_new_path, id: 'btns' %>
+<%= link_to "Ajouter un évènement", admin_events_new_path, id: 'btns' %>

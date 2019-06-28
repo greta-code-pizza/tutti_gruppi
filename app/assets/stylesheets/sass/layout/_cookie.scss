@@ -1,0 +1,36 @@
+// GDPR Pop Up
+.cookie_text {
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: $color-pagination-bg;
+  text-align: center;
+  padding-top: 8px;
+}
+
+#message {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: none;
+  background-color: $color-cookie;
+  border-radius: 0 0 20px 20px;
+}
+
+[type="reset"], [type="submit"], button, html [type="button"] {
+  background-color: $color-pagination-bg;
+  color: $color-btns;
+}
+
+.cookie_link {
+  font-size: 16px;
+  color: $color-white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cookie_link:hover {
+  color: $color-white;
+  text-decoration: underline;
+}
+
+// end: GDPR pop up 

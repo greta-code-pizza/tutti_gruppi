@@ -1,4 +1,4 @@
-<nav class="d-flex navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+<nav class="d-flex navbar navbar-expand-lg navbar-light bg-dark">
   <div>
     <a class="navbar-brand-logo" href="/"><%= image_tag 'logo.png', id: 'logo' %></a>
   </div>
@@ -6,7 +6,7 @@
     <i class="fa fa-navicon"></i>
   </button>
   <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav text-center">
     <% if current_authentication %>
       
         <li class="nav-item <%= 'active' if current_page?('/orders/new') %>">

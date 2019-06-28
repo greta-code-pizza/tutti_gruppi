@@ -20,14 +20,6 @@
 section.gpmt {
   justify-content: center;
 
-  @include respond(tab-land) {
-    margin-top: 3rem;
-  }
-
-  @include respond(tab-port) {
-    margin-top: 6rem;
-  }
-
   .block-gpmt {
     display: flex;
     flex-wrap: wrap;
@@ -83,5 +75,14 @@ section.gpmt {
         }
       }
     }
+  }
+}
+
+.bl-2 {
+  border-left: 1px solid rgba($color-black, .2);
+
+  @include respond(tab-port) {
+    border: none;
+    border-top: 1px solid rgba($color-black, .2);
   }
 }
