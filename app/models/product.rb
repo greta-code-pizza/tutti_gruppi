@@ -13,27 +13,6 @@
 #
 
 class Product < ActiveRecord::Base
-  enum name: {
-    table_oranges: 'table oranges',
-    juice_oranges: 'juice oranges',
-    lemons: 'lemons',
-    tangerines: 'tangerines',
-    avocado: 'avocado',
-    sweet_potatoes: 'sweet potatoes',
-    mangos: 'mangos',
-    annonas: 'annonas',
-    grapefruit: 'grapefruit',
-    papaya: 'papaya',
-    almonds: 'almonds',
-    dried_figs: 'dried figs',
-    dried_tomatoes: 'dried tomatoes',
-    dried_peppers: 'dried peppers',
-    fig_bread: 'fig bread',
-    green_olive: 'green olive',
-    black_olive: 'black olive',
-    tapenade: 'tapenade',
-    olive_oil: 'olive oil'
-  }
   enum package: {
     bag: 'bag',
     bottle: 'bottle',

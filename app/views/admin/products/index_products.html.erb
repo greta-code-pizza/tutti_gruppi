@@ -24,11 +24,11 @@
           <div>
             <tr>      
               <td><%= product.available ? available : unavailable %></td>
-              <td><%= label_tag("order_product_#{product.id}", t("product.#{product.name}")) %></td>
+              <td><%= label_tag("order_product_#{product.id}", product.name) %></td>
               <td><%= t("package.#{product.package}") %></td>
               <td><%= product.euro %></td>
               <td><%= product.weight %></td>
-              <td><%= link_to image_tag('edit.png', class:'icons', title: "Editer #{t("product.#{product.name}")}"), "edition-produits/#{product.id}" %></td> 
+              <td><%= link_to image_tag('edit.png', class:'icons', title: "Editer #{product.name}"), "edition-produits/#{product.id}" %></td> 
               <% if product.available %>
                 <td><%= link_to 'Indisponible', "/admin/unavailable/#{product.id}", id: 'btns' %></td>
               <% else %>
