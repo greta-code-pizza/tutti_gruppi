@@ -86,9 +86,14 @@ bundle install
 ```
 [More informations about bundler](http://bundler.io/)
 
+*requirement: node should be install*
+```shell
+brew install node
+```
+
 If you want to make changes to Stylesheets (compiled from node-sass (SCSS synthax)) You will have to install the Node Modules folders locally, To do so type:
 ```shell
-npm install     # This should install jquery & node-sass
+npm install node-sass    # This should install jquery & node-sass
 ```
 This commande should install node-sass locally on your computer.
 
