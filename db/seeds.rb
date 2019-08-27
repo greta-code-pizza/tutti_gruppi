@@ -3,136 +3,158 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+PRODUCTS = {
+  'table_oranges'   =>  'Oranges de table',
+  'juice_oranges'   =>  'Oranges à jus',
+  'lemons'          =>  'Citrons',
+  'tangerines'      =>  'Mandarines',
+  'avocado'         =>  'Avocats',
+  'sweet_potatoes'  => 'Patates douces',
+  'mangos'          => 'Mangues',
+  'annonas'         => 'Anones',
+  'grapefruit'      => 'Pamplemousses',
+  'papaya'          => 'Papayes',
+  'almonds'         => 'Amandes',
+  'dried_figs'      => 'Figues séchées',
+  'dried_tomatoes'  => 'Tomates séchées',
+  'dried_peppers'   => 'Poivrons séchés',
+  'fig_bread'       => 'Pain de figues',
+  'green_olive'     => 'Olives vertes',
+  'black_olive'     => 'Olives noires',
+  'tapenade'        => 'Tapenade',
+  'olive_oil'       => "Huile d'olive"
+}
+
 Product.create(
   [
     {
-      name: 'table_oranges',
+      name: PRODUCTS['table_oranges'],
       package: 'box',
       price: 1110,
       weight_value: 6000,
       weight_type: 'gram'
     },
     {
-      name: 'juice_oranges',
+      name: PRODUCTS['juice_oranges'],
       package: 'box',
       price: 625,
       weight_value: 5000,
       weight_type: 'gram'
     },
     {
-      name: 'lemons',
+      name: PRODUCTS['lemons'],
       package: 'box',
       price: 858,
       weight_value: 3500,
       weight_type: 'gram'
     },
     {
-      name: 'tangerines',
+      name: PRODUCTS['tangerines'],
       package: 'box',
       price: 1200,
       weight_value: 5000,
       weight_type: 'gram'
     },
     {
-      name: 'avocado',
+      name: PRODUCTS['avocado'],
       package: 'box',
       price: 1800,
       weight_value: 4000,
       weight_type: 'gram'
     },
     {
-      name: 'sweet_potatoes',
+      name: PRODUCTS['sweet_potatoes'],
       package: 'box',
       price: 1000,
       weight_value: 4000,
       weight_type: 'gram'
     },
     {
-      name: 'mangos',
+      name: PRODUCTS['mangos'],
       package: 'box',
       price: 1800,
       weight_value: 4000,
       weight_type: 'gram'
     },
     {
-      name: 'annonas',
+      name: PRODUCTS['annonas'],
       package: 'box',
       price: 1400,
       weight_value: 4000,
       weight_type: 'gram'
     },
     {
-      name: 'grapefruit',
+      name: PRODUCTS['grapefruit'],
       package: 'box',
       price: 1175,
       weight_value: 5000,
       weight_type: 'gram'
     },
     {
-      name: 'papaya',
+      name: PRODUCTS['papaya'],
       package: 'box',
       price: 1800,
       weight_value: 4000,
       weight_type: 'gram'
     },
     {
-      name: 'almonds',
+      name: PRODUCTS['almonds'],
       package: 'tray',
       price: 1600,
       weight_value: 1000,
       weight_type: 'gram'
     },
     {
-      name: 'dried_figs',
+      name: PRODUCTS['dried_figs'],
       package: 'bag',
       price: 800,
       weight_value: 1000,
       weight_type: 'gram'
     },
     {
-      name: 'dried_tomatoes',
+      name: PRODUCTS['dried_tomatoes'],
       package: 'bag',
       price: 600,
       weight_value: 250,
       weight_type: 'gram'
     },
     {
-      name: 'dried_peppers',
+      name: PRODUCTS['dried_peppers'],
       package: 'bag',
       price: 650,
       weight_value: 250,
       weight_type: 'gram'
     },
     {
-      name: 'fig_bread',
+      name: PRODUCTS['fig_bread'],
       package: 'bag',
       price: 450,
       weight_value: 300,
       weight_type: 'gram'
     },
     {
-      name: 'green_olive',
+      name: PRODUCTS['green_olive'],
       package: 'jar',
       price: 400,
       weight_value: 500,
       weight_type: 'gram'
     },
     {
-      name: 'black_olive',
+      name: PRODUCTS['black_olive'],
       package: 'jar',
       price: 380,
       weight_value: 250,
       weight_type: 'gram'
     },
     {
-      name: 'tapenade',
+      name: PRODUCTS['tapenade'],
       package: 'jar',
       price: 390,
       weight_value: 125,
       weight_type: 'gram'
     },
     {
-      name: 'olive_oil',
+      name: PRODUCTS['olive_oil'],
       package: 'bottle',
       price: 430,
       weight_value: 5,
