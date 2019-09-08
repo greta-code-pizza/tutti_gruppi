@@ -14,12 +14,19 @@
                 <div class="w-100">
                   <p>Numero de commande : <%= o.id %></p>
                   <p>Total : <%= render_price_to_euros(o.total) %></p>
-                  <% total += o.total %>
+                  <% total += o.total if o.accept == true %>
                 </div> 
                 
                 <div class="w-100"> 
                   <div class="pt-4 mt-3 text-right">
                     <%= link_to 'Voir', order_path(o.id), id: 'btns' %>
+                    
+                    <% if !o.accept %>
+                      <td><%= link_to 'gris', "unavailable/#{o.id}", id: 'btns' %></td>
+                    <% else %>
+                      <td><%= link_to 'couleur', "available/#{o.id}", id: 'btns' %></td>
+                    <% end %>
+
                   </div>
                 </div>
               </div>
