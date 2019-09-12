@@ -1,10 +1,10 @@
 <table class="container-fluid text-center">
   <thead>
     <tr>
-      <th> Nom du produit </th>
       <% @member_gpmt.each do |member| %>
         <th> <%= member.authentication.fullname %></th>
       <% end %>
+      <th> Nom du produit </th>
       <th> nb. total </th>
     </tr>
   </thead>
@@ -12,8 +12,6 @@
   <% @products.each do |product| %>
       <% quantitytotal = 0 %>
       <tr>
-        <td class="border_command">  <%= t("product.#{product.name}") %> </td>
-
         <% @member_gpmt.each do |member| %>
           <% quantity = 0 %>
           <% if Order.find_by(authentication_id:member.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month)  %>
@@ -26,7 +24,7 @@
           <% end %>
           <td class="border_command"> <%= quantity %> </td>
         <% end %>
-
+        <td class="border_command">  <%= t("product.#{product.name}") %> </td>
         <td class="border_command"> <%= quantitytotal %> </td>
       </tr>
   <% end %>
