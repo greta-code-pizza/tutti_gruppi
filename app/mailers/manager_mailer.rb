@@ -5,6 +5,6 @@ class ManagerMailer < ApplicationMailer
     @manager = manager
     @order = order
     @items = OrderItem.where(order_id: order.id)
-    mail(to: ENV['gmail_username'], subject: 'Tutti Gruppi')
+    mail(to: Rails.application.credentials.gmail[:username], subject: 'Tutti Gruppi')
   end
 end
