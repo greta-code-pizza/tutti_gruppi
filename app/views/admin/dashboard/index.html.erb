@@ -17,7 +17,7 @@
           <td class="pt-4 pr-3"><%= auth.email %></td>
           <td class="pt-4 pr-3"><%= auth.userable_type %></td>
           <% group = GroupmentAuthentication.find_by_authentication_id(auth.id) %>          
-          <td class="pt-4 pr-3"><%= group.groupment.name %></td>
+          <td class="pt-4 pr-3"><%= group ? group.groupment.name : '' %></td>
           <td class="pt-4 pr-3"><%= mail_to "#{auth.email}", image_tag('contact.png', class:'icons', title: "Contacter #{auth.fullname}") %></td>
           <td class="pt-4 pr-3"><%= link_to image_tag('basket.png', class:'icons', title: "Commande(s) de #{auth.fullname}"), admin_path(auth) %></td>
           <td class="pt-4 pr-3"><%= link_to image_tag('edit.png', class:'icons', title: "Editer le profil de #{auth.fullname}"), edit_authentication_path(auth) %></td>
