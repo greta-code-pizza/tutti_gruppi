@@ -75,7 +75,7 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-  config.action_mailer.default_url_options = { host: "http://165.22.65.214" }
+  config.action_mailer.default_url_options = { host: "https://tuttigruppi.gemfacto.fr" }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -84,7 +84,7 @@ Rails.application.configure do
     domain:               'gmail.com',
     user_name:            ENV['gmail_username'],
     password:             ENV['gmail_password'],
-    authentication:       'login',
+    authentication:       'plain',
     enable_starttls_auto: true
   }
 
