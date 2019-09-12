@@ -30,7 +30,7 @@ class OrderPdf < Prawn::Document
     data += (
     @order_items.map do |oi|
       [
-        I18n.t("product.#{oi.product.name}"),
+        oi.product.name,
         oi.quantity,
         oi.product.euro,
         "#{oi.product.price.to_i * oi.quantity / 100},#{oi.product.price.to_s[-2..3]} €"
