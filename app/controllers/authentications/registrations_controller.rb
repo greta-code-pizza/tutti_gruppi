@@ -17,7 +17,7 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    groupment_authentication(params, resource)
+    groupment_authentication(resource)
 
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource&.unconfirmed_email
@@ -58,14 +58,8 @@ class Authentications::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def groupment_authentication(params, resource)
-    groupment = GroupmentAuthentication.find_by_authentication_id(current_authentication.id)
-    groupment&.destroy if params.empty?
-    groupment_id = params[:Groupment][:groupment_id].to_i
-
-    auth_params = { groupment_id: groupment_id, authentication_id: resource.id }
-
-    groupment ? groupment.update(auth_params) : GroupmentAuthentication.create(auth_params)
+  def groupment_authentication(resource)
+    auth_params = { authentication_id: resource.id }
   end
 
 end
