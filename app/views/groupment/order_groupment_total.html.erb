@@ -16,7 +16,7 @@
       <tr>
         <td class="border_command"><%= product.name %> </td>
         <% @member_gpmt.each do |member| %>
-          <% if Order.find_by(authentication_id: member.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month)  %>
+          <% if Order.find_by(authentication_id: member.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month, accept: true)  %>
             <% order = Order.find_by(authentication_id: member.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
             <% orderitem = OrderItem.where(order_id: order.id, product_id: product.id) %>
             <% orderitem.each do |oi| %>
