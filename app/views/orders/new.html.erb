@@ -8,11 +8,7 @@
   <%  if !Order.find_by(date: @event.open..@event.close, authentication_id: current_authentication.id) %>
     <%= form_tag '/orders', method: 'post' do %>
       <div class="mb-4">
-        <p>Commande pour : 
-        <% if current_authentication %>
-          <%= current_authentication.fullname %>
-        <% end %>
-        </p>
+        <p>Commande pour la livraison du mois de <%= @event.name %></p>
       </div>  
       <table class="container text-center">
         <thead>
