@@ -1,39 +1,44 @@
 
 
 <section class="gpmt">
-  <h1 class="text-center">
-    Groupement de <%= @auth_gpmt.name %>
-  </h1>
-  <div class="block-gpmt">
 
-    <% if @auth_gpmt.name != "Aucun" %>
-      <% @member_gpmt.each do |m| %>
+  <% if @auth_gpmt.name != "Aucun" %>
 
-        <article class="profil-card">
+    <h1 class="text-center">
+      Groupement de <%= @auth_gpmt.name %>
+    </h1>
 
-          <div class="main-image">
-            <%= image_tag 'profil-default.png', class: 'profil-img' %>
-          </div>
+    <div class="block-gpmt">
 
-            <div class="image">
-              <% if m.authentication.manager? %>
-                <%= image_tag 'crown.png', class: 'rank-img' %>
-              <% else %>
-                <%= image_tag 'member.png', class: 'rank-img' %>
-              <% end %>
+        <% @member_gpmt.each do |m| %>
+
+          <article class="profil-card">
+            <div class="main-image">
+              <%= image_tag 'profil-default.png', class: 'profil-img' %>
             </div>
 
-          <div class="name">
-            <p><%= m.authentication.fullname %></p>
-          </div>
+              <div class="image">
+                <% if m.authentication.manager? %>
+                  <%= image_tag 'crown.png', class: 'rank-img' %>
+                <% else %>
+                  <%= image_tag 'member.png', class: 'rank-img' %>
+                <% end %>
+              </div>
 
-        </article>
+            <div class="name">
+              <p><%= m.authentication.fullname %></p>
+            </div>
+          </article>
 
-      <% end %>
-    <% else %>
-      <%= link_to 'Rejoindre un groupement', '/authentications/edit', id: 'btns' %>
-    <% end %>
-  </div>
+        <% end %>
+    </div>
+  <% else %>
+    <h1 class="text-center">
+      Vous n'avez pas encore de groupement. <br>
+      Un administrateur va prochainement vous en attribuer.
+    </h1>
+  <% end %>
+  
 </section>
  <% if current_authentication.manager? %>
   <div class="mx-auto">
