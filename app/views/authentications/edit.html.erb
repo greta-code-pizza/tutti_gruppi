@@ -5,12 +5,12 @@
   <div class="col-1-of-2">
   <%= form_for @authentication, method: :patch do |f| %>
 
-    <% unless @authentication.member? %>
+    
       <div class="field">
         <%= f.label :groupement %><br />
         <%= collection_select(Groupment, :groupment_id, Groupment.all, :id, :name, :selected => @groupment.id) %>
       </div>
-    <% end %>
+    
 
     <div class="field">
       <%= f.label :email %><br />
