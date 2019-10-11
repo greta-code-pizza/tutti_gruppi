@@ -4,11 +4,11 @@
   <div class="row">
     <div class="col-1-of-2">
       <% total = 0 %>
-      <% @member_gpmt.each do |member| %>
-        <% order = Order.where(authentication_id: member.id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
+      <% @member_gpmt.each do |member_groupment| %>
+        <% order = Order.where(authentication_id: member_groupment.authentication_id, date: Date.today.beginning_of_month..Date.today.end_of_month) %>
         <% if order != [] %>
           <div class="m-3 p-4" style="border: 2px solid black;">
-            <%= member.authentication.fullname %>
+            <%= member_groupment.authentication.fullname %>
             <% order.each do |o| %>
               <div class="d-flex">
                 <div class="w-100">
