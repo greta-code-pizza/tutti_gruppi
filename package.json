@@ -2,7 +2,7 @@
   "name": "tutti_gruppi",
   "private": true,
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-ujs": "^1.2.2",
     "node-sass": "^4.12.0"
   },
