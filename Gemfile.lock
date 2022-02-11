@@ -245,7 +245,8 @@ GEM
       pry (>= 0.10.4)
     psych (3.1.0)
     public_suffix (3.1.1)
-    puma (3.12.1)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -448,7 +449,7 @@ DEPENDENCIES
   prawn
   prawn-table
   pry-rails
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.3)
   responders
   rspec-rails
